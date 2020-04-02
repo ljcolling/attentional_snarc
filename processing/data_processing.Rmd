@@ -1,0 +1,277 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# PREAMBLE 
+# This section loads the required packages for this notebook. 
+# All the required packages are already installed in the container
+
+library(tidyverse)
+library(magrittr)
+library(glue)
+
+```
+
+# Introduction
+
+This *R Markdown* notebook contains all the code for doing the data cleaning and data collation steps for the Fischer et al RRR project.  
+
+To use this notebook simply run each of the code chucks (either by running each chunk individually or by Run All from the run dropdown menu).
+
+## Participant exclusions
+```{r}
+# Define some parameters
+CATCH.TRIAL.REJECT = 5
+```
+Participants are exluded is their error rate is more than `r CATCH.TRIAL.REJECT`%. Participants are also excluded if they did not complete all the measures, or if the exit questionnaire determined that they were not naive to the purpose of the experiment.
+
+```{r}
+# Perform the exclusions
+dataFolder = here::here("data/")
+generated.dataFolder = here::here("data/processed_data/")
+
+# Load the data
+
+load(file.path(generated.dataFolder,"TidyFileList.sav")) # the file list contains experimenter determined exclusions. For example, crashing computers, technical errors etc
+#load("generated_data/TidyFileList.sav")
+
+Nodes = names(FileList)
+
+for (node in Nodes) {
+
+  load(glue('{generated.dataFolder}{node}-ResponseData.dat'))
+  load(glue('{generated.dataFolder}{node}-SecondaryData.dat'))
+  load(glue('{generated.dataFolder}{node}-EyeTrackerData.dat'))
+  
+  map_df(names(ResponseData), 
+         function(x) tibble(`Subject Code` = x, 
+                            `Catch Trial Reject` = ((1- mean(ResponseData[[x]] %>% pull(correct))) * 100) > CATCH.TRIAL.REJECT)) %>% 
+    full_join(FileList[[node]], by = "Subject Code") -> FileList[[node]]
+  
+  map_df(SecondaryData %>% as.list(), 
+         function(x) tibble(`Subject Code` = x$code, `Guess` = ifelse(x$guess == "N", FALSE,TRUE))) %>% 
+      full_join(FileList[[node]], by = "Subject Code") -> FileList[[node]]
+  
+}
+
+rm(list = c("node","Nodes")) # tidying up!
+rm(list = c("ResponseData","SecondaryData","EyeTrackerData")) # tidying up!
+
+cat("The exclusions have been marked.")
+```
+
+```{r}
+
+# Make a table of the exclude counts
+
+makeExcludeTable<-function(x){
+  
+  # This peforms the exclusions in a specific order. This is to prevent double counting (for example, a participant that both guessed the purpose of the experiment and had a high error rate wouldn't be counted as two)
+  
+  
+  all.Counts = x %>% summarise(`Exclude Data` = sum(`Exclude Data`), `Catch Trial Reject` = sum(`Catch Trial Reject`), Guess = sum(Guess), total = n())
+  
+  TotalSample = dim(x)[1]
+  
+  # Remove excluded
+  x %>% filter(`Exclude Data` == TRUE) %>% dim() %>% t() %>% as.tibble() %>% pull(V1) -> Step1.r
+  x %>% filter(`Exclude Data` == FALSE) -> x
+  Step1.n = dim(x)[1]
+  
+  # Remove catch trial errors
+  x %>% filter(`Catch Trial Reject` == TRUE) %>% dim() %>% t() %>% as.tibble() %>% pull(V1) -> Step2.r
+  x %>% filter(`Catch Trial Reject` == FALSE) -> x
+  Step2.n = dim(x)[1]
+  
+  # Remove participants that have guessed
+  x %>% filter(Guess == TRUE) %>% dim() %>% t() %>% as.tibble() %>% pull(V1) -> Step3.r
+  x %>% filter(Guess == FALSE) -> x
+  Step3.n = dim(x)[1]
+  
+  return.df = tibble(
+    node = unique(x$Node),
+    `Total sample` = all.Counts$total,
+    `After exclusions` = Step3.n,
+    `Other exclusions` = Step1.r,
+    `Error rate exclusions` = Step2.r,
+    `Guessed purpose` = Step3.r
+  )
+  
+  return(return.df)
+  
+}
+
+map_df(FileList, function (x)  makeExcludeTable(x)) -> Exclusions.Table
+
+# I'll use the exclusions table later, so I'll save it for now
+ReplicationProjectTools::GetLabNames()
+Exclusions.Table %>% rename(Lab = node, Total = `Total sample`, Analysed = `After exclusions`, Other = `Other exclusions`, Errors = `Error rate exclusions`, Purpose = `Guessed purpose`) %>% inner_join(tibble(Lab = Nodes, Names = LabNames), by = "Lab") %>% mutate(Lab = Names) %>% select(-Names) %>% arrange(Lab) %>% readr::write_csv(path = file.path(generated.dataFolder,"ExclusionsTable.csv"))
+
+
+
+
+
+```
+
+
+```{r}
+
+
+generated.dataFolder = here::here("data/processed_data/")
+
+map_df(Nodes, function(x) {load(file = glue("{generated.dataFolder}/{x}-HasEyeTracker.dat"))
+  tibble(Node = x, Code = HasEyeTracker %>% as.list() %@% "names", HasEye = HasEyeTracker %>% as.list() %>% unlist())}) %>% write_csv(path = here::here("data/processed_data/EyeTrackerTable.csv"))
+
+
+
+map(Nodes,function(x) {load(file = glue("{generated.dataFolder}/{x}-ResponseData.dat"))
+  ResponseData %>% as.list() %>% Reduce(f = function(x,y) rbind(x,y))}) %>% Reduce(f = function(x,y) rbind(x,y)) -> AllResponseData
+
+map(Nodes,function(x) {load(file = glue("{generated.dataFolder}/{x}-EyeTrackerData.dat"))
+  EyeTrackerData %>% as.list() %>% Reduce(f = function(x,y) rbind(x,y))}) %>% Reduce(f = function(x,y) rbind(x,y)) -> AllEyeTrackerData
+
+CombinedData = merge.data.frame(AllResponseData, AllEyeTrackerData, by = c("node","code","trial"))
+rm(list = c("AllResponseData","AllEyeTrackerData"))
+
+
+map(Nodes,function(x) {load(file = glue("{generated.dataFolder}/{x}-FingerData.dat"))
+  FingerData %>% as.list() %>% Reduce(f = function(x,y) rbind(x,y))}) %>% Reduce(f = function(x,y) rbind(x,y)) -> AllFingerData
+
+map(Nodes,function(x) {load(file = glue("{generated.dataFolder}/{x}-SecondaryData.dat"))
+  SecondaryData %>% as.list() %>% Reduce(f = function(x,y) rbind(x,y))}) %>% Reduce(f = function(x,y) rbind(x,y)) -> AllSecondaryData
+
+
+merge.data.frame(AllSecondaryData, AllFingerData, by = c("node","code")) %>% 
+  mutate(fingers = paste0(substr(fc1,1,1),substr(fc2,1,1),substr(fc3,1,1),substr(fc4,1,1))) %>% # count left and right finger uses
+  mutate(Lef = str_count(fingers,"L")) %>% mutate(Rig = str_count(fingers,"R")) %>% 
+  rename(Lab = node, Code = code) %>% as.tibble() -> Moderators
+
+Moderators %>% mutate(FingerGroup = # Add the finger counting group. Change this is you want to change how the groups are determined
+                        case_when(Rig >= 3 & (Rig + Lef >= 3) ~ "RS",
+                                  Lef >= 3 & (Rig + Lef >= 3) ~ "LS",
+                                  Rig == 2 & (Rig + Lef == 2) ~ "RA",
+                                  Lef == 2 & (Rig + Lef == 2) ~ "LA",
+                                  Rig == 2 & (Rig + Lef == 3) ~ "RA",
+                                  Lef == 2 & (Rig + Lef == 3) ~ "LA",
+                                  TRUE ~ "NG")) %>% # Add the handedness group
+  mutate(Hand = ifelse(handedness < 0, "LH","RH")) %>% # Add the reading direction group
+  mutate(ReadingDir = ifelse(language == 1, "LTR","NLR")) %>% # trim it down
+  select(Lab,Code,FingerGroup,Hand,ReadingDir,mathTest,amas) %>% # do some tidying up
+  rename(MathTest = mathTest, AMAS = amas) -> Moderators
+
+
+Reduce(FileList, f = function(x,y) rbind(x,y)) -> FileList
+names(FileList)[1] = "Code"
+names(CombinedData)[2] <- "Code"
+FileList %>% full_join(Moderators, by = "Code") %>% full_join(CombinedData, by = "Code") -> AllData
+
+AllData %>% write_csv(here::here("data/final_data_csv/AllData.csv"))
+
+# Now process the different data partitions
+# This isn't the easiest for creating arbitrary partitions
+# The code below would probably need to be edited.
+# In a later version I might change this to make it more user friendly
+GUESS.FILTER = c(FALSE,FALSE,TRUE) # Keep participants that correctly guessed purpose? FALSE = drop them; TRUE = select only them
+REJECT.FILTER = c(0,1,0) # Drop eye-movement contaminated trials? 0 = drop them; 1 = select only them
+CSV.NAME = c(here::here("data/final_data_csv/AllFischerData.csv"),
+             here::here("data/final_data_csv/ContaminatedFischerData.csv"),
+             here::here("data/final_data_csv/RejectedFischerData.csv")) # where to save the file?
+
+pmap(list(GUESS.FILTER = GUESS.FILTER, REJECT.FILTER = REJECT.FILTER, CSV.NAME = CSV.NAME), 
+     function(GUESS.FILTER, REJECT.FILTER,CSV.NAME)
+AllData %>% filter(Guess == GUESS.FILTER, `Catch Trial Reject` == FALSE, `Exclude Data` == FALSE) %>% filter(correct == 1, Reject == REJECT.FILTER) %>% select(Lab,Code,delayDur,targetLocation,cue,RT,FingerGroup,Hand,ReadingDir,MathTest,AMAS) %>% mutate(Magnitude = ifelse(cue < 5, "low","high")) %>% filter(targetLocation != "c") %>%
+  mutate(RT = RT * 1000) %>% group_by(Code,Magnitude,delayDur,targetLocation) %>% 
+  summarise(RT = mean(RT),
+            Lab = unique(Lab), 
+            FingerGroup = unique(FingerGroup), 
+            Hand = unique(Hand), 
+            ReadingDir = unique(ReadingDir), 
+            MathTest = unique(MathTest),
+            AMAS = unique(AMAS)) %>%
+  mutate(Congruency = case_when(
+      targetLocation == "l" & Magnitude == "low"  ~ "Con",      # left targets low number = congurent 
+      targetLocation == "l" & Magnitude == "high" ~ "Inc",      # left targets and high numbers = incongruent 
+      targetLocation == "r" & Magnitude == "low"  ~ "Inc",      # right targets low number = incongruent 
+      targetLocation == "r" & Magnitude == "high" ~ "Con")) %>% 
+  group_by(Code,delayDur,Congruency) %>% summarise(Lab = unique(Lab), 
+                                                   FingerGroup = unique(FingerGroup), 
+                                                   Hand = unique(Hand), 
+                                                   ReadingDir = unique(ReadingDir), 
+                                                   MathTest = unique(MathTest),
+                                                   AMAS = unique(AMAS), RT = mean(RT))  %>% spread(Congruency,RT) %>% mutate(RT = Inc - Con) %>% select(-Con,-Inc) %>% spread(delayDur,RT) %>% drop_na() %>% rename(d250 = `250`, d500 = `500`, d750 = `750`, d1000 = `1000`)  %>% select(Lab,Code,d250,d500,d750,d1000,FingerGroup,Hand,ReadingDir,MathTest,AMAS)) -> DataPartitions
+
+DataPartitions[[1]] %>% arrange(Lab,Code) %>% write_csv(path = CSV.NAME[1])
+
+DataPartitions[[2]] %>% arrange(Lab)  %>% select(-FingerGroup,-Hand,-ReadingDir,-MathTest,-AMAS) %>% write_csv(path = CSV.NAME[2])
+
+height<-function(x){dim(x)[1]}
+
+DataPartitions[[3]] %>% arrange(Lab)  %>% ungroup() %>% group_by(Lab) %>% nest() %>% mutate(Ss = map_int(data,height)) %>% filter(Ss > 4) %>% unnest()%>% arrange(Lab,Code) %>% select(-Ss) %>% write_csv(path = CSV.NAME[3]) # make sure to only select labs with more than 5 participants
+
+
+map(Nodes,function(x) {load(file = glue("{generated.dataFolder}/{x}-HasEyeTracker.dat"))
+  tibble(Code = names(HasEyeTracker), HasEye = unlist(HasEyeTracker %>% as.list()))}) %>% Reduce(f = function(x,y) rbind(x,y)) -> AllHasEyeTracker
+
+#AllData %>% filter(Guess == FALSE, `Catch Trial Reject` == FALSE, `Exclude Data` == FALSE) %>% #full_join(AllHasEyeTracker, by = "Code") %>% filter(HasEye == T) %>% mutate(Magnitude = ifelse(cue < 5, #"low","high")) %>% filter(targetLocation != "c", correct == 1) %>%   mutate(Congruency = case_when(
+#      targetLocation == "l" & Magnitude == "low"  ~ "Con",      # left targets low number = congurent 
+#      targetLocation == "l" & Magnitude == "high" ~ "Inc",      # left targets and high numbers = #incongruent 
+#      targetLocation == "r" & Magnitude == "low"  ~ "Inc",      # right targets low number = incongruent 
+#      targetLocation == "r" & Magnitude == "high" ~ "Con")) %>% group_by(Lab,Code,Congruency,delayDur) %>% #summarise(Rejected = mean(Reject) * 100) %>% ungroup() %>% group_by(Lab,Congruency,delayDur) %>% #summarise(M = mean(Rejected), SD = sd(Rejected)) %>% inner_join(tibble(Lab = Nodes, Name = LabNames), by = #"Lab") %>% ungroup() %>% select(Name,Congruency,delayDur,M,SD) %>% mutate(val = glue_data(list(M = M,SD = #SD), "{papaja::printnum(M)} ({papaja::printnum(SD)})")) %>% select(-M,-SD) %>% spread(delayDur,val) %>% #mutate(Congruency = case_when(Congruency == "Con" ~ "congruent", Congruency == "Inc" ~ "incongruent")) %>% #write_csv("generated_data/EyeTrackerDetail.csv")
+```
+
+
+```{r}
+require(papaja)
+
+ReplicationProjectTools::GetLabNames()
+
+LabCodes = tibble(Name = LabNames, Lab = Nodes)
+
+AllData %>% filter(targetLocation != "c", 
+                   correct == 1, 
+                   `Exclude Data` == FALSE,
+                   `Catch Trial Reject` == FALSE,
+                   Guess == FALSE) %>%
+  mutate(Magnitude = ifelse(cue < 5, "low","high")) %>%
+  mutate(Congruency = case_when(
+      targetLocation == "l" & Magnitude == "low"  ~ "Con",   
+      targetLocation == "l" & Magnitude == "high" ~ "Inc",   
+      targetLocation == "r" & Magnitude == "low"  ~ "Inc",   
+      targetLocation == "r" & Magnitude == "high" ~ "Con")) %>%
+  group_by(Lab,Code,Congruency,delayDur) %>% summarise(Reject = sum(Reject)) %>%
+  filter(Reject > 0) %>% select(Lab,Code,Congruency,delayDur,Reject) -> Eye.tmp
+
+
+
+# Trials in Analysis
+Eye.tmp %>% unite("ISI.Con", c("Congruency","delayDur")) %>% spread(ISI.Con,Reject) %>% drop_na() %>% gather(ISI.Con,Reject,-Lab,-Code) %>% group_by(Lab,ISI.Con) %>% summarise(Reject = sum(Reject), N = unique(Code) %>% length()) %>% 
+  separate(ISI.Con, c("Congruency","delayDur")) %>% ungroup() -> TrialsInAnalysis.Model1c #%>% spread(delayDur,Reject)
+
+# Total Trials
+
+
+Eye.tmp %>% unite("ISI.Con", c("Congruency","delayDur")) %>% group_by(Lab,ISI.Con) %>% summarise(Reject = sum(Reject)) %>%
+  separate(ISI.Con,c("Congruency","delayDur")) %>% ungroup() -> TotalTrails.Model1c #%>% spread(delayDur,Reject)
+
+AllData %>% filter(maxHorzDeviation > 0) %>% group_by(Lab) %>% summarise(Total = unique(Code) %>% length()) -> Total.Ns
+
+merge.data.frame(TrialsInAnalysis.Model1c,TotalTrails.Model1c, by = c("Lab","Congruency","delayDur"), suffixes = c(".Analysed",".Total"))  %>% mutate(Value = paste0(Reject.Analysed," (",Reject.Total,")")) %>% select(Lab,N,Congruency,delayDur,Value) %>% spread(delayDur,Value) %>% inner_join(LabCodes) %>% inner_join(Total.Ns) %>%
+  select(Name,Total,N,Congruency,`250`,`500`,`750`,`1000`) %>%
+  arrange(Name) -> Eye.TrialNumbers
+
+names(Eye.TrialNumbers) <- c("Lab","Subjects","Analysed","Trial Type",
+                             "250 ms","500 ms","750 ms", "1000 ms")
+
+Eye.TrialNumbers %>% mutate(`Trial Type` = 
+                              case_when(`Trial Type` == "Con" ~ "Congruent",
+                                        `Trial Type` == "Inc" ~ "Incongruent")) %>%
+  write_csv(here::here("data/processed_data/EyeTrackerDetail.csv"))
+
+```
+You can load the [Analysis notebook](./processing/analysis.Rmd).
+
+
+
+

@@ -1,0 +1,75 @@
+Subject Code,Main Data,Secondary Data,Finger Counting Data,Exclude Data,Reason,Other comments,Node
+Hubbard_01_170411,hubbard_01_170411_data.mat,NA,hubbard_01_170411_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_02_170411,NA,NA,hubbard_02_170411_fingercounting.mat,TRUE,Computer error; data didn't save,NA,encwv
+Hubbard_03_170411,hubbard_03_170411_data.mat,NA,hubbard_03_170411_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_04_170411,hubbard_04_170411_data.mat,NA,hubbard_04_170411_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_05_170411,hubbard_05_170411_data.mat,NA,hubbard_05_170411_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_06_170411,hubbard_06_170411_data.mat,NA,hubbard_06_170411_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_07_170411,hubbard_07_170411_data.mat,NA,hubbard_07_170411_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_08_170412,hubbard_08_170412_data.mat,NA,hubbard_08_170412_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_09_170412,hubbard_09_170412_data.mat,NA,hubbard_09_170412_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_10_170412,hubbard_10_170412_data.mat,NA,hubbard_10_170412_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_11_170412,hubbard_11_170412_data.mat,NA,hubbard_11_170412_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_12_170412,hubbard_12_170412_data.mat,NA,hubbard_12_170412_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_13_170412,hubbard_13_170412_data.mat,NA,hubbard_13_170412_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_14_170413,hubbard_14_170413_data.mat,NA,hubbard_14_170413_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_15_170413,hubbard_15_170413_data.mat,NA,hubbard_15_170413_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_16_170413,hubbard_16_170413_data.mat,NA,hubbard_16_170413_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_17_170413,hubbard_17_170413_data.mat,NA,hubbard_17_170413_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_18_170413,hubbard_18_170413_data.mat,NA,hubbard_18_170413_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_19_170413,hubbard_19_170413_data.mat,NA,hubbard_19_170413_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_20_170413,hubbard_20_170413_data.mat,NA,hubbard_20_170413_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_21_170413,hubbard_21_170413_data.mat,NA,hubbard_21_170413_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_22_170413,hubbard_22_170413_data.mat,NA,hubbard_22_170413_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_23_170414,hubbard_23_170414 _data.mat,NA,hubbard_23_170414_fingercounting.mat,FALSE,Correctly guessed purpose,"""To see the effect of the numbers on how quickly you respond to the dot""",encwv
+Hubbard_24_170414,hubbard_24_170414_data.mat,NA,hubbard_24_170414_fingercounting.mat,FALSE,>5% errors,NA,encwv
+Hubbard_25_170414,hubbard_25_170414_data.mat,NA,hubbard_25_170414_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_26_170414,hubbard_26_170414_data.mat,NA,hubbard_26_170414_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_27_170417,hubbard_27_170417_data.mat,NA,hubbard_27_170417_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_28_170417,hubbard_28_170417_data.mat,NA,hubbard_28_170417_fingercounting.mat,FALSE,>5% errors,NA,encwv
+Hubbard_29_170418,hubbard_29_170418_data.mat,NA,hubbard_29_170418_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_30_170418,hubbard_30_170418_data.mat,NA,hubbard_30_170418_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_31_170418,NA,NA,hubbard_31_170418_fingercounting.mat,TRUE,Computer error; data didn't save,NA,encwv
+Hubbard_32_170418,hubbard_32_170418_data.mat,NA,hubbard_32_170418_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_33_170419,hubbard_33_170419_data.mat,NA,hubbard_33_170419_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_34_170419,hubbard_34_170419_data.mat,NA,hubbard_34_170419_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_35_170419,hubbard_35_170419_data.mat,NA,hubbard_35_170419_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_36_170419,hubbard_36_170419_data.mat,NA,hubbard_36_170419_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_37_170420,hubbard_37_170420_data.mat,NA,hubbard_37_170420_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_38_170420,hubbard_38_170420_data.mat,NA,hubbard_38_170420_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_39_170420,hubbard_39_170420_data.mat,NA,hubbard_39_170420_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_40_170420,hubbard_40_170420_data.mat,NA,hubbard_40_170420_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_41_170420,hubbard_41_170420_data.mat,NA,hubbard_41_170420_fingercounting.mat,FALSE,>5% errors,NA,encwv
+Hubbard_42_170420,hubbard_42_170420_data.mat,NA,hubbard_42_170420_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_43_170420,hubbard_43_170420_data.mat,NA,hubbard_43_170420_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_44_170420,hubbard_44_170420_data.mat,NA,hubbard_44_170420_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_45_170420,hubbard_45_170420_data.mat,NA,hubbard_45_170420_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_46_170420,NA,NA,hubbard_46_170420_fingercounting.mat,TRUE,"Participant noncompliant, likely under the influence of drugs",NA,encwv
+Hubbard_47_170421,hubbard_47_170421_data.mat,NA,hubbard_47_170421_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_48_170421,hubbard_48_170421_data.mat,NA,hubbard_48_170421_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_49_170421,NA,NA,hubbard_49_170421_fingercounting.mat,TRUE,Computer error; data didn't save,NA,encwv
+Hubbard_50_170421,hubbard_50_170421_data.mat,NA,hubbard_50_170421_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_51_170425,hubbard_51_170425 _data.mat,NA,hubbard_51_170425_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_52_170425,hubbard_52_170425_data.mat,NA,hubbard_52_170425_fingercounting.mat,FALSE,>5% errors,NA,encwv
+Hubbard_53_170426,hubbard_53_170426_data.mat,NA,hubbard_53_170426_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_54_170426,hubbard_54_170426_data.mat,NA,hubbard_54_170426_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_55_170426,hubbard_55_170426_data.mat,NA,hubbard_55_170426_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_56_170426,hubbard_56_170426_data.mat,NA,hubbard_56_170426_fingercounting.mat,FALSE,Correctly guessed purpose,"""Reaction time to left and right when primed""",encwv
+Hubbard_57_170426,hubbard_57_170426_data.mat,NA,hubbard_57_170426_fingercounting.mat,FALSE,>5% errors,NA,encwv
+Hubbard_58_170426,hubbard_58_170426_data.mat,NA,hubbard_58_170426_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_59_170427,hubbard_59_170427_data.mat,NA,hubbard_59_170427_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_60_170427,hubbard_60_170427_data.mat,NA,hubbard_60_170427_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_61_170427,hubbard_61_170427_data.mat,NA,hubbard_61_170427_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_62_170427,hubbard_62_170427_data.mat,NA,hubbard_62_170427_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_63_170427,hubbard_63_170427_data.mat,NA,hubbard_63_170427_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_64_170427,hubbard_64_170427_data.mat,NA,hubbard_64_170427_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_65_170428,hubbard_65_170428_data.mat,NA,hubbard_65_170428_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_66_170428,hubbard_66_170428_data.mat,NA,hubbard_66_170428_fingercounting.mat,FALSE,>5% errors,NA,encwv
+Hubbard_67_170428,hubbard_67_170428_data.mat,NA,hubbard_67_170428_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_68_170428,hubbard_68_170428_data.mat,NA,hubbard_68_170428_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_69_170501,hubbard_69_170501_data.mat,NA,hubbard_69_170501_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_70_170501,hubbard_70_170501_data.mat,NA,hubbard_70_170501_fingercounting.mat,FALSE,>5% errors,NA,encwv
+Hubbard_71_170501,hubbard_71_170501_data.mat,NA,hubbard_71_170501_fingercounting.mat,FALSE,>5% errors,NA,encwv
+Hubbard_72_170501,hubbard_72_170501_data.mat,NA,hubbard_72_170501_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_73_170502,hubbard_73_170502_data.mat,NA,hubbard_73_170502_fingercounting.mat,FALSE,-,NA,encwv
+Hubbard_74_170502,hubbard_74_170502_data.mat,NA,hubbard_74_170502_fingercounting.mat,FALSE,-,NA,encwv

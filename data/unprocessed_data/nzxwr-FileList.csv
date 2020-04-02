@@ -1,0 +1,78 @@
+Subject Code,Main Data,Secondary Data,Finger Counting Data,Exclude Data,Reason,Other comments,Node
+moeller_01_170505,moeller_01_170505_data.mat,NA,moeller_01_170505_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_02_170512,moeller_02_170512_data.mat,NA,moeller_02_170512_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_03_170523,moeller_03_170523_data.mat,NA,moeller_03_170523_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_04_170523,moeller_04_170523_data.mat,NA,moeller_04_170523_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_05_170530,moeller_05_170530_data.mat,NA,moeller_05_170530_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_06_170530,moeller_06_170530_data.mat,NA,moeller_06_170530_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_07_170607,moeller_07_170607_data.mat,NA,moeller_07_170607_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_08_170612,NA,NA,moeller_08_170612_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_09_170613,moeller_09_170613_data.mat,NA,moeller_09_170613_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_10_170613,moeller_10_170613_data.mat,NA,moeller_10_170613_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_11_170616,moeller_11_170616_data.mat,NA,moeller_11_170616_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_12_170619,moeller_12_170619_data.mat,NA,moeller_12_170619_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_13_170623,moeller_13_170623_data.mat,NA,moeller_13_170623_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_14_170627,NA,NA,moeller_14_170627_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_15_170627,moeller_15_170627_data.mat,NA,moeller_15_170627_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_16_170630,NA,NA,moeller_16_170630_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_17_170704,NA,NA,moeller_17_170704_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_18_170707,moeller_18_170707_data.mat,NA,moeller_18_170707_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_19_170707,NA,NA,moeller_19_170707_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_20_170707,moeller_20_170707_data.mat,NA,moeller_20_170707_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_21_170710,NA,NA,moeller_21_170710_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_22_170711,moeller_22_170711_data.mat,NA,moeller_22_170711_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_23_170714,moeller_23_170714_data.mat,NA,moeller_23_170714_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_24_170714,moeller_24_170714_data.mat,NA,moeller_24_170714_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_25_170717,moeller_25_170717_data.mat,NA,moeller_25_170717_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_26_170717,moeller_26_170717_data.mat,NA,moeller_26_170717_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_27_170718,NA,NA,moeller_27_170718_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_28_170718,moeller_28_170718_data.mat,NA,moeller_28_170718_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_29_170718,moeller_29_170718_data.mat,NA,moeller_29_170718_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_30_170724,moeller_30_170724_data.mat,NA,moeller_30_170724_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_31_170725,moeller_31_170725_data.mat,NA,moeller_31_170725_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_32_170725,moeller_32_170725_data.mat,NA,moeller_32_170725_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_33_170728,NA,NA,moeller_33_170728_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_34_170728,NA,NA,moeller_34_170728_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_35_170801,moeller_35_170801_data.mat,NA,moeller_35_170801_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_36_170801,moeller_36_170801_data.mat,NA,moeller_36_170801_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_37_170807,moeller_37_170807_data.mat,NA,moeller_37_170807_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_38_170807,moeller_38_170807_data.mat,NA,moeller_38_170807_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_39_170807,moeller_39_170807_data.mat,NA,moeller_39_170807_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_40_170808,moeller_40_170808_data.mat,NA,moeller_40_170808_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_41_170808,NA,NA,moeller_41_170808_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_42_170808,moeller_42_170808_data.mat,NA,moeller_42_170808_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_43_170808,moeller_43_170808_data.mat,NA,moeller_43_170808_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_44_170811,moeller_44_170811_data.mat,NA,moeller_44_170811_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_45,NA,NA,NA,TRUE,not tested,NA,nzxwr
+moeller_46_170927,moeller_46_170927_data.mat,NA,moeller_46_170927_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_47_170927,moeller_47_170927_data.mat,NA,moeller_47_170927_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_48_170927,NA,NA,moeller_48_170927_fingercounting.mat,TRUE,Experiment crashed,see error message screenshot,nzxwr
+moeller_49_170928,moeller_49_170928_data.mat,NA,moeller_49_170928_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_50_170928,moeller_50_170928_data.mat,NA,moeller_50_170928_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_51_170928,moeller_51_170928_data.mat,NA,moeller_51_170928_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_52_170928,moeller_52_170928_data.mat,NA,moeller_52_170928_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_53_170928,moeller_53_170928_data.mat,NA,moeller_53_170928_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_54_170929,moeller_54_170929_data.mat,NA,moeller_54_170929_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_55_170929,moeller_55_170929_data.mat,NA,moeller_55_170929_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_56_170929,moeller_56_170929_data.mat,NA,moeller_56_170929_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_57_171002,moeller_57_171002_data.mat,NA,moeller_57_171002_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_58_171002,moeller_58_171002_data.mat,NA,moeller_58_171002_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_59_171002,moeller_59_171002_data.mat,NA,moeller_59_171002_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_60_171002,moeller_60_171002_data.mat,NA,moeller_60_171002_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_61_171004,moeller_61_171004_data.mat,NA,moeller_61_171004_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_62_171004,moeller_62_171004_data.mat,NA,moeller_62_171004_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_63_171004,moeller_63_171004_data.mat,NA,moeller_63_171004_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_64_171004,moeller_64_171004_data.mat,NA,moeller_64_171004_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_65_171005,moeller_65_171005_data.mat,NA,moeller_65_171005_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_66_171005,moeller_66_171005_data.mat,NA,moeller_66_171005_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_67_171005,moeller_67_171005_data.mat,NA,moeller_67_171005_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_68_171006,moeller_68_171006_data.mat,NA,moeller_68_171006_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_69_171006,moeller_69_171006_data.mat,NA,moeller_69_171006_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_70_171009,moeller_70_171009_data.mat,NA,moeller_70_171009_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_71_171009,moeller_71_171009_data.mat,NA,moeller_71_171009_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_72_171009,moeller_72_171009_data.mat,NA,moeller_72_171009_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_73_171010,moeller_73_171010_data.mat,NA,moeller_73_171010_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_74_171010,moeller_74_171010_data.mat,NA,moeller_74_171010_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_75_171010,moeller_75_171010_data.mat,NA,moeller_75_171010_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_76_171010,moeller_76_171010_data.mat,NA,moeller_76_171010_fingercounting.mat,FALSE,NA,NA,nzxwr
+moeller_77_171011,moeller_77_171011_data.mat,NA,moeller_77_171011_fingercounting.mat,FALSE,NA,NA,nzxwr

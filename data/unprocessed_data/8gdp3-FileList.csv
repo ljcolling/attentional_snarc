@@ -1,0 +1,127 @@
+Subject Code,Main Data,Secondary Data,Finger Counting Data,Exclude Data,Reason,Other comments,Node
+1s,1s_primary_data.mat,1s_secondary_data.mat,1s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+2s,2s_primary_data.mat,2s_secondary_data.mat,2s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+3s,3s_primary_data.mat,3s_secondary_data.mat,3s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+4s,4s_primary_data.mat,4s_secondary_data.mat,4s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+5s,5s_primary_data.mat,5s_secondary_data.mat,5s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+6s,6s_primary_data.mat,6s_secondary_data.mat,6s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+7s,7s_primary_data.mat,7s_secondary_data.mat,7s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+8s,8s_primary_data.mat,8s_secondary_data.mat,8s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+9s,9s_primary_data.mat,9s_secondary_data.mat,9s_fingercounting.mat,FALSE,NA,NA,8gdp3
+10s,10s_primary_data.mat,10s_secondary_data.mat,10s_fingercounting.mat,FALSE,NA,NA,8gdp3
+11s,11s_primary_data.mat,11s_secondary_data.mat,11s_fingercounting.mat,FALSE,NA,NA,8gdp3
+12s,12s_primary_data.mat,12s_secondary_data.mat,12s_fingercounting.mat,FALSE,NA,NA,8gdp3
+13s,13s_primary_data.mat,13s_secondary_data.mat,13s_fingercounting.mat,FALSE,NA,NA,8gdp3
+14s,14s_primary_data.mat,14s_secondary_data.mat,14s_fingercounting.mat,FALSE,NA,NA,8gdp3
+15s,15s_primary_data.mat,15s_secondary_data.mat,15s_fingercounting.mat,FALSE,NA,NA,8gdp3
+16s,16s_primary_data.mat,16s_secondary_data.mat,16s_fingercounting.mat,FALSE,NA,NA,8gdp3
+17s,17s_primary_data.mat,17s_secondary_data.mat,17s_fingercounting.mat,FALSE,NA,NA,8gdp3
+18s,18s_primary_data.mat,18s_secondary_data.mat,18s_fingercounting.mat,FALSE,NA,NA,8gdp3
+19s,19s_primary_data.mat,19s_secondary_data.mat,19s_fingercounting.mat,FALSE,NA,NA,8gdp3
+20s,20s_primary_data.mat,20s_secondary_data.mat,20s_fingercounting.mat,FALSE,NA,NA,8gdp3
+21s,21s_primary_data.mat,21s_secondary_data.mat,21s_fingercounting.mat,FALSE,NA,NA,8gdp3
+22s,22s_primary_data.mat,22s_secondary_data.mat,22s_fingercounting.mat,FALSE,NA,NA,8gdp3
+23s,23s_primary_data.mat,23s_secondary_data.mat,23s_fingercounting.mat,FALSE,NA,NA,8gdp3
+24s,24s_primary_data.mat,24s_secondary_data.mat,24s_fingercounting.mat,TRUE,low compliance,NA,8gdp3
+25s,25s_primary_data.mat,25s_secondary_data.mat,25s_fingercounting.mat,FALSE,NA,NA,8gdp3
+26s,26s_primary_data.mat,26s_secondary_data.mat,26s_fingercounting.mat,FALSE,NA,NA,8gdp3
+27s,27s_primary_data.mat,27s_secondary_data.mat,27s_fingercounting.mat,FALSE,NA,NA,8gdp3
+28s,28s_primary_data.mat,28s_secondary_data.mat,28s_fingercounting.mat,FALSE,NA,NA,8gdp3
+29s,29s_primary_data.mat,29s_secondary_data.mat,29s_fingercounting.mat,FALSE,NA,NA,8gdp3
+30s,30s_primary_data.mat,30s_secondary_data.mat,30s_fingercounting.mat,FALSE,NA,NA,8gdp3
+31s,31s_primary_data.mat,31s_secondary_data.mat,31s_fingercounting.mat,FALSE,NA,NA,8gdp3
+32s,32s_primary_data.mat,32s_secondary_data.mat,32s_fingercounting.mat,FALSE,NA,NA,8gdp3
+33s,33s_primary_data.mat,33s_secondary_data.mat,33s_fingercounting.mat,FALSE,NA,NA,8gdp3
+34s,34s_primary_data.mat,34s_secondary_data.mat,34s_fingercounting.mat,FALSE,NA,NA,8gdp3
+35s,35s_primary_data.mat,35s_secondary_data.mat,35s_fingercounting.mat,FALSE,NA,NA,8gdp3
+36s,36s_primary_data.mat,36s_secondary_data.mat,36s_fingercounting.mat,FALSE,NA,NA,8gdp3
+37s,37s_primary_data.mat,37s_secondary_data.mat,37s_fingercounting.mat,FALSE,NA,NA,8gdp3
+38s,38s_primary_data.mat,38s_secondary_data.mat,38s_fingercounting.mat,FALSE,NA,NA,8gdp3
+39s,39s_primary_data.mat,39s_secondary_data.mat,39s_fingercounting.mat,FALSE,NA,NA,8gdp3
+40s,40s_primary_data.mat,40s_secondary_data.mat,40s_fingercounting.mat,FALSE,NA,NA,8gdp3
+41s,41s_primary_data.mat,41s_secondary_data.mat,41s_fingercounting.mat,FALSE,NA,NA,8gdp3
+42s,42s_primary_data.mat,42s_secondary_data.mat,42s_fingercounting.mat,FALSE,NA,NA,8gdp3
+43s,43s_primary_data.mat,43s_secondary_data.mat,43s_fingercounting.mat,FALSE,NA,NA,8gdp3
+44s,44s_primary_data.mat,44s_secondary_data.mat,44s_fingercounting.mat,FALSE,NA,NA,8gdp3
+45s,45s_primary_data.mat,45s_secondary_data.mat,45s_fingercounting.mat,FALSE,NA,NA,8gdp3
+46s,46s_primary_data.mat,46s_secondary_data.mat,46s_fingercounting.mat,FALSE,NA,NA,8gdp3
+47s,47s_primary_data.mat,47s_secondary_data.mat,47s_fingercounting.mat,FALSE,NA,NA,8gdp3
+48s,48s_primary_data.mat,48s_secondary_data.mat,48s_fingercounting.mat,FALSE,NA,NA,8gdp3
+49s,49s_primary_data.mat,49s_secondary_data.mat,49s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+50s,50s_primary_data.mat,50s_secondary_data.mat,50s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+51s,51s_primary_data.mat,51s_secondary_data.mat,51s_fingercounting.mat,TRUE,technical issues with Matlab,NA,8gdp3
+52s,52s_primary_data.mat,52s_secondary_data.mat,52s_fingercounting.mat,FALSE,NA,NA,8gdp3
+53s,53s_primary_data.mat,53s_secondary_data.mat,53s_fingercounting.mat,FALSE,NA,NA,8gdp3
+54s,54s_primary_data.mat,54s_secondary_data.mat,54s_fingercounting.mat,FALSE,NA,NA,8gdp3
+55s,55s_primary_data.mat,55s_secondary_data.mat,55s_fingercounting.mat,FALSE,NA,NA,8gdp3
+56s,56s_primary_data.mat,56s_secondary_data.mat,56s_fingercounting.mat,FALSE,NA,NA,8gdp3
+57s,57s_primary_data.mat,57s_secondary_data.mat,57s_fingercounting.mat,FALSE,NA,NA,8gdp3
+58s,58s_primary_data.mat,58s_secondary_data.mat,58s_fingercounting.mat,FALSE,NA,NA,8gdp3
+59s,59s_primary_data.mat,59s_secondary_data.mat,59s_fingercounting.mat,FALSE,NA,NA,8gdp3
+60s,60s_primary_data.mat,60s_secondary_data.mat,60s_fingercounting.mat,FALSE,NA,NA,8gdp3
+61s,61s_primary_data.mat,61s_secondary_data.mat,61s_fingercounting.mat,FALSE,NA,NA,8gdp3
+62s,62s_primary_data.mat,62s_secondary_data.mat,62s_fingercounting.mat,FALSE,NA,NA,8gdp3
+63s,63s_primary_data.mat,63s_secondary_data.mat,63s_fingercounting.mat,FALSE,NA,NA,8gdp3
+64s,64s_primary_data.mat,64s_secondary_data.mat,64s_fingercounting.mat,FALSE,NA,NA,8gdp3
+65s,65s_primary_data.mat,65s_secondary_data.mat,65s_fingercounting.mat,TRUE,low compliance,NA,8gdp3
+66s,66s_primary_data.mat,66s_secondary_data.mat,66s_fingercounting.mat,FALSE,NA,NA,8gdp3
+67s,67s_primary_data.mat,67s_secondary_data.mat,67s_fingercounting.mat,FALSE,NA,NA,8gdp3
+68s,68s_primary_data.mat,68s_secondary_data.mat,68s_fingercounting.mat,TRUE,low compliance,NA,8gdp3
+69s,69s_primary_data.mat,69s_secondary_data.mat,69s_fingercounting.mat,FALSE,NA,NA,8gdp3
+70s,70s_primary_data.mat,70s_secondary_data.mat,70s_fingercounting.mat,FALSE,NA,NA,8gdp3
+71s,71s_primary_data.mat,71s_secondary_data.mat,71s_fingercounting.mat,FALSE,NA,NA,8gdp3
+72s,72s_primary_data.mat,72s_secondary_data.mat,72s_fingercounting.mat,FALSE,NA,NA,8gdp3
+73s,73s_primary_data.mat,73s_secondary_data.mat,73s_fingercounting.mat,FALSE,NA,NA,8gdp3
+74s,74s_primary_data.mat,74s_secondary_data.mat,74s_fingercounting.mat,FALSE,NA,NA,8gdp3
+75s,75s_primary_data.mat,75s_secondary_data.mat,75s_fingercounting.mat,FALSE,NA,NA,8gdp3
+76s,76s_primary_data.mat,76s_secondary_data.mat,76s_fingercounting.mat,FALSE,NA,NA,8gdp3
+77s,77s_primary_data.mat,77s_secondary_data.mat,77s_fingercounting.mat,FALSE,NA,NA,8gdp3
+78s,78s_primary_data.mat,78s_secondary_data.mat,78s_fingercounting.mat,FALSE,NA,NA,8gdp3
+79s,79s_primary_data.mat,79s_secondary_data.mat,79s_fingercounting.mat,FALSE,NA,NA,8gdp3
+80s,80s_primary_data.mat,80s_secondary_data.mat,80s_fingercounting.mat,FALSE,NA,NA,8gdp3
+81s,81s_primary_data.mat,81s_secondary_data.mat,81s_fingercounting.mat,FALSE,NA,NA,8gdp3
+82s,82s_primary_data.mat,82s_secondary_data.mat,82s_fingercounting.mat,FALSE,NA,NA,8gdp3
+83s,83s_primary_data.mat,83s_secondary_data.mat,83s_fingercounting.mat,FALSE,NA,NA,8gdp3
+84s,84s_primary_data.mat,84s_secondary_data.mat,84s_fingercounting.mat,FALSE,NA,NA,8gdp3
+85s,85s_primary_data.mat,85s_secondary_data.mat,85s_fingercounting.mat,FALSE,NA,NA,8gdp3
+86s,86s_primary_data.mat,86s_secondary_data.mat,86s_fingercounting.mat,FALSE,NA,NA,8gdp3
+87s,87s_primary_data.mat,87s_secondary_data.mat,87s_fingercounting.mat,FALSE,NA,NA,8gdp3
+88s,88s_primary_data.mat,88s_secondary_data.mat,88s_fingercounting.mat,FALSE,NA,NA,8gdp3
+89s,89s_primary_data.mat,89s_secondary_data.mat,89s_fingercounting.mat,FALSE,NA,NA,8gdp3
+90s,90s_primary_data.mat,90s_secondary_data.mat,90s_fingercounting.mat,FALSE,NA,NA,8gdp3
+91s,91s_primary_data.mat,91s_secondary_data.mat,91s_fingercounting.mat,FALSE,NA,NA,8gdp3
+92s,92s_primary_data.mat,92s_secondary_data.mat,92s_fingercounting.mat,FALSE,NA,NA,8gdp3
+93s,93s_primary_data.mat,93s_secondary_data.mat,93s_fingercounting.mat,FALSE,NA,NA,8gdp3
+94s,94s_primary_data.mat,94s_secondary_data.mat,94s_fingercounting.mat,FALSE,NA,NA,8gdp3
+95s,95s_primary_data.mat,95s_secondary_data.mat,95s_fingercounting.mat,FALSE,NA,NA,8gdp3
+96s,96s_primary_data.mat,96s_secondary_data.mat,96s_fingercounting.mat,FALSE,NA,NA,8gdp3
+97s,97s_primary_data.mat,97s_secondary_data.mat,97s_fingercounting.mat,FALSE,NA,NA,8gdp3
+98s,98s_primary_data.mat,98s_secondary_data.mat,98s_fingercounting.mat,FALSE,NA,NA,8gdp3
+99s,99s_primary_data.mat,99s_secondary_data.mat,99s_fingercounting.mat,FALSE,NA,NA,8gdp3
+100s,100s_primary_data.mat,100s_secondary_data.mat,100s_fingercounting.mat,FALSE,NA,NA,8gdp3
+101s,101s_primary_data.mat,101s_secondary_data.mat,101s_fingercounting.mat,FALSE,NA,NA,8gdp3
+102s,102s_primary_data.mat,102s_secondary_data.mat,102s_fingercounting.mat,FALSE,NA,NA,8gdp3
+103s,103s_primary_data.mat,103s_secondary_data.mat,103s_fingercounting.mat,FALSE,NA,NA,8gdp3
+104s,104s_primary_data.mat,104s_secondary_data.mat,104s_fingercounting.mat,FALSE,NA,NA,8gdp3
+105s,105s_primary_data.mat,105s_secondary_data.mat,105s_fingercounting.mat,FALSE,NA,NA,8gdp3
+106s,106s_primary_data.mat,106s_secondary_data.mat,106s_fingercounting.mat,FALSE,NA,NA,8gdp3
+107s,107s_primary_data.mat,107s_secondary_data.mat,107s_fingercounting.mat,FALSE,NA,NA,8gdp3
+108s,108s_primary_data.mat,108s_secondary_data.mat,108s_fingercounting.mat,FALSE,NA,NA,8gdp3
+109s,109s_primary_data.mat,109s_secondary_data.mat,109s_fingercounting.mat,FALSE,NA,NA,8gdp3
+110s,110s_primary_data.mat,110s_secondary_data.mat,110s_fingercounting.mat,FALSE,NA,NA,8gdp3
+111s,111s_primary_data.mat,111s_secondary_data.mat,111s_fingercounting.mat,FALSE,NA,NA,8gdp3
+112s,112s_primary_data.mat,112s_secondary_data.mat,112s_fingercounting.mat,FALSE,NA,NA,8gdp3
+113s,113s_primary_data.mat,113s_secondary_data.mat,113s_fingercounting.mat,FALSE,NA,NA,8gdp3
+114s,114s_primary_data.mat,114s_secondary_data.mat,114s_fingercounting.mat,FALSE,NA,NA,8gdp3
+115s,115s_primary_data.mat,115s_secondary_data.mat,115s_fingercounting.mat,FALSE,NA,NA,8gdp3
+116s,116s_primary_data.mat,116s_secondary_data.mat,116s_fingercounting.mat,FALSE,NA,NA,8gdp3
+117s,117s_primary_data.mat,117s_secondary_data.mat,117s_fingercounting.mat,FALSE,NA,NA,8gdp3
+118s,118s_primary_data.mat,118s_secondary_data.mat,118s_fingercounting.mat,FALSE,NA,NA,8gdp3
+119s,119s_primary_data.mat,119s_secondary_data.mat,119s_fingercounting.mat,FALSE,NA,NA,8gdp3
+120s,120s_primary_data.mat,120s_secondary_data.mat,120s_fingercounting.mat,FALSE,NA,NA,8gdp3
+121s,121s_primary_data.mat,121s_secondary_data.mat,121s_fingercounting.mat,FALSE,NA,NA,8gdp3
+122s,122s_primary_data.mat,122s_secondary_data.mat,122s_fingercounting.mat,FALSE,NA,NA,8gdp3
+123s,123s_primary_data.mat,123s_secondary_data.mat,123s_fingercounting.mat,FALSE,NA,NA,8gdp3
+124s,124s_primary_data.mat,124s_secondary_data.mat,124s_fingercounting.mat,FALSE,NA,NA,8gdp3
+125s,125s_primary_data.mat,125s_secondary_data.mat,125s_fingercounting.mat,FALSE,NA,NA,8gdp3
+126s,126s_primary_data.mat,126s_secondary_data.mat,126s_fingercounting.mat,TRUE,low compliance,NA,8gdp3

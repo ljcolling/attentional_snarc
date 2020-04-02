@@ -1,0 +1,125 @@
+Subject Code,Main Data,Secondary Data,Finger Counting Data,Exclude Data,Reason,Other comments,Node
+Mieth_S1_180417,NA,NA,mieth_s1_180417_fingercounting.mat,TRUE,Experiment crashed; main data was not saved,NA,t5y2h
+Mieth_S2_180417,mieth_s2_180417_data.mat,NA,mieth_s2_180417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S3_180417,mieth_s3_180417_data.mat,NA,mieth_s3_180417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S4_180417,mieth_s4_180417_data.mat,NA,mieth_s4_180417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S5_180417,mieth_s5_180417_data.mat,NA,mieth_s5_180417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S6_180417,mieth_s6_180417_data.mat,NA,mieth_s6_180417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S7_180417,mieth_s7_180417_data.mat,NA,mieth_s7_180417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S8_190417,mieth_s8_190417_data.mat,NA,mieth_s8_190417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S9_190417,mieth_s9_190417_data.mat,NA,mieth_s9_190417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S10_190417,mieth_s10_190417_data.mat,NA,mieth_s10_190417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S11_190417,mieth_s11_190417_data.mat,NA,mieth_s11_190417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S12_190417,mieth_s12_190417_data.mat,NA,mieth_s12_190417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S13_190417,mieth_s13_190417_data.mat,NA,mieth_s13_190417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S14_190417,mieth_s14_190417_data.mat,NA,mieth_s14_190417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S15_200417,mieth_s15_200417_data.mat,NA,mieth_s15_200417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S16_200417,mieth_s16_200417_data.mat,NA,mieth_s16_200417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S17_200417,mieth_s17_200417_data.mat,NA,mieth_s17_200417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S18_200417,mieth_s18_200417_data.mat,NA,mieth_s18_200417_fingercounting.mat,FALSE,NA,The experimental program was interruped as the ‚Windows Menu‘ was activated by key press on keyboard,t5y2h
+Mieth_S19_200417,mieth_s19_200417_data.mat,NA,mieth_s19_200417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S20_200417,mieth_s20_200417_data.mat,NA,mieth_s20_200417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S21_200417,mieth_s21_200417_data.mat,NA,mieth_s21_200417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S22_200417,mieth_s22_200417_data.mat,NA,mieth_s22_200417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S23_180885,mieth_s23_180885_data.mat,NA,mieth_s23_180885_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S24_210417,mieth_s24_210417_data.mat,NA,mieth_s24_210417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S25_210417,mieth_s25_210417_data.mat,NA,mieth_s25_210417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S26_210417,mieth_s26_210417_data.mat,NA,mieth_s26_210417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S27_210417,mieth_s27_210417_data.mat,NA,mieth_s27_210417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S28_210417,mieth_s28_210417_data.mat,NA,mieth_s28_210417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S29_210417,mieth_s29_210417_data.mat,NA,mieth_s29_210417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S30_210417,mieth_s30_210417_data.mat,NA,mieth_s30_210417_fingercounting.mat,FALSE,NA,The experimental program was interruped as the ‚Windows Menu‘ was activated by key press on keyboard; participant had problems counting syllables,t5y2h
+Mieth_S31_210417,mieth_s31_210417_data.mat,NA,mieth_s31_210417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S32_240417,mieth_s32_240417_data.mat,NA,mieth_s32_240417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S33_240417,NA,NA,mieth_s33_240417_fingercounting.mat,TRUE,Experiment crashed; main data was not saved,NA,t5y2h
+Mieth_S34_240417,mieth_s34_240417_data.mat,NA,mieth_s34_240417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S35_250417,mieth_s35_250417_data.mat,NA,mieth_s35_250417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S36_250417,mieth_s36_250417_data.mat,NA,mieth_s36_250417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S37_250417,mieth_s37_250417_data.mat,NA,mieth_s37_250417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S38_250417,mieth_s38_250417_data.mat,NA,mieth_s38_250417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S39_260417,mieth_s39_260417_data.mat,NA,mieth_s39_260417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S40_260417,mieth_s40_260417_data.mat,NA,mieth_s40_260417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S41_260417,mieth_s41_260417_data.mat,NA,mieth_s41_260417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S42_260417,mieth_s42_260417_data.mat,NA,mieth_s42_260417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S43_260417,mieth_s43_260417_data.mat,NA,mieth_s43_260417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S44_260417,mieth_s44_260417_data.mat,NA,mieth_s44_260417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S45_260417,mieth_s45_260417_data.mat,NA,mieth_s45_260417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S46_260417,mieth_s46_260417_data.mat,NA,mieth_s46_260417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S47_260417,mieth_s47_260417_data.mat,NA,mieth_s47_260417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S48_260417,mieth_s48_260417_data.mat,NA,mieth_s48_260417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S49_270417,mieth_s49_270417_data.mat,NA,mieth_s49_270417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S50_270417,mieth_s50_270417_data.mat,NA,mieth_s50_270417_fingercounting.mat,FALSE,NA,Participant had problems counting syllables,t5y2h
+Mieth_S51_270417,mieth_s51_270417_data.mat,NA,mieth_s51_270417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S52_270417,mieth_s52_270417_data.mat,NA,mieth_s52_270417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S53_270417,mieth_s53_270417_data.mat,NA,mieth_s53_270417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S54_280417,mieth_s54_280417_data.mat,NA,mieth_s54_280417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S55_280417,mieth_s55_280417_data.mat,NA,mieth_s55_280417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S56_280417,mieth_s56_280417_data.mat,NA,mieth_s56_280417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S57_280417,mieth_s57_280417_data.mat,NA,mieth_s57_280417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S58_280417,mieth_s58_280417_data.mat,NA,mieth_s58_280417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S59_280417,mieth_s59_280417_data.mat,NA,mieth_s59_280417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S60_280417,mieth_s60_280417_data.mat,NA,mieth_s60_280417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S61_280417,mieth_s61_280417_data.mat,NA,mieth_s61_280417_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S62_020517,mieth_s62_020517_data.mat,NA,mieth_s62_020517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S63_020517,mieth_s63_020517_data.mat,NA,mieth_s63_020517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S64_020517,mieth_s64_020517_data.mat,NA,mieth_s64_020517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S65_020517,mieth_s65_020517_data.mat,NA,mieth_s65_020517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S66_020517,mieth_s66_020517_data.mat,NA,mieth_s66_020517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S67_020517,mieth_s67_020517_data.mat,NA,mieth_s67_020517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S68_030517,mieth_s68_030517_data.mat,NA,mieth_s68_030517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S69_030517,mieth_s69_030517_data.mat,NA,mieth_s69_030517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S70_030517,mieth_s70_030517_data.mat,NA,mieth_s70_030517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S71_030517,mieth_s71_030517_data.mat,NA,mieth_s71_030517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S72_030517,mieth_s72_030517_data.mat,NA,mieth_s72_030517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S73_030517,mieth_s73_030517_data.mat,NA,mieth_s73_030517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S74_030517,mieth_s74_030517_data.mat,NA,mieth_s74_030517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S75_030517,mieth_s75_030517_data.mat,NA,mieth_s75_030517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S76_030517,mieth_s76_030517_data.mat,NA,mieth_s76_030517_fingercounting.mat,FALSE,NA,Participant had problems counting syllables,t5y2h
+Mieth_S77_030517,mieth_s77_030517_data.mat,NA,mieth_s77_030517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S78_030517,mieth_s78_030517_data.mat,NA,mieth_s78_030517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S79_040517,mieth_s79_040517_data.mat,NA,mieth_s79_040517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S80_040517,mieth_s80_040517_data.mat,NA,mieth_s80_040517_fingercounting.mat,FALSE,NA,A cell phone rang during experiment,t5y2h
+Mieth_S81_040517,mieth_s81_040517_data.mat,NA,mieth_s81_040517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S82_040517,mieth_s82_040517_data.mat,NA,mieth_s82_040517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S83_040517,mieth_s83_040517_data.mat,NA,mieth_s83_040517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S84_050517,mieth_s84_050517_data.mat,NA,mieth_s84_050517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S85_050517,mieth_s85_050517_data.mat,NA,mieth_s85_050517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S86_080517,mieth_s86_080517_data.mat,NA,mieth_s86_080517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S87_080517,mieth_s87_080517_data.mat,NA,mieth_s87_080517_fingercounting.mat,FALSE,NA,Participant had problems counting syllables,t5y2h
+Mieth_S88_080517,mieth_s88_080517_data.mat,NA,mieth_s88_080517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S89_080517,mieth_s89_080517_data.mat,NA,mieth_s89_080517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S90_080517,mieth_s90_080517_data.mat,NA,mieth_s90_080517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S91_080517,mieth_s91_080517_data.mat,NA,mieth_s91_080517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S92_080517,mieth_s92_080517_data.mat,NA,mieth_s92_080517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S93_080517,mieth_s93_080517_data.mat,NA,mieth_s93_080517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S94_080517,mieth_s94_080517_data.mat,NA,mieth_s94_080517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S95_090517,mieth_s95_090517_data.mat,NA,mieth_s95_090517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S96_090517,mieth_s96_090517_data.mat,NA,mieth_s96_090517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S97_090517,mieth_s97_090517_data.mat,NA,mieth_s97_090517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S98_090517,mieth_s98_090517_data.mat,NA,mieth_s98_090517_fingercounting.mat,FALSE,NA,Participant had problems counting syllables,t5y2h
+Mieth_S99_090517,mieth_s99_090517_data.mat,NA,mieth_s99_090517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S100_090517,mieth_s100_090517_data.mat,NA,mieth_s100_090517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S101_090517,mieth_s101_090517_data.mat,NA,mieth_s101_090517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S102_090517,mieth_s102_090517_data.mat,NA,mieth_s102_090517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S103_100517,mieth_s103_100517_data.mat,NA,mieth_s103_100517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S104_100517,mieth_s104_100517_data.mat,NA,mieth_s104_100517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S105_100517,mieth_s105_100517_data.mat,NA,mieth_s105_100517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S106_100517,mieth_s106_100517_data.mat,NA,mieth_s106_100517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S107_100517,mieth_s107_100517_data.mat,NA,mieth_s107_100517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S108_100517,mieth_s108_100517_data.mat,NA,mieth_s108_100517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S109_100517,mieth_s109_100517_data.mat,NA,mieth_s109_100517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S110_100517,mieth_s110_100517_data.mat,NA,mieth_s110_100517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S111_100517,mieth_s111_100517_data.mat,NA,mieth_s111_100517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S112_100517,mieth_s112_100517_data.mat,NA,mieth_s112_100517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S113_110517,mieth_s113_110517_data.mat,NA,mieth_s113_110517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S114_110517,mieth_s114_110517_data.mat,NA,mieth_s114_110517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S115_110517,mieth_s115_110517_data.mat,NA,mieth_s115_110517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S116_110517,mieth_s116_110517_data.mat,NA,mieth_s116_110517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S117_110517,mieth_s117_110517_data.mat,NA,mieth_s117_110517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S118_110517,mieth_s118_110517_data.mat,NA,mieth_s118_110517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S119_110517,mieth_s119_110517_data.mat,NA,mieth_s119_110517_fingercounting.mat,FALSE,NA,Participant had problems counting syllables,t5y2h
+Mieth_S120_110517,mieth_s120_110517_data.mat,NA,mieth_s120_110517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S121_120517,mieth_s121_120517_data.mat,NA,mieth_s121_120517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S122_120517,mieth_s122_120517_data.mat,NA,mieth_s122_120517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S123_120517,mieth_s123_120517_data.mat,NA,mieth_s123_120517_fingercounting.mat,FALSE,NA,NA,t5y2h
+Mieth_S124_120517,mieth_s124_120517_data.mat,NA,mieth_s124_120517_fingercounting.mat,FALSE,NA,NA,t5y2h

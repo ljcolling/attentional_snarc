@@ -1,0 +1,69 @@
+Subject Code,Main Data,Secondary Data,Finger Counting Data,Exclude Data,Reason,Other comments,Node
+Ansari_Participant_001,ansari_participant_001_data.mat,NA,ansari_participant_001_fingercounting.mat,TRUE,File error,n/a,kwg95
+Ansari_Participant_002,ansari_participant_002_data.mat,NA,ansari_participant_002_fingercounting.mat,FALSE,NA,Error rate >5%,kwg95
+Ansari_Participant_003,ansari_participant_003_data.mat,NA,ansari_participant_003_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_004,ansari_participant_004_data.mat,NA,ansari_participant_004_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_005,ansari_participant_005_data.mat,NA,ansari_participant_005_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_006,ansari_participant_006_data.mat,NA,ansari_participant_006_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_007,ansari_participant_007_data.mat,NA,ansari_participant_007_fingercounting.mat,TRUE,File error,n/a,kwg95
+Ansari_Participant_008,ansari_participant_008_data.mat,NA,ansari_participant_008_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_009,ansari_participant_009_data.mat,NA,ansari_participant_009_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_010,ansari_participant_010_data.mat,NA,ansari_participant_010_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_011,ansari_participant_011_data.mat,NA,ansari_participant_011_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_012,ansari_participant_012_data.mat,NA,ansari_participant_012_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_013,ansari_participant_013_data.mat,NA,ansari_participant_013_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_014,ansari_participant_014_data.mat,NA,ansari_participant_014_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_015,ansari_participant_015_data.mat,NA,ansari_participant_015_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_016,ansari_participant_016_data.mat,NA,ansari_participant_016_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_017,ansari_participant_017_data.mat,NA,ansari_participant_017_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_018,ansari_participant_018_data.mat,NA,ansari_participant_018_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_019,ansari_participant_019_data.mat,NA,ansari_participant_019_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_020,ansari_participant_020_data.mat,NA,ansari_participant_020_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_021,ansari_participant_021_data.mat,NA,ansari_participant_021_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_022,ansari_participant_022_data.mat,NA,ansari_participant_022_fingercounting.mat,FALSE,NA,Error rate >5%,kwg95
+Ansari_Participant_023,ansari_participant_023_data.mat,NA,ansari_participant_023_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_024,ansari_participant_024_data.mat,NA,ansari_participant_024_fingercounting.mat,FALSE,NA,Error rate >5%,kwg95
+Ansari_Participant_025,ansari_participant_025_data.mat,NA,ansari_participant_025_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_026,ansari_participant_026_data.mat,NA,ansari_participant_026_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_027,ansari_participant_027_data.mat,NA,ansari_participant_027_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_028,ansari_participant_028_data.mat,NA,ansari_participant_028_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_029,ansari_participant_029_data.mat,NA,ansari_participant_029_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_030,ansari_participant_030_data.mat,NA,ansari_participant_030_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_031,ansari_participant_031_data.mat,NA,ansari_participant_031_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_032,ansari_participant_032_data.mat,NA,ansari_participant_032_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_033,ansari_participant_033_data.mat,NA,ansari_participant_033_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_034,ansari_participant_034_data.mat,NA,ansari_participant_034_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_035,ansari_participant_035_data.mat,NA,ansari_participant_035_fingercounting.mat,FALSE,NA,Error rate >5% (0.51),kwg95
+Ansari_Participant_036,ansari_participant_036_data.mat,NA,ansari_participant_036_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_037,ansari_participant_037_data.mat,NA,ansari_participant_037_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_038,ansari_participant_038_data.mat,NA,ansari_participant_038_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_039,ansari_participant_039_data.mat,NA,ansari_participant_039_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_040,ansari_participant_040_data.mat,NA,ansari_participant_040_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_041,ansari_participant_041_data.mat,NA,ansari_participant_041_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_042,ansari_participant_042_data.mat,NA,ansari_participant_042_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_043,ansari_participant_043_data.mat,NA,ansari_participant_043_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_044,ansari_participant_044_data.mat,NA,ansari_participant_044_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_045,ansari_participant_045_data.mat,NA,ansari_participant_045_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_046,ansari_participant_046_data.mat,NA,ansari_participant_046_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_047,ansari_participant_047_data.mat,NA,ansari_participant_047_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_048,ansari_participant_048_data.mat,NA,ansari_participant_048_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_049,ansari_participant_049_data.mat,NA,ansari_participant_049_fingercounting.mat,FALSE,NA,Error rate >5%,kwg95
+Ansari_Participant_050,ansari_participant_050_data.mat,NA,ansari_participant_050_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_051,ansari_participant_051_data.mat,NA,ansari_participant_051_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_052,ansari_participant_052_data.mat,NA,ansari_participant_052_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_053,ansari_participant_053_data.mat,NA,ansari_participant_053_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_054,ansari_participant_054_data.mat,NA,ansari_participant_054_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_055,ansari_participant_055_data.mat,NA,ansari_participant_055_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_056,ansari_participant_056_data.mat,NA,ansari_participant_056_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_057,ansari_participant_057_data.mat,NA,ansari_participant_057_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_058,ansari_participant_058_data.mat,NA,ansari_participant_058_fingercounting.mat,FALSE,NA,Error rate >5%,kwg95
+Ansari_Participant_059,ansari_participant_059_data.mat,NA,ansari_participant_059_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_060,ansari_participant_060_data.mat,NA,ansari_participant_060_fingercounting.mat,FALSE,NA,Error rate >5%,kwg95
+Ansari_Participant_061,ansari_participant_061_data.mat,NA,ansari_participant_061_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_062,ansari_participant_062_data.mat,NA,ansari_participant_062_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_063,ansari_participant_063_data.mat,NA,ansari_participant_063_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_064,ansari_participant_064_data.mat,NA,ansari_participant_064_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_065,ansari_participant_065_data.mat,NA,ansari_participant_065_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_066,ansari_participant_066_data.mat,NA,ansari_participant_066_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_067,ansari_participant_067_data.mat,NA,ansari_participant_067_fingercounting.mat,FALSE,NA,n/a,kwg95
+Ansari_Participant_068,ansari_participant_068_data.mat,NA,ansari_participant_068_fingercounting.mat,FALSE,NA,n/a,kwg95

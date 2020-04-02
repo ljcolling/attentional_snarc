@@ -1,0 +1,94 @@
+Subject Code,Main Data,Secondary Data,Finger Counting Data,Exclude Data,Reason,Other comments,Node
+cipora_01_290517,cipora_01_290517_data.mat,NA,cipora_01_290517_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_02_310517,cipora_02_310517_data.mat,NA,cipora_02_310517_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_03_010617,cipora_03_010617_data.mat,NA,cipora_03_010617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_04_010617,cipora_04_010617_data.mat,NA,cipora_04_010617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_05_140617,cipora_05_140617_data.mat,NA,cipora_05_140617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_06_210617,cipora_06_210617_data.mat,NA,cipora_06_210617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_07_210617,cipora_07_210617_data.mat,NA,cipora_07_210617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_08_210617,cipora_08_210617_data.mat,NA,cipora_08_210617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_09_210617,cipora_09_210617_data.mat,NA,cipora_09_210617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_10_210617,cipora_10_210617_data.mat,NA,cipora_10_210617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_11_210617,cipora_11_210617_data.mat,NA,cipora_11_210617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_12_210617,cipora_12_210617_data.mat,NA,cipora_12_210617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_13_220617,cipora_13_220617_data.mat,NA,cipora_13_220617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_14_220617,cipora_14_220617_data.mat,NA,cipora_14_220617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_15_220617,cipora_15_220617_data.mat,NA,cipora_15_220617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_16_240617,cipora_16_240617_data.mat,NA,cipora_16_240617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_17_240617,cipora_17_240617_data.mat,NA,cipora_17_240617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_18_240617,cipora_18_240617_data.mat,NA,cipora_18_240617_fingercounting.mat,FALSE,NA,Probably not valid finger counting assessment (RH occupied during the task).,fkjbz
+cipora_19_240617,cipora_19_240617_data.mat,NA,cipora_19_240617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_20_240617,cipora_20_240617_data.mat,NA,cipora_21_240617_fingercounting.mat,FALSE,NA,Mind the number inconsistency in file names,fkjbz
+cipora_22_260617,cipora_22_260617_data.mat,NA,cipora_22_260617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_23_260617,cipora_23_260617_data.mat,NA,cipora_23_260617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_24_280617,cipora_24_280617_data.mat,NA,cipora_24_280617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_25_280617,cipora_25_280617_data.mat,NA,cipora_25_280617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_26_280617,cipora_26_280617_data.mat,NA,cipora_26_280617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_27_280617,cipora_27_280617_data.mat,NA,cipora_27_280617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_28_280617,cipora_28_280617_data.mat,NA,cipora_28_280617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_29_280617,cipora_29_280617_data.mat,NA,cipora_29_280617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_30_290617,cipora_30_290617_data.mat,NA,cipora_30_290617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_31_290617,cipora_31_290617_data.mat,NA,cipora_31_290617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_32_290617,cipora_32_290617_data.mat,NA,cipora_32_290617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_33_290617,cipora_33_290617_data.mat,NA,cipora_33_290617_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_34_010717,cipora_34_010717_data.mat,NA,cipora_34_010717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_35_010717,cipora_35_010717_data.mat,NA,cipora_35_010717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_36_010717,cipora_36_010717_data.mat,NA,cipora_36_010717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_37_010717,cipora_37_010717_data.mat,NA,cipora_37_010717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_38_010717,cipora_38_010717_data.mat,NA,cipora_38_010717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_39_010717,cipora_39_010717_data.mat,NA,cipora_39_010717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_41_030717,cipora_41_030717_data.mat,NA,cipora_41_030717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_42_050717,cipora_42_050717_data.mat,NA,cipora_42_050717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_43_050717,cipora_43_050717_data.mat,NA,cipora_43_050717_fingercounting.mat,TRUE,Noise during experiment,NA,fkjbz
+cipora_44_050717,cipora_44_050717_data.mat,NA,cipora_44_050717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_45_050717,cipora_45_050717_data.mat,NA,cipora_45_050717_fingercounting.mat,FALSE,NA,Probably not valid finger counting assessment (LH occupied during the task).,fkjbz
+cipora_46_050717,cipora_46_050717_data.mat,NA,cipora_46_050717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_47_060717,cipora_47_060717_data.mat,NA,cipora_47_00717_fingercounting.mat,FALSE,NA,Mind inconsistency in file names.,fkjbz
+cipora_48_060717,cipora_48_060717_data.mat,NA,cipora_48_060717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_49_060717,cipora_49_060717_data.mat,NA,cipora_49_060717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_50_060717,cipora_50_060717_data.mat,NA,cipora_50_060717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_51060717,cipora_51060717_data.mat,NA,cipora_51_060717_fingercounting.mat,FALSE,NA,Mind missing underscore in main data file name,fkjbz
+cipora_52_080717,cipora_52_080717_data.mat,NA,cipora_52_080717_fingercounting.mat,FALSE,NA,"Native English speaker. Instructions: main task read from a separate piece of paper by experimenter. For other parts (AMAS, handedness - translated to English by the experimenter).",fkjbz
+cipora_53_080717,cipora_53_080717_data.mat,NA,cipora_53_080717_fingercounting.mat,FALSE,NA,Probably not valid finger counting assessment (RH occupied during the task).,fkjbz
+cipora_54_080717,cipora_54_080717_data.mat,NA,cipora_54_080717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_55_080717,cipora_55_080717_data.mat,NA,cipora_55_080717_fingercounting.mat,FALSE,NA,Probably not valid finger counting assessment (RH occupied during the task).,fkjbz
+cipora_56080717,cipora_56080717_data.mat,NA,cipora_56_080717_fingercounting.mat,FALSE,NA,Mind missing underscore in main data file name,fkjbz
+cipora_57_100717,cipora_57_100717_data.mat,NA,cipora_57_100717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_58_100717,cipora_58_100717_data.mat,NA,cipora_58_100717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_60_120717,cipora_60_120717_data.mat,NA,cipora_60_120717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_61_120717,cipora_61_120717_data.mat,NA,cipora_61_120717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_62_120717,cipora_62_120717_data.mat,NA,cipora_62_120717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_63_120717,cipora_63_120717_data.mat,NA,cipora_63_120717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_64_120717,cipora_64_120717_data.mat,NA,cipora_64_120717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_65_130717,cipora_65_130717_data.mat,NA,cipora_65_130717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_66_130717,cipora_66_130717_data.mat,NA,cipora_66_130717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_67_130717,cipora_67_130717_data.mat,NA,cipora_67_130717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_68_130717,cipora_68_130717_data.mat,NA,cipora_68_130717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_69_130717,cipora_69_130717_data.mat,NA,cipora_69_130717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_70_130717,cipora_70_130717_data.mat,NA,cipora_70_130717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_71_150717,cipora_71_150717_data.mat,NA,cipora_71_150717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_72_150717,cipora_72_150717_data.mat,NA,cipora_72_150717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_73_170717,cipora_73_170717_data.mat,NA,cipora_73_170717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_74_170717,cipora_74_170717_data.mat,NA,cipora_74_170717_fingercounting.mat,FALSE,NA,Mind inconsistencies in number in the subject ID (74 twice) but differing in date.,fkjbz
+cipora_74_190717,cipora_74_190717_data.mat,NA,cipora_74_190717_fingercounting.mat,FALSE,NA,Mind inconsistencies in number in the subject ID (74 twice) but differing in date.,fkjbz
+cipora_76_190717,cipora_76_190717_data.mat,NA,cipora_76_190717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_77_190717,cipora_77_190717_data.mat,NA,cipora_77_190717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_78_190717,cipora_78_190717_data.mat,NA,cipora_78_190717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_79_220717,cipora_79_220717_data.mat,NA,cipora_79_220717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_80_240717,cipora_80_240717_data.mat,NA,cipora_80_240717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_81_260717,cipora_81_260717_data.mat,NA,cipora_81_260717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_82_260717,cipora_82_260717_data.mat,NA,cipora_82260717_fingercounting.mat,FALSE,NA,Mind missing underscore in finger counting data file name,fkjbz
+cipora_83_260717,cipora_83_260717_data.mat,NA,cipora_83_260717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_84_270717,cipora_84_270717_data.mat,NA,cipora_84_270717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_85_270717,cipora_85_270717_data.mat,NA,cipora_85_270717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_86_310717,cipora_86_310717_data.mat,NA,cipora_86_310717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_87_310717,cipora_87_310717_data.mat,NA,cipora_87_310717_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_88_020817,cipora_88_020817_data.mat,NA,cipora_88_020817_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_89_020817,cipora_89_020817_data.mat,NA,cipora_89_020817_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_90_020817,cipora_90_020817_data.mat,NA,cipora_90_020817_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_91_020817,cipora_91_020817_data.mat,NA,cipora_91_020817_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_92_020817,cipora_92_020817_data.mat,NA,cipora_92_020817_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_93_020817,cipora_93_020817_data.mat,NA,cipora_93_020817_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_94_020817,cipora_94_020817_data.mat,NA,cipora_94_020817_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_95_030817,cipora_95_030817_data.mat,NA,cipora_95_030817_fingercounting.mat,FALSE,NA,NA,fkjbz
+cipora_96_030817,cipora_96_030817_data.mat,NA,cipora_96_030817_fingercounting.mat,FALSE,NA,NA,fkjbz

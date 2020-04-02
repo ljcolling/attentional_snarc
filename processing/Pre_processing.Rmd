@@ -1,0 +1,299 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# PREAMBLE 
+# This section loads the required packages for this notebook. 
+# All the required packages are already installed in the container
+
+require(tidyverse)
+require(ReplicationProjectTools)
+require(glue)
+require(furrr)
+
+
+# Make some folders where I'll store stuff
+system('mkdir data')
+system('mkdir data/processed_data')
+
+
+```
+
+
+# Introduction
+
+This *R Markdown* notebook contains all the code for doing the pre-processing steps for the Fischer et al RRR project.  
+
+To use this notebook simply run each of the code chucks (either by running each chunk individually or by Run All from the run dropdown menu).
+
+It only needs to be run once. All the data cleaning and meta-analyes analyes are done in a different notebook, so those notebooks can be used if you want to make any changes to the data cleaning and analysis parameters. 
+
+
+## Downloading the data
+```{r download the data, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Data already downlaoded in data folder so I will just check the data against my record of checksums 
+# You can also re-download the data and check it against my record of checksums
+
+dataFolder = here::here("data/unprocessed_data/")
+checksums = read_csv(file = here::here("other_info/checksums.csv"), col_types = cols(
+  NAME = col_character(),
+  md5sum = col_character()
+))
+
+
+datafile.list = list.files(path = dataFolder, recursive = T)
+plan(multiprocess)
+future_map_lgl(datafile.list, 
+    function(x) unname((checksums %>% filter(NAME == x) %>% pull(md5sum)) == tools::md5sum(file.path(dataFolder,x)))) -> checkedsums
+if(all(checkedsums) == TRUE){
+  cat("I've checked all the files and there are no problems. Proceed to the next chuck.")
+} else {
+  cat("Something went wrong! Re-download the files")
+}
+
+rm("datafile.list") # tidying up!
+rm("checkedsums") # tidying up!
+rm("checksums") # tidying up!
+```
+
+## Tidying up
+
+Some of the files are inconsistently named (for example, inconsistent cases), and their details are not recorded in a consistent manner in the file catalouge files (`FileList.csv`). So I'll do some tidying up and also double check all the files. 
+
+```{r}
+
+# This r script tidies up the file catalogue files
+# This is necessary for several reasons
+# 1. labs were not consistent in what they put in the Exclude Data col
+# 2. labs were not consistent in what they put in the Secondary Data col
+# when they were using the single-file version of the task
+# 3. some labs had case errors in the their file names. For this reason the
+# downloading script writes all the filenames in all lower case and this tidying script
+# rewrites the catalogue file to match the all lower case of the filenames
+
+# This writes out a file called TidyFileList.sav which can be used in any subsequent steps
+
+# Tidy up the FileLists
+ReplicationProjectTools::GetLabNames()
+
+FileList = map(Nodes, function(x)
+  readxl::read_xls(GetNodeFiles(dataFolder, x)[GetNodeFiles(dataFolder, x) %>% grepl(pattern = "filelist")]))
+names(FileList) = Nodes
+map(FileList, function(x)
+  x %>% filter(!is.na(`Subject Code`)) %>% FixExcludeData()) -> FileList
+
+```
+
+```{r}
+# make all the file names in the catalouge lower case
+# this is to make things easier for case sensitive filesystems
+
+map(names(FileList), function(x)
+  FileList[[x]] %>% mutate(Node = x) %>% 
+    mutate(`Main Data` = tolower(`Main Data`)) %>%
+    mutate(`Secondary Data` = tolower(`Secondary Data`)) %>%
+    mutate(`Finger Counting Data` = tolower(`Finger Counting Data`))) -> FileList
+names(FileList) = Nodes
+
+naToNa<-function(input){
+  
+  if(is.na(input)){
+    return(input)
+  }
+  
+  if(input == "n/a"){
+    return(NA)
+  } else if (input == "na"){
+    return(NA)
+  } else{
+    
+    return(input)
+  }
+}
+
+for(node in Nodes){
+  FileList[[node]]$`Secondary Data` <- unlist(map(FileList[[node]]$`Secondary Data`, naToNa))
+  FileList[[node]]$`Subject Code` <- unlist(map(FileList[[node]]$`Subject Code`, naToNa))
+  FileList[[node]]$`Main Data` <- unlist(map(FileList[[node]]$`Main Data`, naToNa))
+  FileList[[node]]$`Finger Counting Data` <- unlist(map(FileList[[node]]$`Finger Counting Data`, naToNa))
+}
+
+rm("naToNa") # Tidying up!
+rm("node") # tidying up!
+
+# Quickly check the integrity of the all the matlab files
+# At time of writing there were 4 files that are corrupt
+# These files are corrupt on the OSF repo (that is, their canonical version is corrupt) 
+CheckMat<-function (filename) 
+{
+  if (file.exists(filename) == FALSE) {
+    cat("!!!!", filename, "IS MISSING!!!")
+    cat("\n")
+    return(filename)
+  }
+  header = rawToChar(readBin(filename, "raw", 19))
+  if ((header == "MATLAB 5.0 MAT-file") == FALSE) {
+    cat("Unexpected file format! Ignoring file!")
+    cat("\n")
+    return(filename)
+  }
+  return(NULL)
+}
+
+complete.files = list.files(path = file.path(dataFolder), pattern = "*.mat", recursive = T, full.names = T) # get all the mat files
+FilesWithErrors = map(.f = function(x) CheckMat(x), .x = as.vector(complete.files)) %>% unlist() # get a list of the files with errors
+
+rm("CheckMat") # tidying up!
+
+cat("The following files had errors so they will be ignored\n\n",paste(FilesWithErrors,collapse = "\n"))
+
+# determine the node codes of the corrupt files
+nodes.wCorrupt = substr(FilesWithErrors,str_locate(FilesWithErrors,pattern = "data//")[,2] + 1, str_locate(FilesWithErrors,pattern = "data//")[,2] + 5)
+
+# determine the file names of the corrupt files
+corrupt.names = substr(FilesWithErrors,str_locate(FilesWithErrors,pattern = nodes.wCorrupt)[,2]+2, str_length(FilesWithErrors))
+
+# determine the file types of the corrupt files
+corrupt.types = map_chr(1: length(nodes.wCorrupt),
+    function(x) case_when(any(grepl(FileList[[nodes.wCorrupt[x]]]$`Main Data`, pattern = corrupt.names[x])) == TRUE ~ "Main Data", 
+          any(grepl(FileList[[nodes.wCorrupt[x]]]$`Secondary Data`, pattern = corrupt.names[x])) == TRUE ~ "Secondary Data", 
+          TRUE ~  "Finger Counting Data"))
+
+
+FixCorruptFile<-function(node,name,type,FileList){
+  # function for marking corrupt files are exclusions
+  FileList[[node]] %<>% mutate(`Exclude Data` = ifelse(!! rlang::sym(type) == name,yes = TRUE, no = `Exclude Data`))
+  FileList[[node]] %<>% mutate(`Reason` = ifelse(!! rlang::sym(type) == name,yes = "File error", no = `Reason`))
+  
+  return(FileList)
+}
+
+CorruptFiles = tibble(node = nodes.wCorrupt, 
+                          name = corrupt.names,
+                          type = corrupt.types)
+
+rm(list = c("nodes.wCorrupt","corrupt.names","corrupt.types")) # tidying up!
+
+
+for(i in 1 : dim(CorruptFiles)[1]){
+  node = CorruptFiles$node[i]
+  name = CorruptFiles$name[i]
+  type = CorruptFiles$type[i]
+  FileList = FixCorruptFile(node,name,type,FileList = FileList )  
+}
+
+rm(list = c("node","name","type","i")) # tidying up!
+rm("complete.files") # tidying up!
+rm("FixCorruptFile") # tidying up!
+
+# This fixes up an issue with duplicated file names being used by some labs
+
+for(i in 1 : length(FileList)){
+  FileList[[names(FileList)[i]]][FileList[[names(FileList)[i]]] %>% pull("Subject Code") %>% duplicated() %>% which(),] %>% pull(`Subject Code`) -> DuplicatedCodes
+  FileList[[names(FileList)[i]]] %>% mutate(dups = case_when(`Subject Code` %in% DuplicatedCodes ~ TRUE, TRUE ~ FALSE)) %>% mutate(`Exclude Data` = `Exclude Data` + dups) %>% mutate(`Exclude Data` = `Exclude Data` == 1) %>% select(-dups) -> FileList[[names(FileList)[i]]]
+}
+
+# now save the FileList so I can use it at a later date
+save("FileList",file = here::here("data/processed_data/TidyFileList.sav"))
+
+```
+
+## Getting the data into R
+
+The next step is to actually read the data into `R`. Because I wanted a pure `R` solution, I first convert the files from `Matlab` files into something more `R` friendly. These files are then saved into the `generated_data` folder. This set is very time consuming, because the `R` routines for reading matlab files are very slow, so this step only needs to be done once, and the generated data files can be used for all subsequent data cleaning and analysis steps. 
+
+```{r}
+
+# This generates .dat files from the .mat files
+# These contain the data that will actually be analysed.
+# This serves as an intermediate step. Because the .dat
+# files can be read into r a lot quicker than working with the raw
+# .mat files
+
+
+
+
+
+
+source(here::here("helper_functions/matlab_file_helpers.R"))
+
+plan(multiprocess)
+cat("Processing matlab files")
+
+furrr::future_walk(Nodes, function(this.node) {
+
+  
+  this.FileList = FileList[[this.node]]
+  
+  this.FileList %<>% filter(`Exclude Data` == F) # Don't process excluded files!
+  
+  EyeTrackerData = new.env()
+  ResponseData = new.env()
+  SecondaryData = new.env()
+  FingerData = new.env()
+  HasEyeTracker = new.env()
+  
+  for(this.subject in 1: dim(this.FileList)[1]){
+    
+    
+    hasSecondary = ifelse(grepl(".mat",this.FileList[["Secondary Data"]][this.subject]) == FALSE, 
+                          yes = 1, no = 0)
+  
+    
+    this.Code = this.FileList[["Subject Code"]][this.subject]
+    cat("Reading the data from participant: ", this.Code,"\n")
+    this.file = file.path(dataFolder,this.FileList[["Node"]][1],this.FileList[["Main Data"]][this.subject])
+    
+      
+    this.Data = ReadFischerData(this.file,hasSecondary = hasSecondary)
+    this.EyeTrackerStruct = this.Data$eyeTrackerData
+    this.ResponseStruct = this.Data$responseData
+    if(hasSecondary == 1){
+      this.SecondaryStuct = this.Data$secondaryData
+    } else {
+      this.Sec = ReadFicherData.SecondaryOnly(file.path(dataFolder,this.FileList[["Node"]][1],this.FileList[["Secondary Data"]][this.subject]))
+      this.SecondaryStuct = this.Sec$secondaryData
+    }
+    
+    
+    this.FingerData = R.matlab::readMat(file.path(dataFolder,this.FileList[["Node"]][1],this.FileList[["Finger Counting Data"]][this.subject]))
+    
+    # Add whether they guessed the purpose, because it lives with the finger counting data
+    add_column(this.SecondaryStuct,guess = ExtractExperimentGuess(this.FingerData)) -> this.SecondaryStuct
+    
+    this.FingerStruct = ExtractFingerData(this.FingerData)
+    
+    # Now add node codes and subject codes to all the data
+    # this.EyeTrackerStruct = eye tracking data
+    # this.ResponseStruct = reaction time dta
+    # this.SecondaryStuct = all the secondary measures (excluding the finger counting) and the debriefing question answer
+    # this.FingerStruct = the finger counting data
+    
+    this.EyeTrackerStruct %<>% add_column(node = this.node, code = this.Code, .before = 1)
+    this.ResponseStruct %<>% add_column(node = this.node, code = this.Code, .before = 1)
+    this.SecondaryStuct %<>% add_column(node = this.node, code = this.Code, .before = 1)
+    this.FingerStruct %<>% add_column(node = this.node, code = this.Code, .before = 1)
+    
+    # Package this subject's data for saving
+    EyeTrackerData[[this.Code]] = this.EyeTrackerStruct
+    ResponseData[[this.Code]] = this.ResponseStruct
+    SecondaryData[[this.Code]] = this.SecondaryStuct
+    FingerData[[this.Code]] = this.FingerStruct
+    HasEyeTracker[[this.Code]] = (this.Data$hasEye == 1)
+  }
+  
+  # Save this Nodes data
+  ext = '.dat'
+  save(file = glue('data/processed_data/{this.node}-EyeTrackerData{ext}') %>% here::here(), EyeTrackerData)
+  save(file = glue('data/processed_data/{this.node}-ResponseData{ext}') %>% here::here(), ResponseData)
+  save(file = glue('data/processed_data/{this.node}-SecondaryData{ext}') %>% here::here(), SecondaryData)
+  save(file = glue('data/processed_data/{this.node}-FingerData{ext}') %>% here::here(), FingerData)
+  save(file = glue('data/processed_data/{this.node}-HasEyeTracker{ext}') %>% here::here(), HasEyeTracker)
+}, .progress = F)
+
+```
+
+
+You can load the [Data processing notebook](./processing/data_processing.Rmd).

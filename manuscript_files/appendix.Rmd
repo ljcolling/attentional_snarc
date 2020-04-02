@@ -1,0 +1,421 @@
+---
+---
+```{r}
+require(tidyverse)
+require(glue)
+require(knitr)
+opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, results = 'asis', eval = TRUE)
+
+load(here::here("manuscript_files/manuscript.RData"))
+
+ReplicationProjectTools::GetLabNames()
+
+SpecName <- function(x){
+  case_when(x == "FE" ~ "*Fixed Effects*",           # 1
+            x == "Equal Var, Zero Corr" ~ "*Equal Variance, Zero Correlation*",                         # 2
+            x == "Equal Var, Single Corr" ~ "*Equal Variance, Single Correlation*",                      # 3
+            x == "Unequal Var, Zero Corr" ~ "*Unequal Variance, Zero Correlation*",                       # 4
+            x == "Unequal Var, Single Corr" ~ "*Unequal Variance, Single Correlation*",                     # 5
+            x == "No Constraints" ~ "*No Constraints*"                               # 6
+  )}
+```
+
+## Primary analyses
+
+### Model 1: No Moderators
+
+
+```{r}
+read.csv(file.path(here::here("data/meta_data/model1.meta.csv"))) %>% select(ConditionDescription,LabID,Freq) %>% distinct() %>% group_by(ConditionDescription) %>% summarise(nlab = n(), n = sum(Freq)) %>% rename(Con = ConditionDescription) -> Model1.counts
+
+
+read.csv(file.path(here::here("data/meta_data/model2.meta.csv"))) %>% select(ConditionDescription,LabID,Freq) %>% distinct() %>% group_by(ConditionDescription) %>% summarise(nlab = n(), n = sum(Freq)) %>% rename(Con = ConditionDescription) -> Model2.counts
+
+
+read.csv(file.path(here::here("data/meta_data/model3.meta.csv"))) %>% select(ConditionDescription,LabID,Freq) %>% distinct() %>% group_by(ConditionDescription) %>% summarise(nlab = n(), n = sum(Freq)) %>% rename(Con = ConditionDescription) -> Model3.counts
+
+
+read.csv(file.path(here::here("data/meta_data/model4.meta.csv"))) %>% select(ConditionDescription,LabID,Freq) %>% distinct() %>% group_by(ConditionDescription) %>% summarise(nlab = n(), n = sum(Freq)) %>% rename(Con = ConditionDescription) -> Model4.counts
+
+load(file.path(here::here("data/processed_rdata/results5.Rdata")))
+
+
+```
+
+```{r modfuncs}
+require(knitr)
+require(kableExtra)
+make.sub.c<-function(estimates,m.idx){
+  model.sub.c.df = tibble()
+  if((names(m.idx) != "FE") == TRUE){
+  if(is.null(estimates$EAMMCS[[m.idx]]$vc$variance %>% dim())){
+    model.sub.c.df = tibble(`ISI Condition` = c("250 ms", "500 ms", "750 ms", "1000 ms"), Estimate = estimates$EAMMCS[[m.idx]]$vc$varianc %>% sqrt() %>% rep(4))
+  } else{
+
+    estimates$EAMMCS[[m.idx]]$vc$variance %>% as.data.frame() %>% rownames_to_column() %>% mutate(rowname = str_remove(rowname,"d"), rowname = as.numeric(rowname)) %>% arrange(rowname) %>% mutate(rowname = paste0(rowname," ms")) %>% as.tibble() %>% rename(`ISI Condition` = rowname, `Estimate` = variance) %>% mutate(Estimate = sqrt(Estimate)) -> model.sub.c.df
+
+  }
+
+  if(estimates$EAMMCS[[m.idx]]$vc$allocation %>% t() %>% as.data.frame()  %>% pull(LabID) != 1){
+    estimates$EAMMCS[[m.idx]]$vc$allocation %>% t() %>% as.data.frame() %>% as.list() %>% glue_data("{round(LabID * 100)}\\% of the variance is estimated to be at the lab-level and {round(ConditionID*100)}\\% at the group-level.") -> sub.c.header}
+  else{sub.c.header = ""}
+
+  return(list(df = model.sub.c.df, header = sub.c.header))
+  } else{
+    return(list(df = tibble(`ISI Condition` = c("250 ms","500 ms","750 ms", "1000 ms"),Estimate = 0),
+                header = ""))
+}
+}
+
+
+```
+
+Model 1 was fit to data from `r Model1.counts %>% pull(n)` participants from `r Model1.counts %>% pull(nlab) %>% english::words()` labs (see Table \@ref(tab:Exclusions) for details). Of the six equal allocation multilevel multivariate compound symmetry (EAMMCS) model specifications, the `r SpecName(names(m1.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod1).
+
+
+### Model 2: Finger counting
+
+Model 2 was fit to data from `r Model2.counts %>% filter(Con == "LS") %>% pull(n)` left-starter participants from `r Model2.counts %>% filter(Con == "LS") %>% pull(nlab) %>% english::words()` labs and `r Model2.counts %>% filter(Con == "RS") %>% pull(n)` right-starter participants from `r Model2.counts %>% filter(Con == "RS") %>% pull(nlab) %>% english::words()` labs (see Supplementary Table \@ref(tab:count) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m2.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod2).
+
+### Model 3: Reading/writing direction
+
+Model 3 was fit to data from `r Model3.counts %>% filter(Con == "LTR") %>% pull(n)` exclusively left-to-right readers/writers from `r Model3.counts %>% filter(Con == "LTR") %>% pull(nlab) %>% english::words()` labs and `r Model3.counts %>% filter(Con == "NLR") %>% pull(n)` not exclusively left-to-right readers/writers from `r Model3.counts %>% filter(Con == "NLR") %>% pull(nlab) %>% english::words()` labs (see Supplementary Table \@ref(tab:read) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m3.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod3).
+
+### Model 4: Handedness
+
+Model 4 was fit to data from `r Model4.counts %>% filter(Con == "LH") %>% pull(n)` left-handed participants from `r Model4.counts %>% filter(Con == "LH") %>% pull(nlab) %>% english::words()` labs and `r Model4.counts %>% filter(Con == "RH") %>% pull(n)` right-handed participants from `r Model4.counts %>% filter(Con == "RH") %>% pull(nlab) %>% english::words()` labs (see Supplementary Table \@ref(tab:hand) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m4.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod4).
+
+### Model 5: Mathematics fluency and mathematics anxiety
+
+Model 5 was fit to data from `r nobs(model5) / 4` participants from `r LabNames %>% length() %>% english::words()` labs (see Table \@ref(tab:Exclusions)). See the main text for model specification details, but note that (i) for consistency with Model 1 we employed the *Equal Variance, Zero Correlation* specification for the Lab $\times$ ISI Condition effects and (ii) the maths test and AMAS were centred and scaled by their respective means and standard deviations across the 1105 participants prior to estimation of the model. Fixed effect estimates, standard errors, and $t$-statistics and variance component estimates are shown in Supplementary Table \@ref(tab:mod5).
+
+
+
+```{r}
+read_csv(here::here("data/processed_data/EyeTrackerDetail.csv")) -> EyeTrackerDetail
+EyeTrackerDetail %>% gather(ISI,N,-Lab,-Subjects,-Analysed,-`Trial Type`) %>% separate(N,c("Analysed.Trials","Total.Trials"),extra = "drop") -> EyeTrackerDetail.seperate
+EyeTracker.Trials = EyeTrackerDetail.seperate$Analysed.Trials %>% as.numeric() %>% sum()
+EyeTracker.Subj = EyeTrackerDetail.seperate %>% group_by(Lab) %>% summarise(Analysed = unique(Analysed)) %>% pull(Analysed) %>% sum()
+EyeTracker.Labs = EyeTrackerDetail.seperate %>% pull(Lab) %>% unique() %>% length()
+
+read_csv(here::here("data/meta_data/model1b.meta.csv")) -> GuessTable
+
+# GuessTable %>% group_by(LabID) %>% summarise(Freq = unique(Freq)) %>% pull(Freq) %>% sum() -> n.guess
+GuessTable %>% pull(LabID) %>% unique() %>% length() -> n.guess.labs
+
+
+
+```
+
+
+## Secondary analyses
+
+### Purpose of experiment
+
+Data from several participants were not included in the primary analysis because they correctly guessed the purpose of the experiment (as assessed by the exit questionnaire). The data from these participants was analysed separately to determine whether insight into the purpose of the experiment moderated the effect. Specifically, Model 1 was refit to data from the `r n.guess` participants from `r n.guess.labs %>% english::words()` labs who correctly guessed the purpose of the experiment (see Supplementary Table \@ref(tab:mod1bn) for details). Of the six model EAMMCS model specifications, the `r SpecName(names(m1b.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod1b).
+
+
+### Eye-movement contaminated trials
+
+Data from individual trials that were contaminated with eye movements were also not included the primary analysis. The data from these trials was analysed separately to determine whether eye movements moderated the effect. Specifically, Model 1 was refit to data from `r EyeTracker.Trials` eye movement contaminated trials from `r EyeTracker.Subj` participants from `r EyeTracker.Labs %>% english::words()` labs with contaminated trials at each ISI $\times$ congruency condition (see Supplementary Table \@ref(tab:Eyedetail) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m1c.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod1c)
+
+
+```{r}
+fit1.stats$AIC %>% as.data.frame() %>% tibble::rownames_to_column("Specification") %>% mutate(Specification = SpecName(Specification) %>% str_remove_all(pattern = "\\*")) %>% select(-MMCS) %>% rename(AIC = EAMMCS) -> model1.sub.a.df
+model1.fe %>% select(-`$n$`) -> model1.sub.b.df
+make.sub.c(estimates1,m1.idx) -> model1.sub.c.df
+```
+
+\begin{table}[!p]
+\caption{\label{tab:mod1}Model 1 Estimates.}
+\begin{subtable}{\textwidth}
+\subcaption{AIC}
+\centering
+```{r, results="asis"}
+kable(model1.sub.a.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{Fixed Effect Estimates}
+\centering
+```{r, results="asis"}
+kable(model1.sub.b.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{`r glue("Variance Component Estimates. Estimates are presented on the standard deviation scale. {model1.sub.c.df$header}")`}
+\centering
+```{r, results="asis"}
+kable(model1.sub.c.df$df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\end{table}
+
+
+```{r count, results='asis'}
+ReplicationProjectTools::GetLabNames()
+blankNa<-function(x)(ifelse(is.na(x),"0",as.character(x)))
+
+read_csv(here::here("data/final_data_csv/AllFischerData.csv")) %>% select(Lab,FingerGroup) %>% group_by(Lab,FingerGroup) %>% summarise(n = n()) %>% spread(FingerGroup,n) %>% inner_join(tibble(Lab = Nodes, Name = LabNames), by = "Lab") %>% arrange(Name) %>% ungroup() %>% select(Name,LS,LA,NG,RA,RS) %>% mutate_at(c("LS","LA","NG","RA","RS"),blankNa) %>% mutate_all(linebreak) %>% kable("latex",booktabs = T, escape = F, caption = "Number of participants in each finger counting group for each of the seventeen labs.", col.names = linebreak(c("Lab","Left-\nStarter","Left-\nPrefer","No\nGroup","Right-\nPrefer","Right-\nStarter"), align = "c"), linesep = "",align = c("l","c","c","c","c","c"))
+```
+
+
+```{r Eye}
+#read_csv("../generated_data/EyeTrackerTable.csv") %>% inner_join(read_csv("../AllFischerData.csv")) %>% drop_na() %>% select(Node,Code,HasEye) %>% group_by(Node) %>% summarise(With = sum(HasEye), Without = sum(HasEye==FALSE), Total = n()) %>% inner_join(tibble(Node = Nodes, Lab = LabNames), by = "Node") %>% arrange(Lab) %>% select(Lab,With,Without,Total) %>% #papaja::apa_table(caption = "Number of participants tested with and without an eye-tracker in each lab.")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--- table figure counting -->
+```{r}
+fit2.stats$AIC %>% as.data.frame() %>% tibble::rownames_to_column("Specification") %>% mutate(Specification = SpecName(Specification) %>% str_remove_all(pattern = "\\*")) %>% select(-MMCS) %>% rename(AIC = EAMMCS) -> model2.sub.a.df
+model2.fe %>% select(-`$n$`) -> model2.sub.b.df
+make.sub.c(estimates2,m2.idx) -> model2.sub.c.df
+```
+
+\begin{table}[!p]
+\caption{\label{tab:mod2}Model 2 Estimates.}
+\begin{subtable}{\textwidth}
+\subcaption{AIC}
+\centering
+```{r, results="asis"}
+kable(model2.sub.a.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{Fixed Effect Estimates}
+\centering
+```{r, results="asis"}
+kable(model2.sub.b.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "")  %>% kableExtra::kable_styling(font_size = 10)%>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{`r glue("Variance Component Estimates. Estimates are presented on the standard deviation scale. {model2.sub.c.df$header}")`}
+\centering
+```{r, results="asis"}
+kable(model2.sub.c.df$df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\end{table}
+
+
+```{r read}
+read_csv(here::here("data/final_data_csv/AllFischerData.csv"))  %>% select(Lab,ReadingDir) %>% inner_join(tibble(Lab = Nodes, Name = LabNames), by = "Lab") %>% arrange(Name) %>% select(Name,ReadingDir) %>% group_by(Name,ReadingDir) %>% summarise(n = n()) %>% ungroup() %>% spread(ReadingDir,n) %>% mutate_at(c("LTR","NLR"), blankNa) %>%
+  mutate_all(linebreak) %>% kable("latex",booktabs = T, escape = F, caption = "Number of participants in each of the reading/writing direction groups for each of the seventeen labs.", col.names = linebreak(c("Lab","Exclusively\nLeft-to-Right","Not exclusively\nLeft-to-Right"), align = "c"), linesep = "", align = c("l","c","c"))
+
+
+```
+
+<!--- reading table -->
+```{r}
+fit3.stats$AIC %>% as.data.frame() %>% tibble::rownames_to_column("Specification") %>% mutate(Specification = SpecName(Specification) %>% str_remove_all(pattern = "\\*")) %>% select(-MMCS) %>% rename(AIC = EAMMCS) -> model3.sub.a.df
+model3.fe %>% select(-`$n$`) -> model3.sub.b.df
+make.sub.c(estimates3,m3.idx) -> model3.sub.c.df
+```
+
+\begin{table}[!p]
+\caption{\label{tab:mod3}Model 3 Estimates.}
+\begin{subtable}{\textwidth}
+\subcaption{AIC}
+\centering
+```{r, results="asis"}
+kable(model3.sub.a.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{Fixed Effect Estimates}
+\centering
+```{r, results="asis"}
+names(model3.sub.b.df)[2] = " Reading/Writing Direction"
+kable(model3.sub.b.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "")  %>% kableExtra::kable_styling(font_size = 10)%>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{`r glue("Variance Component Estimates. Estimates are presented on the standard deviation scale. {model3.sub.c.df$header}")`}
+\centering
+```{r, results="asis"}
+kable(model3.sub.c.df$df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\end{table}
+
+```{r hand}
+read_csv(here::here("data/final_data_csv/AllFischerData.csv")) %>% select(Lab,Hand) %>% inner_join(tibble(Lab = Nodes, Name = LabNames), by = "Lab") %>% arrange(Name)  %>% select(Name,Hand) %>% group_by(Name,Hand) %>% summarise(n = n()) %>% ungroup() %>% spread(Hand,n) %>% mutate_at(c("LH","RH"), blankNa) %>%
+  mutate_all(linebreak) %>% kable("latex",booktabs = T, escape = F, caption = "Number of participants in each handedness group for each of the seventeen labs.", col.names = linebreak(c("Lab","Left-\nhanded","Right-\nhanded"), align = "c"), linesep = "", align = c("l","c","c"))
+
+
+```
+
+```{r}
+fit4.stats$AIC %>% as.data.frame() %>% tibble::rownames_to_column("Specification") %>% mutate(Specification = SpecName(Specification) %>% str_remove_all(pattern = "\\*")) %>% select(-MMCS) %>% rename(AIC = EAMMCS) -> model4.sub.a.df
+model4.fe %>% select(-`$n$`) -> model4.sub.b.df
+names(model4.sub.b.df)[2] = "Handedness Group"
+make.sub.c(estimates4,m4.idx) -> model4.sub.c.df
+```
+
+\begin{table}[!p]
+\caption{\label{tab:mod4}Model 4 Estimates.}
+\begin{subtable}{\textwidth}
+\subcaption{AIC}
+\centering
+```{r, results="asis"}
+kable(model4.sub.a.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{Fixed Effect Estimates}
+\centering
+```{r, results="asis"}
+kable(model4.sub.b.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "")  %>% kableExtra::kable_styling(font_size = 10)%>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{`r glue("Variance Component Estimates. Estimates are presented on the standard deviation scale. {model4.sub.c.df$header}")`}
+\centering
+```{r, results="asis"}
+kable(model4.sub.c.df$df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\end{table}
+
+
+```{r}
+load(file.path(here::here("data/processed_rdata/results5.Rdata")))
+VarCorr(model5) -> model5.vce
+
+
+# ISI Conditions
+
+tibble(`ISI Condition` =c("250 ms","500 ms","750 ms","1000 ms"),Estimate1 = rep(sqrt(model5.vce[2]$varLabID[1]))) -> model5.sub.b
+
+# Additional Effects
+tibble(`Additional Effects` = c("Participant","Maths Test","AMAS","Maths test $\\times$ AMAS"),
+       Estimate2 = c(sqrt(model5.vce[1]$SubjectID[1]), # Participant
+                     sqrt(model5.vce[5]$LabID.2[1]), # Maths test
+                     sqrt(model5.vce[4]$LabID.1[1]), # AMAS
+                     sqrt(model5.vce[3]$LabID[1]))) -> model5.sub.c # Maths test x AMAS
+
+
+model5.fe.stats %>% select(Name,Estimate,`Std. Err.`,`$t$`) %>% rename(Effect = "Name") -> model5.sub.a
+
+```
+
+\begin{table}[!p]
+\caption{\label{tab:mod5}Model 5 Estimates.}
+\begin{subtable}{\textwidth}
+\subcaption{Fixed Effect Estimates}
+\centering
+```{r, results="asis"}
+model5.sub.a %>% kable("latex", booktabs = T, linesep = "", align = c("l","c","c","c","c"), escape = F) %>% kableExtra::kable_styling(font_size = 10) %>%  str_remove("\\n")  %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{Variance Component Estimates. Estimates are presented on the standard deviation scale.}
+\centering
+```{r, results="asis"}
+cbind(model5.sub.b,model5.sub.c)  %>% kable("latex",booktabs = T, digits = 2, linesep = "", align = c("l","c|","l","c"), escape = F, col.names = c("ISI Condition","Estimate","Additional Effects","Estimate")) %>% kableExtra::kable_styling(font_size = 10) %>%  str_remove("\\n")  %>% cat()
+```
+\end{subtable}
+\end{table}
+
+```{r mod1bn}
+read_csv(here::here("data/meta_data/model1b.meta.csv")) %>% inner_join(tibble(LabID = Nodes, Lab = LabNames)) %>%
+  select(Lab,Freq) %>% distinct() %>% arrange(Lab) %>% rename(`$n$` = Freq) %>% kable("latex",booktabs = T, digits = 0, linesep = "", align = c("l","c"), caption = "Number of participants who correctly guessed the purpose of the experiment for each lab.", escape = FALSE)
+
+```
+
+
+<!-- refitted model 1's --->
+<!-- guessed the experiment -->
+
+```{r}
+fit1b.stats$AIC %>% as.data.frame() %>% tibble::rownames_to_column("Specification") %>% mutate(Specification = SpecName(Specification) %>% str_remove_all(pattern = "\\*")) %>% select(-MMCS) %>% rename(AIC = EAMMCS) -> model1b.sub.a.df
+model1b.fe %>% select(-`$n$`) -> model1b.sub.b.df
+make.sub.c(estimates1b,m1b.idx) -> model1b.sub.c.df
+```
+
+\begin{table}[!p]
+\caption{\label{tab:mod1b}Model 1 Estimates (only participants who correctly guessed the purpose of the experiment).}
+\begin{subtable}{\textwidth}
+\subcaption{AIC}
+\centering
+```{r, results="asis"}
+kable(model1b.sub.a.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{Fixed Effect Estimates}
+\centering
+```{r, results="asis"}
+kable(model1b.sub.b.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "")  %>% kableExtra::kable_styling(font_size = 10)%>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{`r glue("Variance Component Estimates. Estimates are presented on the standard deviation scale. {model1b.sub.c.df$header}")`}
+\centering
+```{r, results="asis"}
+kable(model1b.sub.c.df$df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\end{table}
+
+
+
+
+
+```{r Eyedetail}
+
+
+read_csv(here::here("data/processed_data/EyeTrackerDetail.csv")) -> EyeTrackerDetail
+names(EyeTrackerDetail)[2] = "Participants"
+EyeTrackerDetail %>% kable(booktabs = T, format = "latex", caption = "Number of participants tested with an eye-tracker, number of participants analysed in our secondary analysis of eye movement contaminated trials, and number of eye movement contaminated trials in the analysis (total number of eye movement contaminated trials) at each ISI $\\times$ congruency condition for each lab.", escape = T, align = c("l","c","c","l","c","c","c","c")) %>% kableExtra::collapse_rows(c(1:3)) %>% kableExtra::landscape()
+
+```
+
+
+
+<!-- eye movement contaminated trials -->
+
+```{r}
+fit1c.stats$AIC %>% as.data.frame() %>% tibble::rownames_to_column("Specification") %>% mutate(Specification = SpecName(Specification) %>% str_remove_all(pattern = "\\*")) %>% select(-MMCS) %>% rename(AIC = EAMMCS) -> model1c.sub.a.df
+model1c.fe %>% select(-`$n$`) -> model1c.sub.b.df
+make.sub.c(estimates1c,m1c.idx) -> model1c.sub.c.df
+```
+
+\begin{table}[!p]
+\caption{\label{tab:mod1c}Model 1 Estimates (only eye movement contaminated trials).}
+\begin{subtable}{\textwidth}
+\subcaption{AIC}
+\centering
+```{r, results="asis"}
+kable(model1c.sub.a.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{Fixed Effect Estimates}
+\centering
+```{r, results="asis"}
+kable(model1c.sub.b.df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "")  %>% kableExtra::kable_styling(font_size = 10)%>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\begin{subtable}{\textwidth}
+\caption{`r glue("Variance Component Estimates. Estimates are presented on the standard deviation scale. {model1c.sub.c.df$header}")`}
+\centering
+```{r, results="asis"}
+kable(model1c.sub.c.df$df, format = "latex", booktabs = "TRUE", digits = 2, escape = F, linesep = "") %>% kableExtra::kable_styling(font_size = 10) %>%str_remove(pattern = "\\n") %>% cat()
+```
+\end{subtable}
+\end{table}
+
+<!-- eye movement contaminated trials -->

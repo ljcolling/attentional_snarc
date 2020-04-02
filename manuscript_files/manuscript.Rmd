@@ -1,0 +1,597 @@
+---
+title             : "A multilab registered replication of the attentional SNARC effect"
+shorttitle        : "Replication of the attentional SNARC effect"
+
+author:
+  - name          : "**Lincoln J Colling**"
+    affiliation   : "1"
+  - name          : "**Dénes Szűcs**"
+    affiliation   : "1"
+    corresponding : yes
+    address       : "Downing Street, CB2 3EB, Cambridge, UK"
+    email         : "ds377@cam.ac.uk"
+  - name          : "Damiano De Marco"
+    affiliation   : "1, 12"
+  - name          : "Krzysztof Cipora"
+    affiliation   : "2"
+  - name          : "Rolf Ulrich"
+    affiliation   : "2"
+  - name          : "Hans-Christoph Nuerk"
+    affiliation   : "2"
+  - name          : "Mojtaba Soltanlou"
+    affiliation   : "2"
+  - name          : "Donna Bryce"
+    affiliation   : "2"
+  - name          : "Sau-Chin Chen"
+    affiliation   : "3"
+  - name          : "Philipp Alexander Schroeder"
+    affiliation   : "4"
+  - name          : "Dion T Henare"
+    affiliation   : "5"
+  - name          : "Christine K Chrystall"
+    affiliation   : "5"
+  - name          : "Paul M Corballis"
+    affiliation   : "5"
+  - name          : "Daniel Ansari"
+    affiliation   : "6"
+  - name          : "Celia Goffin"
+    affiliation   : "6"
+  - name          : "H Moriah Sokolowski"
+    affiliation   : "6"
+  - name          : "Peter JB Hancock"
+    affiliation   : "7"
+  - name          : "Ailsa E Millen"
+    affiliation   : "7"
+  - name          : "Stephen RH Langton"
+    affiliation   : "7"
+  - name          : "Kevin J Holmes"
+    affiliation   : "8"
+  - name          : "Mark S Saviano"
+    affiliation   : "8"
+  - name          : "Tia A Tummino"
+    affiliation   : "8"
+  - name          : "Oliver Lindemann"
+    affiliation   : "9"
+  - name          : "Rolf A Zwaan"
+    affiliation   : "9"
+  - name          : "Jiří Lukavský"
+    affiliation   : "10"
+  - name          : "Adéla Becková"
+    affiliation   : "11"
+  - name          : "Marek A Vranka"
+    affiliation   : "11"
+  - name          : "Simone Cutini"
+    affiliation   : "12"
+  - name          : "Irene Cristina Mammarella"
+    affiliation   : "12"
+  - name          : "Claudio Mulatti"
+    affiliation   : "12"
+  - name          : "Raoul Bell"
+    affiliation   : "13"
+  - name          : "Axel Buchner"
+    affiliation   : "13"
+  - name          : "Laura Mieth"
+    affiliation   : "13"
+  - name          : "Jan Philipp Röer"
+    affiliation   : "14, 2"
+  - name          : "Elise Klein"
+    affiliation   : "15"
+  - name          : "Stefan Huber"
+    affiliation   : "15"
+  - name          : "Korbinian Moeller"
+    affiliation   : "15,2"
+  - name          : "Brenda Ocampo"
+    affiliation   : "16"
+  - name          : "Juan Lupiáñez"
+    affiliation   : "17"
+  - name          : "Javier Ortiz-Tudela"
+    affiliation   : "17"
+  - name          : "Juanma De la fuente"
+    affiliation   : "17"
+  - name          : "Julio Santiago"
+    affiliation   : "17"
+  - name          : "Marc Ouellet"
+    affiliation   : "17"
+  - name          : "Edward M Hubbard"
+    affiliation   : "18"
+  - name          : "Elizabeth Y Toomarian"
+    affiliation   : "18"
+  - name          : "Remo Job"
+    affiliation   : "19"
+  - name          : "Barbara Treccani"
+    affiliation   : "19"
+  - name          : "Blakeley B McShane"
+    affiliation   : "20"
+
+affiliation:
+  - id            : "1"
+    institution   : "Department of Psychology, University of Cambridge"
+  - id            : "2"
+    institution   : "Department of Psychology, University of Tübingen"
+  - id            : "3"
+    institution   : "Department of Human Development and Psychology, Tzu-Chi University"
+  - id            : "4"
+    institution   : "Department of Psychiatry and Psychotherapy, University of Tübingen"
+  - id            : "5"
+    institution   : "School of Psychology, University of Auckland"
+  - id            : "6"
+    institution   : "Department of Psychology & Brain and Mind Institute, The University of Western Ontario"
+  - id            : "7"
+    institution   : "Psychology, Faculty of Natural Sciences, University of Stirling, Stirling, UK"
+  - id            : "8"
+    institution   : "Department of Psychology, Colorado College"
+  - id            : "9"
+    institution   : "Department of Psychology, Education & Child Studies, Erasmus University Rotterdam, Netherlands"
+  - id            : "10"
+    institution   : "Institute of Psychology of the Czech Academy of Sciences"
+  - id            : "11"
+    institution   : "Department of Psychology, Faculty of Arts, Charles University"
+  - id            : "12"
+    institution   : "Department of Developmental Psychology, University of Padova"
+  - id            : "13"
+    institution   : "Department of Experimental Psychology, Heinrich Heine University Düsseldorf"
+  - id            : "14"
+    institution   : "Department of Psychology and Psychotherapy, Witten/Herdecke University"
+  - id            : "15"
+    institution   : "Leibniz-Institut für Wissensmedien, Tübingen"
+  - id            : "16"
+    institution   : "School of Psychology, The University of Queensland"
+  - id            : "17"
+    institution   : "Research Center for Mind, Brain, and Behavior, University of Granada"
+  - id            : "18"
+    institution   : "Department of Educational Psychology, University of Wisconsin-Madison"
+  - id            : "19"
+    institution   : "Department of Psychology and Cognitive Science, University of Trento"
+  - id            : "20"
+    institution   : "Kellogg School of Management, Northwestern University"
+
+abstract: |
+  The attentional Spatial-Numerical Association of Response Codes (att-SNARC) effect (Fischer et al., 2003; Nature Neuroscience)---the finding that participants are quicker to detect left-side targets when the targets are preceded by small numbers and quicker to detect right-side targets when they are preceded by large numbers---has been used as evidence for *embodied* number representations and to allow for strong claims about the link between number and space (e.g., a mental number line). We attempted to replicate Study 2 of Fischer et al. (2003) by collecting data from 1105 participants across seventeen labs. Across all 1105 participants and four ISI conditions, the proportion of times the direction of the observed effect was consistent with the original effect was 0.50. Further, the effects we observed both within and across labs were minuscule and incompatible with those observed in Fischer et al. (2003). Given this, we conclude that we have *failed* to replicate the effect reported by Fischer et al. (2003). In addition, our analysis of several participant-level moderators (finger counting preferences, reading/writing direction experience, handedness, and mathematics fluency and mathematics anxiety) revealed no substantial moderating effects. Our results demonstrate that the att-SNARC effect cannot be used as evidence to support the strong claims about the link between number and space discussed above
+
+bibliography      : ["cited.bib"]
+
+floatsintext      : yes
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : yes
+mask              : no
+draft             : no
+papersize         : "A4"
+
+documentclass     : "apa6"
+classoption       : "man"
+biblio-style      : "apa"
+output:
+  papaja::apa6_pdf:
+    citation_package: biblatex
+    latex_engine: xelatex
+    keep_tex: TRUE
+
+    includes:
+      after_body: "appendix.tex"
+
+header-includes:
+  - \renewcommand\appendixname{Supplementary Results}
+  - \usepackage{subcaption}
+  - \usepackage{caption}
+  - \usepackage{makecell}
+  - \DeclareLanguageMapping{english}{english-apa}
+  - \DeclareBibliographyCategory{asterisk}
+  - \renewbibmacro*{begentry}{\ifcategory{asterisk}{\ensuremath{\ast}}{}}
+  - \newcommand*{\nocitemeta}[1]{\nocite{#1}\addtocategory{asterisk}{#1}}
+  - \usepackage{fontspec}
+  - \setmainfont{Tinos}
+  -  \usepackage{float}
+  - \floatplacement{figure}{htp}
+
+---
+
+
+```{r setup, include = FALSE}
+library("papaja")
+library("tidyverse")
+library("ReplicationProjectTools")
+library("reticulate")
+library("glue")
+library("pwr")
+library("magick")
+library("R.matlab")
+library("lme4")
+library("nlme")
+library("forestplot")
+library("kableExtra")
+
+#install.packages("kableExtra")
+
+#use_python(system('which python3',intern = T))
+#source_python(file = "../get_citation_count.py")
+
+
+
+```
+
+```{r analysis-preferences}
+
+
+#citationCounts = get_citation() # obtain the latest citation counts!
+citationCounts.counts = here::here("other_info","cites.txt") %>% read_lines() %>% stringr::str_split(pattern = "'",simplify = T) %>% .[[2]]
+
+citationCounts.date = here::here("other_info","cites.txt") %>% read_lines() %>% stringr::str_split(pattern = "'",simplify = T) %>% .[[4]]
+citationCounts = c(citationCounts.counts,citationCounts.date)
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed, echo = FALSE, warning = FALSE)
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+
+require(knitr)
+rd <- papaja::printp
+
+readr::read_csv(here::here("data/processed_data/ExclusionsTable.csv")) -> Exclusions.Table
+readr::read_csv(here::here("data/processed_data/EyeTrackerTable.csv"))  -> EyeTrackerTable
+
+
+# Do a little preprocessing
+# Calculate the number of labs using an eye-tracker
+
+EyeTrackerTable %>% group_by(Node) %>% summarise(LabsWithEye = sum(HasEye)) %>% filter(LabsWithEye > 0) %>% pull(Node) %>% length() -> LabsWithEye
+
+# Calculate the perfect, partial, any ReplicationProjectTools
+readr::read_csv(here::here("data/meta_data/model1.meta.csv")) %>% mutate(se = sqrt(v))  %>% select(-v) %>%  mutate(lower = y - (qnorm(.95) * se), upper = y + (qnorm(.95) * se)) %>% rename(mean = y) %>% mutate(sig = sign(lower) == 1) -> individual.replications
+
+individual.replications %>% select(LabID,DependentVariable,sig) %>% spread(DependentVariable,sig) %>% select(LabID,d250,d500,d750,d1000) %>% mutate(perfect = d250 == FALSE & d500 == TRUE & d750 == TRUE & d1000 == FALSE) -> perfect.replications
+
+perfect.replications %>% filter(perfect == FALSE) %>% mutate(partial =  d500 == TRUE | d750 == TRUE) -> partial.replications
+
+individual.replications %>% select(LabID,DependentVariable,sig) %>% spread(DependentVariable,sig) %>% select(LabID,d250,d500,d750,d1000) %>% mutate(any = d250 == TRUE | d500 == TRUE | d750 == TRUE | d1000 == TRUE) -> any.effects
+
+load("manuscript.RData")
+
+
+# This will need to be generated somewhere
+
+
+Fischer.estimates = read.csv(file.path(here::here(),"other_info/Original_estimates.csv")) %>% glue_data("{sprintf('%.2f',RT)} ms at the {delay} ms ISI condition")
+#Fischer.estimates =  read.csv(file.path(here::here(),"other_info/Original_estimates.csv")) %>% glue_data("{sprintf('%.2f',RT)} (90% CI [{sprintf('%.2f',RT - (qnorm(.95) * se))}, {sprintf('%.2f',RT + (qnorm(.95) * se))}])  ms at the {delay} ms ISI condition")
+
+#read.csv(file.path(here::here(),"other_info/all_estimates.csv")) %>% pull(sd) %>% median() %>% ceiling() -> median.sd
+```
+
+# Introduction
+
+A foundational issue in cognitive science is the question of how we *represent* concepts. Classical approaches to cognitive science, exemplified by Fodor's [-@Fodor1975] "language of thought" and Newell and Simon's [-@Newell1976] "physical symbol systems" hypothesis, view representations as abstract or amodal and as distinct from sensorimotor processing. In contrast to these traditional views, a range of other views that go under labels such as "embodied", "situated", or "grounded" cognition argue that representations (i) are intimately linked to sensorimotor processing [see, e.g., @Wilson2002six for an overview]; (ii) are analogue rather than symbolic; and (iii) represent by in some sense resembling their targets [e.g., see @Gladzijewski2017; @Williams2018].
+
+One area of research that has provided a wealth of empirical findings valuable for debates about the nature of concept representation has been numerical cognition. In fact, @Fischer2011em have referred to numerical cognition as the "prime example of embodied cognition". In particular, @Fischer2011em point to tasks examining spatial-numerical associations to make their case.
+
+Researchers have long reasoned that numbers might be represented in a spatially organised manner [@Galton:1880na], for example, as a *mental number line* [e.g., @Restle:1970km]. Key support for this notion comes from a series of nine experiments conducted by @Dehaene:1993fc. In these experiments, @Dehaene:1993fc asked participants to judge whether the parity of a number was odd or even, finding that responses to large numbers were faster when pressing a right-hand key relative to a left-hand key while the opposite was true for small numbers. They labelled this number magnitude by response side interaction the Spatial-Numerical Association of Response Codes (SNARC) effect.
+
+In these parity judgement experiments, there was no standard with which to compare the presented number. Consequently, whether a particular number was responded to quicker with the left hand or the right hand was not determined by the absolute magnitude of the number, but by the relative magnitude of the number within a stimulus set. Thus, the number five was responded to more quickly with the left hand when appearing in a set of numbers ranging from four to nine but more quickly with the right hand when appearing in a set of numbers ranging from zero to five [e.g., @Dehaene:1993fc; @Fias:1996ms].
+
+@Dehaene:1993fc reported that the effects were neither dependent on the handedness of participants nor the hand used to make the response. Instead, they tracked the side of space of the response, with responses to small numbers being quicker with the right hand when the participants' hands were crossed [see, however, @Woods:2006cp]. Nonetheless, @Dehaene:1993fc did report that the effect was dependent on reading/writing direction. Specifically, while they initially found the effect in French participants who had experience reading/writing from left to right, the did not replicate it in a follow-up experiment with Iranian participants who had experience reading/writing from right to left (see @Shaki:2009ch and @Zebine). Together, the results of the nine experiments reported in @Dehaene:1993fc were taken to support the idea of a mental number line with numbers of increasing magnitude associated with the left-to-right axis of external space.
+
+While SNARC effects appear to be robust (see @Wood:2008rev and @Toomarian:2018rev for recent reviews), the great range of findings has resulted in some debate about the underlying mechanism(s) that produce them. One such debate is concerned with whether the SNARC effect is produced by early, *response-independent* mechanisms or whether processes at the stage of *response selection* are responsible. According to theories that place the origin of the SNARC effect at an early stage, the mere observation of the number should be sufficient to activate the spatial code because the spatial code is intimately connected to the numerical representation. Consequently, these theories make the strongest claims about the link between number and space. Theories that place the origin of the SNARC effect at the response selection stage, however, make weaker claims about the connection between number and space. As @PecherBoot:2011 note, if the response selection stage gives rise to the SNARC effect, then no underlying spatial-numerical representation need be assumed.
+
+Most recent work has tended to support the notion that the response selection stage is the locus of the SNARC effect. In particular, Keus and colleagues have used both behavioural [@Keus:2005ho] and psychophysiological [@Keus:2005jh] evidence to argue in favour of a later, response-related origin of the SNARC effect. Further support comes from a computational model that relies on task-dependent conceptual coding of the number at a stage distinct from the numerical representation itself [@Gevers:2006model].
+
+Additional accounts that break the link between number, space, and the SNARC effect are so-called response polarity-related accounts. Specifically, @Proctor:2006jv argue that on binary classification tasks, items in the task set are coded as being positive or negative in polarity. Response selection can then be facilitated when there is a structural overlap between the polarity of the item (the number in the case of the SNARC effect) and the response. As with the model from @Gevers:2006model, the account of @Proctor:2006jv does not require any perceptual or conceptual overlap between the stimulus and the response dimensions for the SNARC effect to occur. That is, these accounts do not rely on the notion of a mental number line or sensorimotor-linked representations. A range of empirical findings support these types of accounts. For example, @Santens:2008 found that SNARC-like effects can be produced when left-right responses are replaced with unimanual close-far responses, with small numbers associated with close responses and large numbers associated with far responses. Further, @Landy:2008 found that verbal "Yes" and "No" responses on a parity judgement task were facilitated by large numbers and small numbers respectively.
+
+Finally, still other researchers have argued in favour of a working memory account of the SNARC effect. For example, in the task reported by @vanDijck:2011kk, participants performed a fruit/vegetable classification after having been encouraged to store the stimuli as an ordered set in working memory. This was done by presenting participants with a sequence of fruit and vegetable names (displayed in the centre of the screen) before the classification task and then testing them on the order of the items. A spatial response-compatibility effect emerged with participants responding faster to items early in the sequence with their left hand and items later in the sequence with the right hand. @vanDijck:2011kk argue that this working memory account can also explain why SNARC-like effect emerge for other kinds of ordinal sequences such as months of the year [@Gevers:2003je] or days of the week [@Gevers:2004gj] as well as why spatial-numerical associations can be moderated by giving participants instructions to associate numbers with positions on a clock-face (1--5 on the right and 6--10 on the left) rather than on a ruler [1--5 on the left and 6--10 on the right; @Bachtold:1998]
+
+Given that several competing accounts of the SNARC effect exist and that many of the accounts do not require a mental number line, one may doubt whether spatial-numerical associations provide evidence for anything like "embodied" number representations or number representation that are intimately linked with space. However, there is evidence that does support an early, response-independent locus for the SNARC effect and thus does provide support for the notion of a mental number-line and spatially-linked number representation---the modified version of the @Posner attentional cueing task developed by @Fischer:2003ju. In this study, participants were asked to detect the appearance of lateralised targets. The target, a white circle, was preceded by either a small number (1 or 2) or a large number (8 or 9). Importantly, the digit did not predict the subsequent location of the target, that is, it was not task-relevant. Instead, the task was merely to press a single response button when the target appeared regardless of whether it appeared on the left or the right. Importantly, not requiring a spatially lateralised response negates the possibility of any response-related effects. The finding from this paradigm was consistent with the SNARC effect, as participants were quicker to detect left-side targets when the targets were preceded by small numbers and quicker to detect right-side targets when they were preceded by large numbers, at least for digits and targets that were separated by an inter-stimulus interval (ISI) between 250 and 1000 ms. This finding---named the attentional SNARC (att-SNARC) effect---suggests that viewing numbers alone was able to cue spatial attention either to the left or the right depending on the magnitude of the number.
+
+Because the att-SNARC effect argues strongly in favour of an early, response-independent locus for the cause of the SNARC effect, the att-SNARC effect plays a crucially important role in adjudicating debates about the origin of the SNARC effect and the nature of number representations. As a result, the original finding has been extremely influential  (e.g., cited `r citationCounts[1]` times according to Google Scholar as of `r citationCounts[2]`). However, subsequent attempts to replicate the effect have produced mixed results.
+
+@Galfano:2006cu report a statistically significant effect for right-side targets when the data was collapsed across two ISI conditions of 500 and 800 ms using a one-tailed test [Estimate = 6.5 ms; *t*(25) = 1.75; *p* = .046 (reported as *p* = .04)]. They also report a statistically significant effect for left-side targets collapsed across the two ISI conditions, but the claimed statistical significance reflected a reporting error [Estimate = 5.5 ms; *t*(25) = 1.59; *p* = .062 (reported as *p* = .04)]. Finally, they report an overall estimate (collapsed across the left and right target locations) of 8 ms for the 500 ms ISI condition and 4 ms for the ISI 800 ms condition, but the reporting is such that the corresponding variances or test statistics for these estimates cannot be obtained.
+
+In addition, @Dodd:2008dv report a statistically significant effect when the data was collapsed across three ISI conditions between 250 and 750 ms and across both left and right target locations, but again the claimed statistical significance reflected a reporting error [Estimate = 5.5 ms; *F*(1,29) = 4.05; *p* = .054 (reported as *p* < .05)]. At the level of individual inter-stimulus intervals, they report statistically significant effects at 500 ms for right-side targets [Estimate = 6 ms; *t*(29) = 2.34; *p* = .013] and left-side targets [Estimate = 16 ms; *t*(29) = 2.48; *p* = .010]. Finally, they report estimates of 6 ms for the 250 ms ISI condition, 11 ms for the 500 ms ISI condition, and -0.5 ms for the 750 ms ISI condition (collapsed across left and right target locations), but the reporting is such that the corresponding variances or test statistics for these estimates cannot be obtained.
+
+@Ristic:2006cr also report a statistically significant effect when the data was collapsed across six ISI conditions between 350 and 800 ms and across right and left side targets [Estimate = 3.79 ms; *F*(1,17) = 5.48; *p* = .032]. Although it is possible to obtain point estimates for each of the six inter-stimulus intervals [350 ms ISI = 11.24 ms; 400 ms ISI = 2.81 ms; 500 ms ISI = -1.44 ms; 600 ms ISI = 6.17 ms; 700 ms ISI = 6.05 ms; 800 ms ISI = -2.17 ms] (collapsed across left and right target locations), the reporting is such that the corresponding variances or test statistics for these estimates cannot be obtained.
+
+Several other failed replications have also been reported. @Zanolie:2014jr report two experiments that failed to find a statistically significant effect when collapsed across four ISIs between 250 and 750 ms and across left and right side targets [Experiment 1: No estimates reported; *F*(1,19) = 0.03, *p* = .863; Experiment 2: No estimates reported; *F*(1,23) = 0.13, *p* = .772]. @Ranzini2009 also failed to find a statistically significant effect when collapsed across three ISIs between 300 and 500 ms and across left and right side targets [Estimate = 3 ms; *F*(1,14) = 4.1, *p* = .06]. @Salillas2008 failed to find a statically signifiant effect at a 400 ms ISI when collapsed across left and right side targets [Estimate = 2 ms; *F*(1,11) = 1.3, *p* = .28]. More recently,   @vanDijck2014 failed to find an effect collapsed across four ISIs between 250 and 1000 ms and left and right side targets [Experiment 1: No estimates reported] and three ISIs between 100   and 700 ms [Experiment 2: No estimates reported; *F*(1,28) = 2.94, *p* = .097]. While @Fattorini2015 failed to find an effect collapsed across two ISI of 500 and 750 ms and across left and right side targets [Experiment 1: No estimates reported; *F*(1,59) = 1.69, *p* = .20] and four ISIs between 250 and 1000 ms [Experiment 2: No estimates reported; *F*(1,31) = 1.5, *p* = .22]. The final two studies by @vanDijck2014 and @Fattorini2015 are particularly notable for their large sample size.
+
+It should be noted that alternative accounts of the effect reported by @Fischer:2003ju have been suggested. These alternative accounts include, for example, accounts based on working memory [@vanDijck2014]. Similarly, manipulations that make explicit associations between number and space have also been able to produce att-SNARC-like effect [e.g., @Fattorini2015, Experiment 3]. However, because of these modifications, the findings of these studies have different theoretical implications to the att-SNARC and, therefore, they will not be discussed here. Instead, the focus of the present work will be on the att-SNARC as originally proposed.
+
+In sum, prior studies have demonstrated---at best---only qualified and partial success at replicating @Fischer:2003ju. That said, one might argue that failure to replicate @Fischer:2003ju, reflects more the definition of replication employed---namely one based on statistical significance---than any true failure to replicate the scientific hypothesis as opposed to the statistical hypothesis examined by @Fischer:2003ju. As we discuss in greater depth below, we are sympathetic to this view and prefer alternative operationalisations of replication.
+
+One component of such a better approach to assessing replication might involve synthesising the evidence across all published studies of the effect via meta-analysis in order to estimate, for example, an overall average effect size, the heterogeneity in effect sizes across studies, and the effects of potential moderators at the study-level or otherwise. However, this is complicated because (i) the statistical significance of a study's results typically impacts whether or not the study is published therefore resulting a set of published studies that is not representative and (ii) meta-analytic results are biased when the set of studies analysed is not representative [@McSBocHan16; @ioannidis:eff].
+
+Given this, the Registered Replication Report (RRR) format that we pursue here provides an ideal means of assessing the att-SNARC effect because results from all participating labs are included in the meta-analysis regardless of the results. Further, pre-registration of the primary hypotheses and statistical analyses further mitigates many potential biases.
+
+An additional benefit of an RRR is that it allows for the investigation of potential moderator variables not previously considered thereby shedding light on mechanism and perhaps also the current mixed record of replication success. Consequently, in addition to replicating the experimental protocol of @Fischer:2003ju, we investigate several variables that could potentially moderate the att-SNARC effect including finger counting habits, reading/writing direction, handedness, mathematics ability, and mathematics anxiety (see Fischer [@Fischer:2006er; @Fischer:2008bv], @Fischer:2014kz, @Georges:2016gn, and @Shaki:2009ch for details and conjectures).
+
+# Methods
+
+## Design
+
+## Sample size
+
+
+Each participating lab was required to provide a target sample size and stopping rule on a lab-specific OSF page (<https://osf.io/7zyxj/>), with labs agreeing to a minimum target sample size of sixty participants. We chose sixty as the minimum because it provides more than adequate power (`r round(pwr::pwr.t.test(n = 60, d = .4, type = "one", alternative = "greater")$power,2)` using a one-tailed test at $\alpha$ = 0.05) assuming an effect size on the standardised Cohen's *d* scale of 0.4, about the midpoint of previously published estimates. This corresponds to a raw effect size of 6 ms assuming a between-participant standard deviation of 15 ms, again about the midpoint of previously published estimates.
+
+
+Due to time constraints, not all labs were able to reach the minimum target of sixty (see Table \@ref(tab:Exclusions) for sample sizes achieved by each lab). However, again assuming an effect size of 0.4, we would expect to see a statistically significant effect in 93% of the labs (i.e., about sixteen) given the sample sizes actually achieved. Given this, if 0.4 is a reasonable estimate of the effect size and there are no substantial moderators of the effect, we would expect statistically significant effects not only at the meta-analytic level but also at the level of the individual lab.
+
+## Materials
+
+The participating labs all had: (i) a testing station, such as a room or a cubicle, where participants could undertake the experiment without distraction; (ii) a computer for presenting stimuli and recording responses; (iii) a chin rest or similar device to ensure that the participant remained a set distance from the computer monitor; and (iv) a tape measure for use in the screen calibration process. `r LabsWithEye %>% english::Words()` labs also optionally made use of an eye-tracker to record participants' eye movements during the replication task; see the lab-specific OSF pages for details.
+
+Additionally, an instruction booklet detailing how to perform the setup and calibration procedure and the finger counting assessment was provided. The materials were initially written in English. The experiment was also conducted in German, Dutch, Czech, Spanish, Italian, and Chinese, reflecting the predominant language in the locale of the individual labs; for these labs, the English language instructions were translated into the new language and then independently back-translated into English to ensure accuracy.
+
+All materials including translations are available on OSF (see <https://osf.io/7zyxj/>). To perform analyses, we used R [Version 3.5.1; @R-base] and the R packages *bindrcpp* [Version 0.2.2; @R-bindrcpp], *checkmate* [Version 1.8.5; @R-checkmate], *dplyr* [Version 0.7.6; @R-dplyr], *forcats* [Version 0.3.0; @R-forcats], *forestplot* [Version 1.7.2; @R-forestplot], *ggplot2* [Version 3.0.0; @R-ggplot2], *glue* [Version 1.3.0; @R-glue], *kableExtra* [Version 0.9.0; @R-kableExtra], *knitr* [Version 1.20; @R-knitr], *lme4* [Version 1.1.18.1; @R-lme4], *magick* [Version 1.9; @R-magick], *magrittr* [Version 1.5; @R-magrittr], *Matrix* [Version 1.2.14; @R-Matrix], *nlme* [Version 3.1.137; @R-nlme], *papaja* [Version 0.1.0.9842; @R-papaja], *purrr* [Version 0.2.5; @R-purrr], *pwr* [Version 1.2.2; @R-pwr], *R.matlab* [Version 3.6.2; @R-R.matlab], *readr* [Version 1.1.1; @R-readr], *reticulate* [Version 1.10; @R-reticulate], *stringr* [Version 1.3.1; @R-stringr], *tibble* [Version 1.4.2; @R-tibble], *tidyr* [Version 0.8.1; @R-tidyr], and *tidyverse* [Version 1.2.1; @R-tidyverse].
+
+## Procedure
+
+We employed an experimental paradigm based on Experiment 2 of @Fischer:2003ju. We chose Experiment 2 over Experiment 1 because it had fewer ISI conditions and because the results were statistically significant in a greater proportion of conditions. Before starting data collection, each lab performed a monitor calibration procedure using a supplied calibration script which involved measuring the viewing distance and the size of standard stimuli presented on the screen; see OSF for details. After participants provided informed consent, they were seated in front of a computer monitor with their heads placed into a chin rest that was located a fixed distance from the monitor (set during the calibration procedure) and then data collection commenced.
+
+The standard trial structure, which is identical to that of @Fischer:2003ju and which does not contain timing modifications for the eye-tracker (see below for details), is shown in Figure \@ref(fig:Trial). The initial display of each trial contained a centrally presented white fixation point on a black background (0.2° diameter), and two white boxes (1° × 1°) presented on either side of the fixation point. The centres of the boxes were located 5° from the centre of the fixation point. This initial display was shown for 500 ms. Following the initial display, a digit (1, 2, 8, or 9; 0.75° height) was presented at a fixed duration of 300 ms. After the digit was removed, the fixation point reappeared for a variable duration (250 ms, 500 ms, 750 ms, or 1000 ms). This was followed by a circular white target (0.7° diameter) appearing in either the left- or right-side box on target trials or no target appearing on catch trials.
+
+Target trials ended after a response was made or 1000 ms after target onset, whichever came first. Catch trials ended 1000 ms after the digit was removed. Trials automatically advanced and were separated by an inter-trial interval of 1000 ms.
+
+Participants responded by pressing the spacebar with the preferred hand. Participants who responded before the target appeared or who responded on a catch trial were presented with the warning "Too quick! Please wait until the target appears in a box before pressing SPACE" [English text] and the trial ended. Participants who failed to respond on a target trial were presented with the warning "Too slow! Please press SPACE as soon as the target appears". Participants who erred on more than 5% of trials were excluded from analyses.
+
+Participants performed a total of 800 trials (640 target trials and 160 catch trials), split into five blocks of 160 trials each with 128 target trials and 32 catch trials per block; each block contained an equal number of trials for each ISI, digit, and target location, and these were presented in a random order.
+
+(ref:Trial) Outline of the trial structure for target trials and catch trials.
+
+```{r Trial, echo=FALSE, fig.cap="(ref:Trial)", out.width="\\textwidth"}
+knitr::include_graphics("trialstructure")
+```
+
+## Eye-tracking protocol
+
+Code implementing an eye-tracking protocol using an EyeLink 1000 eye-tracker was provided to all labs (and is available at <https://github.com/ljcolling/FischerRRR-eyetracking>). For labs using an eye-tracker other than an EyeLink 1000, deviations from the standard protocol are listed on the lab-specific OSF page. The standard nine-point grid was used for calibration and validation at the start of each block or when required during a block. The start of trials was triggered after the detection of 500 ms of stable fixation within a 2° box centred on the fixation point. If the system could not detect a stable fixation within a 2000 ms time window, the calibration process was repeated. After the digit was presented, and before the target appeared, the gaze position was monitored and any deviations outside a 1° box centred on the fixation point were recorded. Any deviations towards the lateral boxes that exceeded 2° resulted in the trial being marked as contaminated. These trials were excluded from primary analyses; however, they were analysed separately to attempt to determine any possible effect of eye movements on the results.
+
+## Finger counting
+
+The finger counting assessment was derived from the task developed by @Lucidi:2014gn. Participants were asked to read aloud four sentences while counting the number of syllables in each. As reading aloud prevents prevents participants from verbalising counting, most participants would need to resort to finger counting while sounding out the syllables. For each sentence, the experimenter recorded the first finger and first hand the participant used. While most participants used their fingers for the task, some participants did not use their fingers and instead adopted a different strategy. Participant who failed to engage in finger counting after two sentences were prompted to do so. Details of the prompting were recorded in lab logs. See OSF for details.
+
+The results of the finger counting task were used to place participants into one of five groups: left-starters, right-starters, left-prefer, right-prefer, and no group. The finger counting group was determined not only by participants' hand preferences but also by how consistently they engaged in finger counting. The left- (right-)starter group was defined as those who counted using a hand on all four occasions and used the left (right) hand on at least three of them. The left (right)-prefer group was defined as those who counted using a hand on two or three occasions and used the left (right) hand on at least two of them. The no group group was defined as all other participants (for example, those who did not count on their fingers, those who only counted on their fingers once, and those who counted an equal number of times with each hand).
+
+## Reading/writing direction
+
+Reading and writing direction was determined with a simple three option questionnaire asking if participants had experience with languages that are written exclusively from left to right (e.g., English and German), not exclusively left to right (e.g., Hebrew), or both types (see <https://osf.io/he5za/> for details). This was used to cluster participants into two groups: exclusively left-to-right readers/writers and not exclusively left-to-right readers/writers.
+
+## Handedness
+
+To assess handedness, we used the 10-item questionnaire from @Nicholls:2013ha. In labs conducting the experiment in a language other than English, the questionnaire was translated and some questions were replaced with more culturally appropriate versions when required (see <https://osf.io/he5za/> for details).
+
+## Mathematics assessment
+
+To assess mathematics fluency, we used the short mathematics assessment employed by @Tibber:2013ho. This test is adapted from the Mathematics Calculation Subtest (WJ-RCalc) of the Woodcock-Johnson III Tests of Cognitive Abilities [@Woodcock:1989ww]. It contains twenty-five multiple choice mathematics questions requiring addition, subtraction, multiplication, and division. Participants had thirty seconds to select the response on each trial, with the timing controlled by the computer software. A countdown timer was stationed in the top left of the screen to inform participants of the time remaining. The twenty-five questions were split into five levels of five questions. Two errors on a single level or errors on consecutive levels terminated the test. The final score was the total number of correct answers.
+
+## Mathematics anxiety
+
+Mathematics anxiety was assessed using the Abbreviated Math Anxiety Scale [AMAS; @Hopko:2003et]. The AMAS contains nine questions that ask participants to rate (on a one to five scale) how anxious they would feel during particular events including thinking of an upcoming mathematics test, sitting a mathematics examination, and listening to a mathematics lecture. In labs conducting the experiment in a language other than English, the AMAS was translated (see <https://osf.io/dhnf8/> for details). The final score was the sum of the individual ratings, with scores ranging from nine (low anxiety) to forty-five (high anxiety).
+
+## Exit questionnaire
+
+An exit questionnaire that asked participants to describe the purpose of the experiment was used to determine whether participants could guess the purpose of the experiment. Participants who correctly guessed the purpose of the experiment, as judged by the experimenter, were excluded from primary analyses; however, they were analysed separately to determine whether this moderated the effect.
+
+## Exclusion criteria
+
+Participants whose reaction time data contained more than 5% catch trial errors, who correctly guessed the purpose of the experiment or who who did not undertake all additional assessments were excluded from the analysis as per our pre-registration plan (see <https://osf.io/6a2ny/>).
+
+
+## Analysis
+
+The dependent variables of interest were the congruency effect at each of the four ISI conditions (i.e., 250 ms, 500 ms, 750 ms, and 1000 ms). This is defined as the average difference in response time between congruent and incongruent targets, with congruent targets being defined as left targets preceded by low digits and right targets preceded by high digits and incongruent targets being defined as left targets preceded by high digits and right targets preceded by low digits. A positive value for the congruency effect indicates that participants were faster at responding to congruent targets relative to incongruent targets, and a negative value indicates the reverse.
+
+We analysed our data via multilevel multivariate meta-analytic models [@McSBoc18]. Such models have at least two advantages over the standard random effects meta-analytic model. First, they better account for the dependence between our multiple dependent variables (i.e., the congruency effect at each of the four ISI conditions). Second, rather than assuming a simple two-level structure, with participants nested within labs, they can account for more complex nesting structures such as participants nested within with moderator groups (e.g., left-starters, right-starters, etc.) and moderator groups nested within within labs. In short, the standard approach necessitates treating several variance components as zero, thereby making unwarranted independence assumptions.
+
+For each analysis, we consider several simplifications to the equal allocation multilevel multivariate compound symmetry specification detailed in @McSBoc18; we also consider an equal variance version of the single correlation equal allocation multilevel multivariate compound symmetry specification that, using the notation of that paper, sets the $\sigma_{d,d}$ equal for all dependent variables $d$ (i.e., the congruency effect at each of the four ISI conditions). We chose among the six specifications via the Akaike Information Criterion [AIC; @Aki74].
+
+In analysing the effect of moderators, it would be ideal to consider them jointly within a single model. However, this would require a sufficient number of participants in each moderator group. Specifically, a minimum number of five participants is necessary to compute a 4 $\times$ 4 covariance matrix of full rank (i.e., corresponding to the congruency effect at each of the four ISI conditions) as required. Therefore, the decision on whether to consider all the moderators jointly within a single model or separately in different models was left until the sample sizes were known.
+
+Unfortunately, data sparsity prevented us from considering all the moderators jointly in a single model: when considered jointly, many combinations of moderators (e.g., finger counting, reading/writing direction, handedness) result in either zero or very few participants per moderator group; indeed, this is also the case for some moderators (i.e., reading/writing direction and handedness) when considered alone as can be seen in Supplementary Tables \@ref(tab:read) and \@ref(tab:hand) respectively. Consequently, we consider each moderator separately analysing only moderator groups with a minimum of five participants. All analyses were pre-registered (see <https://osf.io/6a2ny/>) and carried out in accordance with this plan.
+
+For models featuring no moderators (Model 1) or discrete moderators (finger counting, reading/writing direction, and handedness; Models 2--4 respectively), we analysed the data at the moderator group level as per @McSBoc18. For the model featuring continuous moderators (mathematics fluency and mathematics anxiety; Model 5), we analysed the data at the participant level using an analogous specification (see below for details). Our motivation for considering these moderators and predictions follow as applicable.
+
+### Model 1: No Moderators
+
+@Fischer:2003ju suggests a positive congruency effect. The purpose of Model 1 was to assess this by replicating the analysis performed by @Fischer:2003ju; consequently, it did not account for any moderators.
+
+### Model 2: Finger counting
+
+Recent work suggests that spatial-numerical compatibility effects in general [@Fischer:2008bv]---including attentional cueing effects in response to numbers [@Fischer:2014kz]---might be moderated by finger counting behaviour, specifically being stronger among those who start finger counting on the left hand and weaker or possibly even reversed among those who start finger counting on the right hand. The purpose of Model 2 was to assess this and consequently it took account of the finger counting moderator.
+
+This model used only data from participants who consistently engaged in finger counting and consistently started on the same hand, that is, participants categorised as left-starters or right-starters. We restricted the analysis to these two groups principally because, if the finger counting moderator is to have an effect, then we would expect it to be most prominent in those whose finger counting is clear and unambiguous.
+
+
+### Model 3: Reading/writing direction
+
+Recent work suggests that the congruency effect might be weaker or possibly even reversed among those who have experience with languages that are not read/written exclusively from left to right [@Fischer:2008bv; @Shaki:2009ch]. The purpose of Model 3 was to assess this and consequently it took account of the reading/writing direction moderator. Specifically, participants were placed into two groups based on the reading/writing questionnaire: those who read/wrote exclusively left to right and those who did not.
+
+### Model 4: Handedness
+
+The purpose of Model 4 was to assess whether handedness moderates the congruency effect and consequently it took account of the handedness moderator. Specifically, participants were classified as left-handed or right-handed according to the handedness questionnaire.
+
+### Model 5: Mathematics fluency and mathematics anxiety
+
+Recent work suggests that numerical abilities [@Fischer:2006er] and mathematics anxiety [@Georges:2016gn] may influence the strength of spatial-numerical associations. The purpose of Model 5 was to assess this and consequently it jointly took account of both mathematics fluency and mathematics anxiety as measured by the maths test and AMAS respectively.
+
+Specifically, we fit a multilevel model to the participant-level congruency effects at each of the four ISI conditions; fixed effects were included for the full set of ISI Condition $\times$ Maths test $\times$ AMAS interactions and random effects were included for (i) each participant, (ii) each Lab $\times$ ISI Condition (with equal variance and zero correlation), and (iii) independently each Lab $\times$ Maths test, Lab $\times$ AMAS, and Lab $\times$ Maths test $\times$ AMAS.
+
+### Secondary analyses
+
+The purpose of our secondary analyses was to assess whether insight into the purpose of the experiment or eye movements moderate the congruency effect. Specifically, Model 1 was refit separately to data from participants who correctly guessed the purpose of the experiment and to data from eye movement contaminated trials from participants with contaminated trials at each ISI $\times$ congruency condition.
+
+# Results
+
+## Replication operationalisation
+
+The common definition of replication employed in practice is that a subsequent study is considered to have successfully replicated a prior study if either both failed to attain statistical significance or both attained statistical significance and were directionally consistent. This definition has been applied analogously in large-scale replication projects like the present one by comparing the results of a meta-analysis of the replication studies to the original study in terms of statistical significance.
+
+However, the null hypothesis significance testing paradigm upon which this operationalisation of replication is based has been the subject of no small amount of criticism over the decades [see, for example, @Rozenboom; @Meehl1978; @Cohen1994; @Gelman2003; @McShane2016; @McShane2017] and recent calls to abandon it abound [@Amrhein; @mcshane2019; @Wasserstein; @AmrheinGreendlandMcShane]. Further, recent work discussing alternative statistical paradigms specifically in the context of replication [@CollingSzucs] has called for a better understanding of how statistical inference relates to scientific inference. A key point is that any assessment of whether a theory is supported by data depends on whether the magnitude of the observed effect is consistent with the theory [@Gelman:effect]. Consequently, in assessing replication, we distinguish between *statistical hypotheses* and *scientific hypotheses* and focus on that latter. Specifically, in discussing our results, we do so in light of the scientific hypothesis advanced by @Fischer:2003ju.
+
+## Exclusions
+
+In total, `r LabNames %>% length() %>% english::as.english()` labs contributed data from a total of `r Exclusions.Table$Total %>% sum()` participants; `r Exclusions.Table$Total %>% sum() - Exclusions.Table$Analysed %>% sum()` were excluded as per our pre-registered criteria leaving a total of `r Exclusions.Table$Analysed %>% sum()`. See Table \@ref(tab:Exclusions) for details of the number of participants collected by each lab, the number analysed, and the number excluded based on each criterion; the technical error category includes those participants that were excluded for having incomplete data due to, for example, equipment failure, experimenter error, or other technical errors.
+
+```{r Exclusions, results='asis'}
+Exclusions.Table %>% mutate_all(linebreak) %>% kable("latex", escape = F, booktabs = T, caption = "Total number of participants, number analysed, number excluded for reasons of technical error, number excluded for more than 5\\% catch trial errors, and number excluded for guessing the purpose of the experiment for each lab.", digits = 0, linesep = "", col.names = linebreak(c("Lab","Total\nParticipants","Analysed\nParticipants","Technical\nError","Catch Trial\nError","Guessed\nPurpose"), align = 'c'), align = c('l','c','c','c','c','c')) %>% kableExtra::kable_styling(latex_options = c("hold_position"))
+```
+
+
+`r LabsWithEye %>% english::Words()` labs used an eye-tracker for at least some of their participants. See Table \@ref(tab:Eyedetail) for details of the number of participants tested with an eye-tracker, number of participants analysed in our secondary analysis of eye movement contaminated trials, and number of eye movement contaminated trials at each ISI $\times$ congruency condition for each lab.
+
+```{r}
+model1.fe.stats %>% glue::glue_data("{Estimate} ms (90% CI[{sprintf('%.2f',Estimate - (qnorm(.95) * `Std. Err.`))}, {sprintf('%.2f',Estimate + (qnorm(.95) * `Std. Err.`))}])") ->
+  model1.report
+round((model1.fe.stats$`Std. Err.` * sqrt(model1.fe.stats$`$n$`))[2]) -> obs.sd
+
+dd %>% select(variable,value,SubjectID) %>% group_by(variable) %>% summarise(M = mean(value), SD = sd(value)) %>% mutate(variable = case_when(variable == "d250" ~ "250 ms", variable == "d500" ~ "500 ms", variable == "d750" ~ "750 ms", variable == "d1000" ~ "1000 ms")) %>% glue::glue_data("a mean of {sprintf(fmt = '%.2f', M)} ms and a standard deviation of {sprintf(fmt = '%.2f', SD)} ms at the {variable} ISI condition") -> prelimtext
+
+dat %>% select(d250,d500,d500,d750,d1000) %>% as.matrix() %>% cor() -> cor.matrix
+
+(dd %>% pull(value) %>% sign() %>% table(deparse.level = F) )  / ((dd %>% pull(value) %>% sign() %>% table(deparse.level = F) )  %>% sum()) -> con.total
+
+(dd %>% filter(variable == "d250") %>% pull(value) %>% sign() %>% table(deparse.level = F) )  / ((dd %>% filter(variable == "d250") %>% pull(value) %>% sign() %>% table(deparse.level = F) )  %>% sum())  -> con.250
+
+(dd %>% filter(variable == "d500") %>% pull(value) %>% sign() %>% table(deparse.level = F) )  / ((dd %>% filter(variable == "d500") %>% pull(value) %>% sign() %>% table(deparse.level = F) )  %>% sum())  -> con.500
+
+(dd %>% filter(variable == "d750") %>% pull(value) %>% sign() %>% table(deparse.level = F) )  / ((dd %>% filter(variable == "d750") %>% pull(value) %>% sign() %>% table(deparse.level = F) )  %>% sum())  -> con.750
+
+(dd %>% filter(variable == "d1000") %>% pull(value) %>% sign() %>% table(deparse.level = F) )  / ((dd %>% filter(variable == "d1000") %>% pull(value) %>% sign() %>% table(deparse.level = F) )  %>% sum())  -> con.1000
+
+
+paste0.final<-function(x,collapse = ", ", final = ", and "){
+  paste(c(paste(x[1:end(x)[1]-1], collapse = collapse),x[end(x)[1]]), collapse = final)
+}
+
+```
+
+## Preliminary analyses
+
+Across all `r dd %>% pull(SubjectID) %>% unique() %>% length()` participants and four ISI conditions, the congruency effect we observed had a mean of `r dd %>% pull(value) %>% mean() %>% sprintf(fmt = "%.2f")` ms and a standard deviation of `r dd %>% pull(value) %>% sd() %>% sprintf(fmt = "%.2f")` ms. In addition, across all `r dd %>% pull(SubjectID) %>% unique() %>% length()` participants, it had `r prelimtext %>% .[[1]]`, `r prelimtext %>% .[[2]]`, `r prelimtext %>% .[[3]]`, and `r prelimtext %>% .[[4]]`. Further, the correlation between conditions had a mean of `r cor.matrix[upper.tri(cor.matrix, diag = F)] %>% mean() %>% sprintf(fmt = "%.2f")` (and a mean of `r cor.matrix[upper.tri(cor.matrix, diag = F)] %>% abs() %>% mean() %>% sprintf(fmt = "%.2f")` in magnitude) across the six possible pairs of conditions.
+
+In terms of sign, across all 1105 participants and four ISI conditions, the proportion of times the congruency effect we observed was positive was `r con.total[2] %>% unname() %>% sprintf(fmt = "%.2f")`. In addition, across all 1105 participants, this proportion was `r con.250[2] %>% unname() %>% sprintf(fmt = "%.2f")` at the 250 ms ISI condition, `r con.500[2] %>% unname() %>% sprintf(fmt = "%.2f")` at the 500 ms ISI condition, `r con.750[2] %>% unname() %>% sprintf(fmt = "%.2f")` at the 750 ms ISI condition, and `r con.1000[2] %>% unname() %>% sprintf(fmt = "%.2f")` at the 1000 ms ISI condition. Further, the proportion of times the number of positive congruency effects per participant was equal to zero, one, two, three, and four was respectively `r dd %>% select(value, SubjectID, variable) %>% mutate(value = sign(value)) %>% group_by(SubjectID) %>% summarise(value = sum(value == 1)) %>% group_by(value) %>% summarise(n = n()) %>% mutate(n = n / sum(n)) %>% mutate(n = sprintf(fmt = "%.2f",n)) %>% pull(n) %>% paste0.final()`. All of these results are compatible with the relevant binomial distribution with probability parameter one-half (i.e., the distribution of the number of heads on tosses of a fair coin).
+
+
+
+## Primary analyses
+
+### Model 1: No moderators
+
+The purpose of Model 1 was to replicate the analysis performed by @Fischer:2003ju, and thus it did not account for any moderators. Model 1 was fit to data from 1105 participants from seventeen labs. We summarise the results from Study 2 of @Fischer:2003ju along with results from each lab and from Model 1 in Figure \@ref(fig:model1).
+
+The effects we observed both within and across labs were minuscule and incompatible with those observed in @Fischer:2003ju. Specifically, @Fischer:2003ju estimated an effect of `r Fischer.estimates %>% paste0.final()`. In contrast, Model 1 estimates an effect of `r model1.fe.stats %>% pull(Estimate) %>% sprintf(fmt = "%.2f ms") %>% paste0.final()` at each of the four respective ISI conditions.
+
+Given this in tandem with the results of our preliminary analyses, we conclude that we have *failed* to replicate the effect reported by @Fischer:2003ju.
+
+Another major finding was that the effects we observed were highly consistent not only across ISI conditions but also---perhaps more surprisingly---across labs. Recent work has found that, contrary to both substantive and statistical expectations, large-scale replications projects like the present one tend to show a nontrivial degree of heterogeneity across labs [@mcshane2019b]. In contrast, we estimate heterogeneity across labs at `r estimates1$EAMMCS[[m1.idx]]$vc$variance %>% sqrt() %>% sprintf(fmt = "%.2f")` ms and thus practically unimportant for most purposes. This suggests that, at least across the labs involved in the present project, there are unlikely to be lab-level moderators driving our results. See Table \@ref(tab:Exclusions) and Supplementary Table \@ref(tab:mod1) for additional details.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.7\textwidth}
+        \includegraphics[]{d250}
+        \caption{250 ms ISI Condition}
+    \end{subfigure}
+    \begin{subfigure}{.7\textwidth}
+        \includegraphics[]{d500}
+        \caption{500 ms ISI Condition}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \ContinuedFloat % continue from previous page
+    \begin{subfigure}{.7\textwidth}
+        \includegraphics[]{d750}
+        \caption{750 ms ISI Condition}
+    \end{subfigure}
+    \begin{subfigure}{.7\textwidth}
+        \includegraphics[]{d1000}
+        \caption{1000 ms ISI Condition}
+    \end{subfigure}
+    \caption{Summary of Results from Study 2 of Fischer et al. (2003), Each Lab, and Model 1. The effects we observed both within and across labs were miniscule---around 1 ms---and incompatible with those of around 20 ms observed in Fischer et al. (2003). They were also highly consistent not only across ISI conditions but also---perhaps more surprisingly---across labs with the latter suggesting there are unlikely to be lab-level moderators driving our results Labs using an eye-tracker are marked with an asterisk.}\label{fig:model1}
+\end{figure}
+
+### Model 2: Finger counting
+
+```{r metasum, echo=FALSE, fig.cap="(ref:metasum)", out.width="\\textwidth"}
+knitr::include_graphics("meta_summaryv4")
+```
+
+Model 2 was fit to data from `r LS.n` left-starter participants from seventeen labs and `r RS.n` right-starter participants from `r LabNames %>% length() %>% english::words()` labs. We summarize the results from Model 2 along with the results from Study 2 of @Fischer:2003ju as well as Model 1, Model 3, and Model 4 in Figure \@ref(fig:metasum). While the evidence presented above suggests a stronger congruency effect among left-starters and a weaker or possibly even reversed effect among right-starters, as can be seen in Figure \@ref(fig:metasum), finger counting had no substantial impact on the results: we observed minuscule effects for each ISI condition and finger counting group and minuscule differences between the two finger counting groups at each ISI condition. See Supplementary Table \@ref(tab:count) and Supplementary Table \@ref(tab:mod2) for additional details.
+
+(ref:metasum) Summary of Results from Study 2 of Fischer et al. (2003) and Models 1--4. The effects we observed were minuscule and incompatible with those observed in Fischer et al. (2003). They were also highly consistent across ISI conditions.
+
+### Model 3: Reading/writing direction
+
+
+```{r}
+read.csv(file.path(here::here(),"data/meta_data/model3.meta.csv")) %>% select(ConditionDescription,LabID,Freq) %>% distinct() %>% group_by(ConditionDescription) %>% summarise(nlab = n(), n = sum(Freq)) %>% rename(Con = ConditionDescription) -> Model3.counts
+
+```
+
+Model 3 was fit to data from `r Model3.counts %>% filter(Con == "LTR") %>% pull(n)` exclusively left-to-right readers/writers from `r Model3.counts %>% filter(Con == "LTR") %>% pull(nlab) %>% english::words()` labs and `r Model3.counts %>% filter(Con == "NLR") %>% pull(n)` not exclusively left-to-right readers/writers from `r Model3.counts %>% filter(Con == "NLR") %>% pull(nlab) %>% english::words()` labs. While the evidence presented above suggests a weaker or possibly even reversed congruency effect among those who have experience with languages that are not read/written exclusively from left to right, as can be seen in Figure \@ref(fig:metasum), reading/writing direction had no substantial impact on the results: we observed minuscule effects for each ISI condition and reading/writing direction group and minuscule differences between the two reading/writing direction groups at each ISI condition. See Supplementary Table \@ref(tab:read) and Supplementary Table \@ref(tab:mod3) for additional details.
+
+### Model 4: Handedness
+
+```{r}
+read.csv(file.path(here::here(),"data/meta_data/model4.meta.csv")) %>% select(ConditionDescription,LabID,Freq) %>% distinct() %>% group_by(ConditionDescription) %>% summarise(nlab = n(), n = sum(Freq)) %>% rename(Con = ConditionDescription) -> Model4.counts
+```
+
+Model 4 was fit to data from `r Model4.counts %>% filter(Con == "LH") %>% pull(n)` left-handed participants from `r Model4.counts %>% filter(Con == "LH") %>% pull(nlab) %>% english::words()` labs and `r Model4.counts %>% filter(Con == "RH") %>% pull(n)` right-handed participants `r Model4.counts %>% filter(Con == "RH") %>% pull(nlab) %>% english::words()` labs. As can be seen in Figure \@ref(fig:metasum), handedness had no substantial impact on the results: we observed minuscule effects for each ISI condition and handedness group and minuscule differences between the two handedness groups at each ISI condition. See Supplementary Table \@ref(tab:hand) and Supplementary Table \@ref(tab:mod4) for additional details.
+
+
+### Model 5: Mathematics fluency and mathematics anxiety
+
+```{r}
+load(file.path(here::here(),"data/processed_rdata/results5.Rdata"))
+```
+
+
+Model 5 was fit to data from 1105 participants from seventeen labs. While the evidence presented above suggests mathematics fluency and mathematics anxiety might moderate congruency effects, we observed no substantial moderating effects. See Table \@ref(tab:Exclusions) and Supplementary Table \@ref(tab:mod5) for additional details.
+
+
+```{r}
+read_csv(here::here("data/processed_data/EyeTrackerDetail.csv")) -> EyeTrackerDetail
+EyeTrackerDetail %>% gather(ISI,N,-Lab,-Subjects,-Analysed,-`Trial Type`) %>% separate(N,c("Analysed.Trials","Total.Trials"),extra = "drop") -> EyeTrackerDetail.seperate
+EyeTracker.Trials = EyeTrackerDetail.seperate$Analysed.Trials %>% as.numeric() %>% sum()
+EyeTracker.Subj = EyeTrackerDetail.seperate %>% group_by(Lab) %>% summarise(Analysed = unique(Analysed)) %>% pull(Analysed) %>% sum()
+EyeTracker.Labs = EyeTrackerDetail.seperate %>% pull(Lab) %>% unique() %>% length()
+
+read_csv(here::here("data/meta_data/model1b.meta.csv")) -> GuessTable
+
+GuessTable %>% group_by(LabID) %>% summarise(Freq = unique(Freq)) %>% pull(Freq) %>% sum() -> n.guess
+GuessTable %>% pull(LabID) %>% unique() %>% length() -> n.guess.labs
+
+
+
+```
+
+## Secondary analyses
+
+Model 1 was refit separately to data from `r n.guess` participants from `r n.guess.labs %>% english::words()` labs who correctly guessed the purpose of the experiment and to data from `r EyeTracker.Trials` eye movement contaminated trials from `r EyeTracker.Subj` participants from `r EyeTracker.Labs %>% english::words()` labs with contaminated trials at each ISI $\times$ congruency condition. These analyses yielded nothing of substantive interest. See Supplementary Materials for details.
+
+# Discussion
+
+The att-SNARC effect [@Fischer:2003ju] has been used to argue for an early, response-independent, and automatic origin of the SNARC effect. If the SNARC effect is produced by early mechanisms, this would provide good evidence for "embodied" number representations and allow for strong claims about the link between number and space (e.g., a mental number line).
+
+We attempted to replicate Study 2 of @Fischer:2003ju by collecting data from 1105 participants across seventeen labs. Across all 1105 participants and four ISI conditions, the proportion of times the congruency effect we observed was positive was 0.50. Further, the effects we observed both within and across labs were miniscule and incompatible with those observed in @Fischer:2003ju. Given this, we conclude that we have *failed* to replicate the effect reported by @Fischer:2003ju.
+
+The effects we observed were also highly consistent not only across ISI conditions but also---perhaps more surprisingly---across labs. The latter suggests there are unlikely to be lab-level moderators driving our results. In addition, our analysis of several participant-level moderators (finger counting preferences, reading/writing direction experience, handedness, and mathematics fluency and mathematics anxiety) revealed no substantial moderating effects.
+
+We conclude with two important points. First, one might, on the basis of the common definition of replication employed in practice, object that we have successfully replicated @Fischer:2003ju, at least at the 500 ms ISI condition. In response, we argue this illustrates one major flaw of that definition: our result at the 500 ms ISI condition is manifestly incompatible with the analogous result of @Fischer:2003ju. In addition, we view a difference of about 1 ms, even if "real", as too small for any neurally or psychologically plausible mechanism---particularly one constrained to operate only within a narrow time window of 500 ms after the digit display stimulus. That said, we recognize that some such mechanism could be subject to an arbitrarily large attenuation factor in any particular experimental paradigm such as that of @Fischer:2003ju, and that potential new paradigms could reveal an effect. Nonetheless, even were such paradigms forthcoming, we maintain based on these results that @Fischer:2003ju provides no evidence of such a mechanism.
+
+Second, we point to several limitations of the present study. First and foremost, while our results demonstrate that the att-SNARC effect cannot be used as evidence to support the strong claims about the link between number and space discussed above, this does not refute such accounts. Specifically, while one might, on the basis of our results, prefer accounts of the SNARC effect that do not imply a mental number line, the entirety of the evidence for and against different claims about the SNARC effect must be viewed as a whole. The att-SNARC effect provides only one such piece of evidence---albeit a particularly strong and valuable one.
+
+The second set of limitations relates to our sample of subjects. Our sample was primarily collected from North America, Europe, and Australasia. Consequently, participants who read/wrote exclusively left to right are overrepresented in our data. As reading/writing direction has been shown to strongly moderate spatial-numerical associations, it would have been preferable to have more participants in this subgroup. In addition, data sparsity prevented us from considering all the moderators jointly in a single model and thus we were required to consider each moderator separately.
+
+Finally, the finger counting assessment we employed did not contain an explicit instruction to engage in finger counting. As a result, some participants inconsistently employed finger counting, resulting in them being excluded from the Model 2 analysis.
+
+# Acknowledgements
+
+LJC and DS are funded by James S. McDonnell Foundation 21st Century Science Initiative in Understanding Human Cognition (grant number 220020370; received by DS). We acknowledge the help of the original authors, in particular Martin Fischer and Jay Pratt. We also note this project would not have been possible without editor Alex Holcombe's patient and thoughtful help at every step of the process.
+
+# Author contributions
+
+LJC and DS proposed the study. LJC programmed the experiments. LJC and BBM conducted the analyses. LJC wrote an initial manuscript. LJC and BBM wrote revised and final manuscripts. All authors critically reviewed the final manuscript.
+
+```{r}
+papaja::render_appendix("appendix.Rmd")
+```
+
+# References

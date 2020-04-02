@@ -1,0 +1,61 @@
+Subject Code,Main Data,Secondary Data,Finger Counting Data,Exclude Data,Reason,Other comments,Node
+Treccani_S01_130417,treccani_s01_130417_data.mat,treccani_s01_130417_secondary_data.mat,treccani_s01_130417_fingercounting.mat,FALSE,NA,"between the 1st and 2nd block, the subject asked ""how many blocks are there?"".  I answered 5.  During the calibration (2nd block) the subject asked ""Is it still the second block?""",ecdmw
+Treccani_S02_130417,treccani_s02_130417_data.mat,treccani_s02_130417_secondary_data.mat,treccani_s02_130417_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S03_140417,treccani_s03_140317_data.mat,treccani_s03_140417_secondary_data.mat,treccani_s03_140417_fingercounting.mat,FALSE,NA,"between the 3rd and 4th block subject asked  ""there are 5 blocks, right?""",ecdmw
+Treccani_S04_050517,treccani_s04_050517_data.mat,treccani_s04_050517_secondary_data.mat,treccani_s04_050517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S05_100517,treccani_s05_100517_primary_data.mat,treccani_s05_100517_secondary_data.mat,treccani_s05_100517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S06_100517,treccani_s06_100517_primary_data.mat,treccani_s06_100517_secondary_data.mat,treccani_s06_100517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S07_110517,treccani_s07_110517_data.mat,treccani_s07_110517_secondary_data.mat,treccani_s07_110517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S08_150517,treccani_s08_150517_primary_data.mat,treccani_s08_150517_secondary_data.mat,treccani_s08_150517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S09_150517,treccani_s09_150517_primary_data.mat,treccani_s09_150517_secondary_data.mat,treccani_s09_150517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S10_160517,treccani_s10_160517_primary_data.mat,treccani_s10_160517_secondary_data.mat,treccani_s10_160517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S11_160517,treccani_s11_160517_data.mat,treccani_s11_160517_secondary_data.mat,treccani_s11_160517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S12_190517,treccani_s12_190517_data.mat,treccani_s12_190517_secondary_data.mat,treccani_s12_190517_fingercounting.mat,FALSE,NA,"The subject asked ""this is the 4th block, isn't it?""",ecdmw
+Treccani_S13_230517,treccani_s13_230517_data.mat,treccani_s13_230517_secondary_data.mat,treccani_s13_230517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S14_240517,treccani_s14_240517_data.mat,treccani_s14_240517_secondary_data.mat,treccani_s14_240517_fingercounting.mat,FALSE,NA,"at the end of the 1st block subject asked ""There are 5 blocks, aren't there?""",ecdmw
+Treccani_S15_240517,treccani_s15_240517_data.mat,treccani_s15_240517_secondary_data.mat,treccani_s15_240517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S16_250517,treccani_s16_250517_primary_data.mat,treccani_s16_250517_secondary_data.mat,treccani_s16_250517_fingercounting.mat,FALSE,NA,"subject asked ""how many blocks are there?"" I answered ""5""; the subject asked ""how many trials are there for each block?"" I answered ""160""",ecdmw
+Treccani_S17_250517,treccani_s17_250517_data.mat,treccani_s17_250517_secondary_data.mat,treccani_s17_250517_fingercounting.mat,FALSE,NA,"at the end of the 2nd block subject asked ""how many blocks are there left?"" I answered ""3""; subject asked ""what time is it?"" I answered ""17.30""; at the end of the 4th block subject asked ""How many blocks are there left?"" I answered ""1""",ecdmw
+Treccani_S18_260517,treccani_s18_260517_data.mat,treccani_s18_260517_secondary_data.mat,treccani_s18_260517_fingercounting.mat,FALSE,NA,"at the end of the 3rd block, the subject asked ""There are 5 blocks, aren't there?",ecdmw
+Treccani_S19_290517,treccani_s19_290517_primary_data.mat,treccani_s19_290517_secondary_data.mat,treccani_s19_290517_fingercounting.mat,FALSE,NA,"between the 2nd and 3rd block the subject asked ""There are 3 blocks left, am I right?""",ecdmw
+Treccani_S20_290517,treccani_s20_290517_primary_data.mat,treccani_s20_290517_secondary_data.mat,treccani_s20_290517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S21_290517,treccani_s21_290517_primary_data.mat,treccani_s21_290517_secondary_data.mat,treccani_s21_290517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S22_300517,treccani_s22_300517_data.mat,treccani_s22_300517_secondary_data.mat,treccani_s22_300517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S23_300517,treccani_s23_300517_primary_data.mat,treccani_s23_300517_secondary_data.mat,treccani_s23_300517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S24_310517,treccani_s24_310517_data.mat,treccani_s24_310517_secondary_data.mat,treccani_s24_310517_fingercounting.mat,FALSE,NA,"at the end of 3rd block subject asked ""There are 2 blocks left, aren't there""",ecdmw
+Treccani_S25_310517,treccani_s25_310517_data.mat,treccani_s25_310517_secondary_data.mat,treccani_s25_310517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S26_310517,treccani_s26_310517_primary_data.mat,treccani_s26_310517_secondary_data.mat,treccani_s26_310517_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S27_010617,treccani_s27_010617_data.mat,treccani_s27_010617_secondary_data.mat,treccani_s27_010617_fingercounting.mat,FALSE,NA,"at the end of 2nd block subject asked ""There are 5 blocks, aren't there?",ecdmw
+Treccani_S28_050617,treccani_s28_050617_data.mat,treccani_s28_050617_secondary_data.mat,treccani_s28_050617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S29_060617,treccani_s29_060617_data.mat,treccani_s29_060617_secondary_data.mat,treccani_s29_060617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S30_090617,treccani_s30_090617_data.mat,treccani_s30_090617_secondary_data.mat,treccani_s30_090617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S31_090617,treccani_s31_090617_data.mat,treccani_s31_090617_secondary_data.mat,treccani_s31_090617_fingercounting.mat,FALSE,NA,"between the 3rd and the 4th block, subject asked ""This is the 4th block, isn't it?""",ecdmw
+Treccani_S32_120617,treccani_s32_120617_data.mat,treccani_s32_120617_secondary_data.mat,treccani_s32_120617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S33_120617,treccani_s33_120617_data.mat,treccani_s33_120617_secondary_data.mat,treccani_s33_120617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S34_120617,treccani_s34_120617_primary_data.mat,treccani_s34_120617_secondary_data.mat,treccani_s34_120617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S35_130617,treccani_s35_130617_primary_data.mat,treccani_s35_130617_secondary_data.mat,treccani_s35_130617_fingercounting.mat,FALSE,NA,"subject said ""I've finished the 2nd block""",ecdmw
+Treccani_S36_130617,treccani_s36_130617_primary_data.mat,treccani_s36_130617_secondary_data.mat,treccani_s36_130617_fingercounting.mat,FALSE,NA,"subject asked ""what time is it?"" I answered ""It's half past 4""",ecdmw
+Treccani_S37_130617,treccani_s37_130617_primary_data.mat,treccani_s37_130617_secondary_data.mat,treccani_s37_130617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S38_140617,treccani_s38_140617_data.mat,treccani_s38_140617_secondary_data.mat,treccani_s38_140617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S39_140617,treccani_s39_140617_primary_data.mat,treccani_s39_140617_secondary_data.mat,treccani_s39_140617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S40_150617,treccani_s40_150617_primary_data.mat,treccani_s40_150617_secondary_data.mat,treccani_s40_150617_fingercounting.mat,FALSE,NA,"During the experiment, the subject asked ""how many blocks are there?"" I answered ""5""",ecdmw
+Treccani_S41_150617,treccani_s41_150617_data.mat,treccani_s41_150617_secondary_data.mat,treccani_s41_150617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S42_160617,treccani_s42_160617_data.mat,treccani_s42_160617_secondary_data.mat,treccani_s42_160617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S43_160617,treccani_s43_160617_data.mat,treccani_s43_160617_secondary_data.mat,treccani_s43_160617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S44_199617,treccani_s44_190617_primary_data.mat,treccani_s44_199617_secondary_data.mat,treccani_s44_190617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S45_190617,treccani_s45_190617_primary_data.mat,treccani_s45_190617_secondary_data.mat,treccani_s45_190617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S46_200617,treccani_s46_200617_data.mat,treccani_s46_200617_secondary_data.mat,treccani_s46_200617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S47_210617,treccani_s47_210617_primary_data.mat,treccani_s47_210617_secondary_data.mat,treccani_s47_210617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S48_210617,treccani_s48_210617_data.mat,treccani_s48_210617_secondary_data.mat,treccani_s48_210617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S49_220617,treccani_s49_220617_primary_data.mat,treccani_s49_220617_secondary_data.mat,treccani_s49_220617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S50_220617,treccani_s50_220617_data.mat,treccani_s50_220617_secondary_data.mat,treccani_s50_220617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S51_230617,treccani_s51_230617_data.mat,treccani_s51_230617_secondary_data.mat,treccani_s51_230617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S52_270617,treccani_s52_270617_primary_data.mat,treccani_s52_270617_secondary_data.mat,treccani_s52_270617_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S53_060717,treccani_s53_060717_primary_data.mat,treccani_s53_060717_secondary_data.mat,treccani_s53_060717_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S54_060717,treccani_s54_060717_primary_data.mat,treccani_s54_060717_secondary_data.mat,treccani_s54_060717_fingercounting.mat,FALSE,NA,"After the first block, the subject asked:""how many blocks  are there left?"" I answered:""4""",ecdmw
+Treccani_S55_110717,treccani_s55_110717_primary_data.mat,treccani_s55_110717_secondary_data.mat,treccani_s55_110717_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S56_110717,treccani_s56_110717_primary_data.mat,treccani_s56_110717_secondary_data.mat,treccani_s56_110717_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S57_180717,treccani_s57_180717_primary_data.mat,treccani_s57_180717_secondary_data.mat,treccani_s57_180717_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S58_180717,treccani_s58_180717_primary_data.mat,treccani_s58_180717_secondary_data.mat,treccani_s58_180717_fingercounting.mat,FALSE,NA,N/A,ecdmw
+Treccani_S59_190717,treccani_s59_190717_primary_data.mat,treccani_s59_190717_secondary_data.mat,treccani_s59_190717_fingercounting.mat,FALSE,NA,"subject asked:""what time is it?"" I answered:""16:30""",ecdmw
+Treccani_S60_200717,treccani_s60_200717_primary_data.mat,treccani_s60_200717_secondary_data.mat,treccani_s60_200717_fingercounting.mat,FALSE,NA,N/A,ecdmw

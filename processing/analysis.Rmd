@@ -1,0 +1,433 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# PREAMBLE 
+# This section loads the required packages for this notebook. 
+# All the required packages are already installed in the container
+
+library(tidyverse)
+library(magrittr)
+library(glue)
+
+```
+
+# Introduction
+
+This *R Markdown* notebook contains all the code for peforming the meta-analysis and generating the figures and tables. Each of the chunks below prepares the data for one of the models
+
+```{r}
+library(Matrix)
+require(reshape2)
+matrixlist.to.matrix <- function(matrixlist){
+	G <- length(matrixlist)
+	M <- bdiag(matrixlist[[1]])
+	for(g in 2:G){ M <- bdiag(M,matrixlist[[g]]) }
+	M <- as.matrix(M)
+	M
+}
+
+dat <- read_csv("AllFischerData.csv")
+
+```
+
+## Meta-analysis
+
+### Model 1
+
+```{r}
+# Prepare data for Model 1
+tmp1 <- by(dat[,c("d250","d500","d750","d1000")], dat$Lab, colMeans)
+tmp2 <- by(dat[,c("d250","d500","d750","d1000")], dat$Lab, function(x){apply(x,2,var)})
+nn <- table(dat$Lab)
+dat1 <- melt(sapply(tmp1, function(x){x}))
+dat1$v <- melt(sapply(tmp2, function(x){x}))$value / nn[dat1$Var2]
+dat1 <- data.frame(ConditionDescription="Not.Applicable", dat1)
+colnames(dat1)[-1] <- c("DependentVariable", "LabID", "y", "v")
+write.csv(dat1, file="model1.dat1.csv", row.names=FALSE, quote=FALSE)
+
+## Added by Lincoln
+
+write.csv(merge(as.data.frame(nn) %>% rename(LabID = Var1),dat1), 
+          file = "model1.meta.csv", row.names = FALSE, quote = FALSE)
+
+## ----------------
+
+
+
+
+ulab <- unique(dat1$Lab)
+vcv.list <- list(NULL)
+for(i in 1:length(ulab)){
+	sel <- dat$Lab==ulab[i]
+	tmp.vcv <- cov(dat[sel,c("d250","d500","d750","d1000")])
+	vcv.list[[i]] <- tmp.vcv / nn[ulab[i]]
+}
+dat2 <- matrixlist.to.matrix(vcv.list)
+max(abs(dat1$v - diag(dat2)))
+min(eigen(dat2)$values)	 >  1E-04
+write.csv(dat2, file="model1.dat2.csv", row.names=FALSE, quote=FALSE)
+# Analyze via: https://blakemcshane.shinyapps.io/mlmvmeta/
+cat("Go to https://blakemcshane.shinyapps.io/mlmvmeta/\n")
+cat("upload the files:\n")
+cat("model1.dat1.csv\n")
+cat("model1.dat2.csv\n")
+cat("save the output as results1.Rdata\n\n")
+```
+
+### Model 2
+```{r}
+# Prepare data for Model 2
+sel <- dat$FingerGroup %in% c("LS", "RS")
+datFC <- dat[sel,]
+datFC$FingerGroup <- factor(datFC$FingerGroup)
+tmp1 <- by(datFC[,c("d250","d500","d750","d1000")], list(datFC$FingerGroup,datFC$Lab), colMeans)
+tmp2 <- by(datFC[,c("d250","d500","d750","d1000")], list(datFC$FingerGroup,datFC$Lab), function(x){apply(x,2,var)})
+tmp3 <- length(tmp1[[1]]) * length(dimnames(tmp1)[[1]])
+nn <- table(datFC$FingerGroup,datFC$Lab)
+dat1 <- melt(sapply(tmp1, function(x){x}))
+dat1$v <- melt(sapply(tmp2, function(x){x}))$value / rep(as.vector(nn),each=length(tmp1[[1]]))
+dat1 <- data.frame(ConditionDescription=rep(dimnames(tmp1)[[1]],each=length(tmp1[[1]])), 
+					DependentVariable=dat1$Var1,
+					LabID=rep(dimnames(tmp1)[[2]],each=tmp3),
+					ConditionID=dat1$Var2,
+					y=dat1$value,
+					v=dat1$v)
+write.csv(dat1, file="model2.dat1.csv", row.names=FALSE, quote=FALSE)
+
+## Added by Lincoln
+
+write.csv(merge(as.data.frame(nn) %>% rename(ConditionDescription = Var1, LabID = Var2),dat1), 
+          file = "model2.meta.csv", row.names = FALSE, quote = FALSE)
+
+## ----------------
+
+
+umod <- unique(dat1$ConditionDescription)
+ulab <- unique(dat1$Lab)
+vcv.list <- list(NULL)
+cnt <- 1
+for(i in 1:length(ulab)){
+	for(j in 1:length(umod)){
+		sel <- datFC$Lab==ulab[i] & datFC$FingerGroup==umod[j]
+		tmp.vcv <- cov(datFC[sel,c("d250","d500","d750","d1000")])
+		m <- min(eigen(tmp.vcv)$values)
+		
+		
+		vcv.list[[cnt]] <- tmp.vcv / nn[umod[j],ulab[i]]
+		cnt <- cnt + 1	
+	}
+}
+dat2 <- matrixlist.to.matrix(vcv.list)
+max(abs(dat1$v - diag(dat2)))
+min(eigen(dat2)$values)	 >  1E-04
+write.csv(dat2, file="model2.dat2.csv", row.names=FALSE, quote=FALSE)
+
+cat("Go to https://blakemcshane.shinyapps.io/mlmvmeta/\n")
+cat("upload the files:\n")
+cat("model2.dat1.csv\n")
+cat("model2.dat2.csv\n")
+cat("save the output as results2.Rdata\n\n")
+```
+
+### Model 3
+```{r}
+# Prepare data for Model 3
+tmp1 <- by(dat[,c("d250","d500","d750","d1000")], list(dat$ReadingDir,dat$Lab), colMeans)
+tmp2 <- by(dat[,c("d250","d500","d750","d1000")], list(dat$ReadingDir,dat$Lab), function(x){apply(x,2,var)})
+for(i in 1:length(tmp1)){ if(is.null(tmp1[[i]])){ tmp1[[i]] <- rep(NA,4) } }
+for(i in 1:length(tmp2)){ if(is.null(tmp2[[i]])){ tmp2[[i]] <- rep(NA,4) } }
+tmp3 <- length(tmp1[[1]]) * length(dimnames(tmp1)[[1]])
+nn <- table(dat$ReadingDir,dat$Lab)
+dat1 <- melt(sapply(tmp1, function(x){x}))
+dat1$v <- melt(sapply(tmp2, function(x){x}))$value / rep(as.vector(nn),each=length(tmp1[[1]]))
+dat1 <- data.frame(ConditionDescription=rep(dimnames(tmp1)[[1]],each=length(tmp1[[1]])), 
+					DependentVariable=dat1$Var1,
+					LabID=rep(dimnames(tmp1)[[2]],each=tmp3),
+					ConditionID=dat1$Var2,
+					y=dat1$value,
+					v=dat1$v)
+write.csv(dat1, file="model3.dat1.csv", row.names=FALSE, quote=FALSE)
+
+
+umod <- unique(dat1$ConditionDescription)
+ulab <- unique(dat1$Lab)
+vcv.list <- vcv.list2 <- list(NULL)
+cnt <- 1
+for(i in 1:length(ulab)){
+	for(j in 1:length(umod)){
+		sel <- dat$Lab==ulab[i] & dat$ReadingDir==umod[j]
+		tmp.vcv <- cov(dat[sel,c("d250","d500","d750","d1000")])
+		vcv.list[[cnt]] <- tmp.vcv / nn[umod[j],ulab[i]]
+
+		if(sum(sel)>1){ m <- min(eigen(tmp.vcv)$values)	}else{m <- -1}
+		if(m < 1E-04 ){ 
+			cat(umod[j], ", ", ulab[i], ", ", nn[umod[j],ulab[i]], ", ", m, "\n")
+			tmp.vcv <- matrix(NA, nrow(tmp.vcv), ncol(tmp.vcv))
+		}
+		vcv.list2[[cnt]] <- tmp.vcv / nn[umod[j],ulab[i]]
+
+		cnt <- cnt + 1	
+	}
+}
+dat2 <- matrixlist.to.matrix(vcv.list)
+max(abs(dat1$v - diag(dat2)))
+max(abs(dat1$v - diag(dat2)), na.rm=TRUE)
+# min(eigen(dat2)$values)	 >  1E-04
+ write.csv(dat2, file="model3.dat2.csv", row.names=FALSE, quote=FALSE)
+
+
+dat2 <- matrixlist.to.matrix(vcv.list2)
+sel <- !is.na(diag(dat2))
+max(abs(dat1$v[sel] - diag(dat2)[sel]))
+min(eigen(dat2[sel,sel])$values)	 >  1E-04
+write.csv(dat1[sel,], file="model3.dat1.csv", row.names=FALSE, quote=FALSE)
+write.csv(dat2[sel,sel], file="model3.dat2.csv", row.names=FALSE, quote=FALSE)
+
+
+## Added by Lincoln
+
+write.csv(merge(as.data.frame(nn) %>% rename(ConditionDescription = Var1, LabID = Var2),dat1[sel,]), 
+          file = "model3.meta.csv", row.names = FALSE, quote = FALSE)
+
+## ----------------
+cat("Go to https://blakemcshane.shinyapps.io/mlmvmeta/\n")
+cat("upload the files:\n")
+cat("model3.dat1.csv\n")
+cat("model3.dat2.csv\n")
+cat("save the output as results3.Rdata\n\n")
+```
+
+
+### Model 4
+
+```{r}
+# Prepare data for Model 4
+tmp1 <- by(dat[,c("d250","d500","d750","d1000")], list(dat$Hand,dat$Lab), colMeans)
+tmp2 <- by(dat[,c("d250","d500","d750","d1000")], list(dat$Hand,dat$Lab), function(x){apply(x,2,var)})
+tmp3 <- length(tmp1[[1]]) * length(dimnames(tmp1)[[1]])
+nn <- table(dat$Hand,dat$Lab)
+dat1 <- melt(sapply(tmp1, function(x){x}))
+dat1$v <- melt(sapply(tmp2, function(x){x}))$value / rep(as.vector(nn),each=length(tmp1[[1]]))
+dat1 <- data.frame(ConditionDescription=rep(dimnames(tmp1)[[1]],each=length(tmp1[[1]])), 
+					DependentVariable=dat1$Var1,
+					LabID=rep(dimnames(tmp1)[[2]],each=tmp3),
+					ConditionID=dat1$Var2,
+					y=dat1$value,
+					v=dat1$v)
+write.csv(dat1, file="model4.dat1.csv", row.names=FALSE, quote=FALSE)
+
+
+
+
+
+umod <- unique(dat1$ConditionDescription)
+ulab <- unique(dat1$Lab)
+vcv.list <- vcv.list2 <- list(NULL)
+cnt <- 1
+for(i in 1:length(ulab)){
+	for(j in 1:length(umod)){
+		sel <- dat$Lab==ulab[i] & dat$Hand==umod[j]
+		tmp.vcv <- cov(dat[sel,c("d250","d500","d750","d1000")])
+		vcv.list[[cnt]] <- tmp.vcv / nn[umod[j],ulab[i]]
+
+		m <- min(eigen(tmp.vcv)$values)	
+		if(m < 1E-04 ){ 
+			cat(umod[j], ", ", ulab[i], ", ", nn[umod[j],ulab[i]], ", ", m, "\n")
+			tmp.vcv <- matrix(NA, nrow(tmp.vcv), ncol(tmp.vcv))
+		}
+		vcv.list2[[cnt]] <- tmp.vcv / nn[umod[j],ulab[i]]
+
+		cnt <- cnt + 1	
+	}
+}
+dat2 <- matrixlist.to.matrix(vcv.list)
+max(abs(dat1$v - diag(dat2)))
+min(eigen(dat2)$values)	 >  1E-04
+write.csv(dat2, file="model4.dat2.csv", row.names=FALSE, quote=FALSE)
+
+
+dat2 <- matrixlist.to.matrix(vcv.list2)
+sel <- !is.na(diag(dat2))
+max(abs(dat1$v[sel] - diag(dat2)[sel]))
+min(eigen(dat2[sel,sel])$values)	 >  1E-04
+write.csv(dat1[sel,], file="model4.dat1.csv", row.names=FALSE, quote=FALSE)
+write.csv(dat2[sel,sel], file="model4.dat2.csv", row.names=FALSE, quote=FALSE)
+
+cat("Go to https://blakemcshane.shinyapps.io/mlmvmeta/\n")
+cat("upload the files:\n")
+cat("model4.dat1.csv\n")
+cat("model4.dat2.csv\n")
+cat("save the output as results4.Rdata\n\n")
+write.csv(merge(as.data.frame(nn) %>% rename(ConditionDescription = Var1, LabID = Var2),dat1[sel,]), 
+          file = "model4.meta.csv", row.names = FALSE, quote = FALSE)
+
+```
+
+
+### Model 1 B: guess rejected particpants
+
+```{r}
+# Prepare data for Model 1 (guess rejected participants)
+dat <- read.csv("RejectedFischerData.csv", header=TRUE)
+
+tmp1 <- by(dat[,c("d250","d500","d750","d1000")], dat$Lab, colMeans)
+tmp2 <- by(dat[,c("d250","d500","d750","d1000")], dat$Lab, function(x){apply(x,2,var)})
+nn <- table(dat$Lab)
+dat1 <- melt(sapply(tmp1, function(x){x}))
+dat1$v <- melt(sapply(tmp2, function(x){x}))$value / nn[dat1$Var2]
+dat1 <- data.frame(ConditionDescription="Not.Applicable", dat1)
+colnames(dat1)[-1] <- c("DependentVariable", "LabID", "y", "v")
+write.csv(dat1, file="model1b.dat1.csv", row.names=FALSE, quote=FALSE)
+
+## Added by Lincoln
+
+write.csv(merge(as.data.frame(nn) %>% rename(LabID = Var1),dat1), 
+          file = "model1b.meta.csv", row.names = FALSE, quote = FALSE)
+
+## ----------------
+
+
+
+
+ulab <- unique(dat1$Lab)
+vcv.list <- list(NULL)
+for(i in 1:length(ulab)){
+  sel <- dat$Lab==ulab[i]
+  tmp.vcv <- cov(dat[sel,c("d250","d500","d750","d1000")])
+  vcv.list[[i]] <- tmp.vcv / nn[ulab[i]]
+}
+dat2 <- matrixlist.to.matrix(vcv.list)
+max(abs(dat1$v - diag(dat2)))
+min(eigen(dat2)$values)	 >  1E-04
+write.csv(dat2, file="model1b.dat2.csv", row.names=FALSE, quote=FALSE)
+# Analyze via: https://blakemcshane.shinyapps.io/mlmvmeta/
+
+cat("Go to https://blakemcshane.shinyapps.io/mlmvmeta/\n")
+cat("upload the files:\n")
+cat("model1b.dat1.csv\n")
+cat("model1b.dat2.csv\n")
+cat("save the output as results1b.Rdata\n\n")
+```
+
+### Model 1 C: Eye-movement contaminated trials
+```{r}
+# Prepare data for Model 1 (Eye movement contaminated trials)
+dat <- read.csv("ContaminatedFischerData.csv", header=TRUE)
+
+tmp1 <- by(dat[,c("d250","d500","d750","d1000")], dat$Lab, colMeans)
+tmp2 <- by(dat[,c("d250","d500","d750","d1000")], dat$Lab, function(x){apply(x,2,var)})
+nn <- table(dat$Lab)
+dat1 <- melt(sapply(tmp1, function(x){x}))
+dat1$v <- melt(sapply(tmp2, function(x){x}))$value / nn[dat1$Var2]
+dat1 <- data.frame(ConditionDescription="Not.Applicable", dat1)
+colnames(dat1)[-1] <- c("DependentVariable", "LabID", "y", "v")
+write.csv(dat1, file="model1c.dat1.csv", row.names=FALSE, quote=FALSE)
+
+## Added by Lincoln
+
+write.csv(merge(as.data.frame(nn) %>% rename(LabID = Var1),dat1), 
+          file = "model1c.meta.csv", row.names = FALSE, quote = FALSE)
+
+## ----------------
+
+
+
+
+ulab <- unique(dat1$Lab)
+vcv.list <- list(NULL)
+for(i in 1:length(ulab)){
+  sel <- dat$Lab==ulab[i]
+  tmp.vcv <- cov(dat[sel,c("d250","d500","d750","d1000")])
+  vcv.list[[i]] <- tmp.vcv / nn[ulab[i]]
+}
+dat2 <- matrixlist.to.matrix(vcv.list)
+max(abs(dat1$v - diag(dat2)))
+min(eigen(dat2)$values)	 >  1E-04
+write.csv(dat2, file="model1c.dat2.csv", row.names=FALSE, quote=FALSE)
+# Analyze via: https://blakemcshane.shinyapps.io/mlmvmeta/
+
+
+cat("Go to https://blakemcshane.shinyapps.io/mlmvmeta/\n")
+cat("upload the files:\n")
+cat("model1c.dat1.csv\n")
+cat("model1c.dat2.csv\n")
+cat("save the output as results1c.Rdata\n\n")
+```
+
+
+#### Model 5: Influence of AMAS and Maths test
+
+```{r}
+require(lme4)
+dat <- read.csv("AllFischerData.csv", header=TRUE)
+
+# Center and scale MathTest and AMAS to improve convergence:
+dat$MathTest <- scale(dat$MathTest)
+dat$AMAS <- scale(dat$AMAS)
+
+# Prepare data for individual-level models:
+dd <- melt(dat[,c("d250","d500","d750","d1000")])
+dd$SubjectID <- rep(dat$Code, 4)
+dd$LabID <- rep(dat$Lab, 4)
+dd$FingerGroup <- rep(dat$FingerGroup, 4)
+dd$Hand <- rep(dat$Hand, 4)
+dd$ReadingDir <- rep(dat$ReadingDir, 4)
+dd$MathTest <- rep(dat$MathTest, 4)
+dd$AMAS <- rep(dat$AMAS, 4)
+dd$varLabID <- paste(dd$variable, dd$LabID, sep="*")
+dd$varSubjectID <- paste(dd$variable, dd$SubjectID, sep="*")
+
+###################
+# Fit lmer models #
+###################
+
+m2a <- lmer(value~variable*MathTest*AMAS-1-MathTest-AMAS-MathTest*AMAS + 
+              (1|varLabID) + (MathTest*AMAS-1||LabID) + (1|SubjectID), data=dd)
+
+VarCorr(m2a)
+
+Estimates = summary(m2a)$coefficients %>% as.tibble() %>% add_column(Name = row.names(summary(m2a)$coefficients), .before = 1) 
+Estimates$Lower = Estimates$Estimate - (qnorm(.975) * Estimates$`Std. Error`)
+Estimates$Upper = Estimates$Estimate + (qnorm(.975) * Estimates$`Std. Error`)
+
+
+Estimates$Name %>% stringr::str_replace_all(pattern = "variabled250", "250 ms ISI") %>%
+  stringr::str_replace_all(pattern = "variabled500", "500 ms ISI") %>%
+  stringr::str_replace_all(pattern = "variabled750", "750 ms ISI") %>%
+  stringr::str_replace_all(pattern = "variabled1000", "1000 ms ISI") %>%
+  stringr::str_replace_all(pattern = ":MathTest", " $\\\\times$ Maths test") %>%
+  stringr::str_replace_all(pattern = ":AMAS", " $\\\\times$ AMAS") -> Estimates$Name 
+
+
+m2a.n = dd$SubjectID %>% unique() %>% length()
+
+Estimates %>% select(-Lower,-Upper) %>% rename(`$t$` = `t value`, `Std. Err.` = `Std. Error`) %>% 
+  mutate(Estimate = round(Estimate,2), `Std. Err.` = round(`Std. Err.`,2), `$t$` = round(`$t$`,2)) -> Estimates
+Estimates %>% add_column(`$n$` = m2a.n, .before = "Estimate") -> Estimates
+RandomEffect  = summary(m2a)$varcor
+
+model5.fe.stats = Estimates
+save(list = "model5.fe.stats", file = "results5.Rdata")
+
+model5 <- m2a
+save(model5, file="results5.Rdata")
+
+
+```
+You can now run the script to produce the statistics at [make_statistics.R](helper_functions/make_statistics.R)
+And you can run the script to produce the figures at [make_figures.R](helper_functions/make_figures.R)
+
+All the .csv files should be moved to data/meta_data for later use
+All the .Rdata files should be moved to data/processed_rdata for later use
+
+Or run the code chunk below to do it automagically
+
+```{r}
+list.files(path = here::here(),pattern = "model[1-4,a-c]{1,2}.[dat12meta]{4}.csv", recursive = T, full.names = T) %>% map(function(x) file.copy(from = x, to = here::here("data/meta_data/",basename(x))))
+
+list.files(path = here::here(),pattern = "results[1-5,a-d]{1,2}.Rdata", recursive = T, full.names = T) %>% map(function(x) file.copy(from = x, to = here::here("data/processed_rdata/",basename(x))))
+
+```

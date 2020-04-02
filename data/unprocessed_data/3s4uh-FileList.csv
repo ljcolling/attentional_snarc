@@ -1,0 +1,73 @@
+Subject Code,Main Data,Secondary Data,Finger Counting Data,Exclude Data,Reason,Other comments,Node
+COLLING_S001_170313,colling_s001_170313_data.mat,NA,colling_s001_170313_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S002_170313,colling_s002_170313_data.mat,NA,colling_s002_170313_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S003_170313,colling_s003_170313_data.mat,NA,colling_s003_170313_fingercounting.mat,TRUE,Technical problem,no eye tracker,3s4uh
+COLLING_S004_170313,colling_s004_170313_data.mat,NA,colling_s004_170313_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S005_170314,colling_s005_170314_data.mat,NA,colling_s005_170314_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S006_170314,colling_s006_170314_data.mat,NA,colling_s006_170314_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S007_170314,colling_s007_170314_data.mat,NA,colling_s007_170314_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S008_170314,colling_s008_170314_data.mat,NA,colling_s008_170314_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S009_170314,colling_s009_170314_data.mat,NA,colling_s009_170314_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S010_170320,colling_s010_170320_data.mat,NA,colling_s010_170320_fingercounting.mat,TRUE,Technical problem,no eye tracker,3s4uh
+COLLING_S011_170320,colling_s011_170320_data.mat,NA,colling_s011_170320_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S012_170320,colling_s012_170320_data.mat,NA,colling_s012_170320_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S013_170320,colling_s013_170320_data.mat,NA,colling_s013_170320_fingercounting.mat,TRUE,Technical problem,NA,3s4uh
+COLLING_S014_170321,colling_s014_170321_data.mat,NA,colling_s014_170321_fingercounting.mat,TRUE,Technical problem,no eye tracker,3s4uh
+COLLING_S015_170321,colling_s015_170321_data.mat,NA,colling_s015_170321_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S016_170321,colling_s016_170321_data.mat,NA,colling_s016_170321_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S017_170321,colling_s017_170321_data.mat,NA,colling_s017_170321_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S018_170322,colling_s018_170322_data.mat,NA,colling_s018_170322_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S019_170322,colling_s019_170322_data.mat,NA,colling_s019_170322_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S020_170322,colling_s020_170322_data.mat,NA,colling_s020_170322_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S021_170322,colling_s021_170322_data.mat,NA,colling_s021_170322_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S022_170322,colling_s022_170322_data.mat,NA,colling_s022_170322_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S023_170323,colling_s023_170323_data.mat,NA,colling_s023_170323_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S024_170324,colling_s024_170324_data.mat,NA,colling_s024_170324_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S025_170324,colling_s025_170324_data.mat,NA,colling_s025_170324_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S026_170325,colling_s026_170325_data.mat,NA,colling_s026_170325_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S027_170327,colling_s027_170327_data.mat,NA,colling_s027_170327_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S028_170327,colling_s028_170327_data.mat,NA,colling_s028_170327_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S029_170328,colling_s029_170328_data.mat,NA,colling_s029_170328_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S030_170403,colling_s030_170403_data.mat,NA,colling_s030_170403_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S031_170403,colling_s031_170403_data.mat,NA,colling_s031_170403_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S032_170403,colling_s032_170403_data.mat,NA,colling_s032_170403_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S033_170403,colling_s033_170403_data.mat,NA,colling_s033_170403_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S034_170403,colling_s034_170403_data.mat,NA,colling_s034_170403_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S035_170403,colling_s035_170403_data.mat,NA,colling_s035_170403_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S036_170404,colling_s036_170404_data.mat,NA,colling_s036_170404_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S037_170410,colling_s037_170410_data.mat,NA,colling_s037_170410_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S038_170410,colling_s038_170410_data.mat,NA,colling_s038_170410_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S039_170412,colling_s039_170412_data.mat,NA,colling_s039_170412_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S040_170413,colling_s040_170413_data.mat,NA,colling_s040_170413_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S041_170413,colling_s041_170413_data.mat,NA,colling_s041_170413_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S042_170413,colling_s042_170413_data.mat,NA,colling_s042_170413_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S043_170424,colling_s043_170424_data.mat,NA,colling_s043_170424_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S044_170424,colling_s044_170424_data.mat,NA,colling_s044_170424_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S045_170425,colling_s045_170425_data.mat,NA,colling_s045_170425_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S046_170508,colling_s046_170508_data.mat,NA,colling_s046_170508_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S047_170508,colling_s047_170508_data.mat,NA,colling_s047_170508_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S048_170508,colling_s048_170508_data.mat,NA,colling_s048_170508_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S049_170509,colling_s049_170509_data.mat,NA,colling_s049_170509_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S050_170515,colling_s050_170515_data.mat,NA,colling_s050_170515_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S051_170518,colling_s051_170518_data.mat,NA,colling_s051_170518_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S052_170519,colling_s052_170519_data.mat,NA,colling_s052_170519_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S053_170523,colling_s053_170523_data.mat,NA,colling_s053_170523_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S054_170526,colling_s054_170526_data.mat,NA,colling_s054_170526_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S055_170531,colling_s055_170531_data.mat,NA,colling_s055_170531_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S056_170606,colling_s056_170606_data.mat,NA,colling_s056_170606_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S057_170606,colling_s057_170606_data.mat,NA,colling_s057_170606_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S058_170606,colling_s058_170606_data.mat,NA,colling_s058_170606_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S059_170608,colling_s059_170608_data.mat,NA,colling_s059_170608_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S060_170613,colling_s060_170613_data.mat,NA,colling_s060_170613_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S061_170616,colling_s061_170616_data.mat,NA,colling_s061_170616_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S062_170616,colling_s062_170616_data.mat,NA,colling_s062_170616_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S063_170619,colling_s063_170619_data.mat,NA,colling_s063_170619_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S064_170621,colling_s064_170621_data.mat,NA,colling_s064_170621_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S065_170622,colling_s065_170622_data.mat,NA,colling_s065_170622_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S066_170622,colling_s066_170622_data.mat,NA,colling_s066_170622_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S067_170622,colling_s067_170622_data.mat,NA,colling_s067_170622_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S068_170623,colling_s068_170623_data.mat,NA,colling_s068_170623_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S069_170626,colling_s069_170626_data.mat,NA,colling_s069_170626_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S070_170628,colling_s070_170628_data.mat,NA,colling_s070_170628_fingercounting.mat,FALSE,NA,no eye tracker,3s4uh
+COLLING_S071_170705,colling_s071_170705_data.mat,NA,colling_s071_170705_fingercounting.mat,FALSE,NA,NA,3s4uh
+COLLING_S072_170705,colling_s072_170705_data.mat,NA,colling_s072_170705_fingercounting.mat,FALSE,NA,NA,3s4uh
