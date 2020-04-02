@@ -1,6 +1,7 @@
 # About
 
-This the data and code repository for the multi-lab RRR of the Fischer et al 2003 (doi: [10.1177/2515245920903079](http://dx.doi.org/10.1177/2515245920903079)).
+This the data and code repository for the multi-lab RRR of the Fischer et al 2003 to be published as:  
+Colling L. J., Szűcs, D., ... McShane, B.B. (2020) Registered Replication Report on Fischer, Castel, Dodd, and Pratt (2003). *Advances in Methods and Practices in Psychological Science*. doi: [10.1177/2515245920903079](http://dx.doi.org/10.1177/2515245920903079).
 
 The raw data is located in the folder `data`.  You can re-download the data from the lab's OSF pages by using the script `DownloadAllData.r`. Do to this, you will need to replace the string `'token_code'` with your OSF token.
 
