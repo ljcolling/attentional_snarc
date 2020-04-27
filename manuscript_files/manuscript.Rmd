@@ -590,6 +590,7 @@ LJC and DS are funded by James S. McDonnell Foundation 21st Century Science Init
 
 LJC and DS proposed the study. LJC programmed the experiments. LJC and BBM conducted the analyses. LJC wrote an initial manuscript. LJC and BBM wrote revised and final manuscripts. All authors critically reviewed the final manuscript.
 
+
 ```{r}
 papaja::render_appendix("appendix.Rmd")
 ```

@@ -167,10 +167,10 @@ meta.files = c(here::here("data/meta_data/model1.meta.csv"),
 
 map(meta.files, function(x) read_csv(x) %>% group_by(ConditionDescription, DependentVariable) %>% summarise(n = sum(Freq))) %>% bind_rows() -> subj.nums
 
-results.files = c("results1.Rdata",
-                  "results2.Rdata",
-                  "results3.Rdata",
-                  "results4.Rdata")
+results.files = c(here::here("data/processed_rdata/results1.Rdata"),
+                  here::here("data/processed_rdata/results2.Rdata"),
+                  here::here("data/processed_rdata/results3.Rdata"),
+                  here::here("data/processed_rdata/results4.Rdata"))
 
 
 estimates.list = list()
@@ -197,10 +197,10 @@ estimates.list %>% mutate(
     grepl(Condition.Full, pattern = "Not.Applicable") == TRUE ~ "Model 1",
     grepl(Condition.Full, pattern = "LS") == TRUE ~ "Model 2",
     grepl(Condition.Full, pattern = "RS") == TRUE ~ "Model 2",
-    grepl(Condition.Full, pattern = "LH") == TRUE ~ "Model 3",
-    grepl(Condition.Full, pattern = "RH") == TRUE ~ "Model 3",
-    grepl(Condition.Full, pattern = "LTR") == TRUE   ~ "Model 4",
-    grepl(Condition.Full, pattern = "NLR")  == TRUE ~ "Model 4"
+    grepl(Condition.Full, pattern = "LH") == TRUE ~ "Model 4",
+    grepl(Condition.Full, pattern = "RH") == TRUE ~ "Model 4",
+    grepl(Condition.Full, pattern = "LTR") == TRUE   ~ "Model 3",
+    grepl(Condition.Full, pattern = "NLR")  == TRUE ~ "Model 3"
   )
 ) %>%
   mutate(
@@ -287,10 +287,10 @@ estimates.list %>% mutate(y = case_when(Model == "Fischer et al. (2003)" & Moder
                                         Model == "Model 1" & Moderator == "No moderators" ~ 7,
                                         Model == "Model 2" & Moderator == "Left-starter" ~ 6,
                                         Model == "Model 2" & Moderator == "Right-starter" ~ 5,
-                                        Model == "Model 3" & Moderator == "Left-handed" ~ 4,
-                                        Model == "Model 3" & Moderator == "Right-handed" ~ 3,
-                                        Model == "Model 4" & Moderator == "Left-to-right" ~ 2,
-                                        Model == "Model 4" & Moderator == "Not left-to-right" ~ 1,
+                                        Model == "Model 4" & Moderator == "Left-handed" ~ 2,
+                                        Model == "Model 4" & Moderator == "Right-handed" ~ 1,
+                                        Model == "Model 3" & Moderator == "Left-to-right" ~ 4,
+                                        Model == "Model 3" & Moderator == "Not left-to-right" ~ 3,
                                         FALSE ~ NA_real_)) %>%
   mutate(label2 = pmap_chr(.l = list(Ml = as.character(Model), Mr = as.character(Moderator)), .f = function(Ml,Mr) glue("{Ml} ({Mr})"))) %>% ggplot() + 
   geom_errorbarh(aes(xmax = Estimate + (qnorm(.95) * SE), xmin = Estimate - (qnorm(.95) * SE), y = y), height = 0) + 
@@ -304,7 +304,7 @@ estimates.list %>% mutate(y = case_when(Model == "Fischer et al. (2003)" & Moder
                                                                                                                                                                                                                             panel.spacing.y = unit(x = 1.1, units = "picas")) ->p 
 p
 
-ggsave(plot = p, filename = here::here("manuscript_files/meta_summaryv4.png"), height = 12, width = 10)
-#ggsave(plot = p, filename = "manuscript_files/meta_summaryv4.pdf", height = 12, width = 10, device = cairo_pdf)
+#ggsave(plot = p, filename = here::here("manuscript_files/meta_summaryv4.png"), height = 12, width = 10)
+ggsave(plot = p, filename = "manuscript_files/meta_summaryv4.pdf", height = 12, width = 10, device = cairo_pdf)
 
 

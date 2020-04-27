@@ -1,5 +1,9 @@
 ---
 ---
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\pagenumbering{arabic}
+\setcounter{page}{1}
 ```{r}
 require(tidyverse)
 require(glue)
