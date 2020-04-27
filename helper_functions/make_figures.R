@@ -287,10 +287,10 @@ estimates.list %>% mutate(y = case_when(Model == "Fischer et al. (2003)" & Moder
                                         Model == "Model 1" & Moderator == "No moderators" ~ 7,
                                         Model == "Model 2" & Moderator == "Left-starter" ~ 6,
                                         Model == "Model 2" & Moderator == "Right-starter" ~ 5,
-                                        Model == "Model 4" & Moderator == "Left-handed" ~ 2,
-                                        Model == "Model 4" & Moderator == "Right-handed" ~ 1,
                                         Model == "Model 3" & Moderator == "Left-to-right" ~ 4,
                                         Model == "Model 3" & Moderator == "Not left-to-right" ~ 3,
+                                        Model == "Model 4" & Moderator == "Left-handed" ~ 2,
+                                        Model == "Model 4" & Moderator == "Right-handed" ~ 1,
                                         FALSE ~ NA_real_)) %>%
   mutate(label2 = pmap_chr(.l = list(Ml = as.character(Model), Mr = as.character(Moderator)), .f = function(Ml,Mr) glue("{Ml} ({Mr})"))) %>% ggplot() + 
   geom_errorbarh(aes(xmax = Estimate + (qnorm(.95) * SE), xmin = Estimate - (qnorm(.95) * SE), y = y), height = 0) + 
@@ -304,7 +304,7 @@ estimates.list %>% mutate(y = case_when(Model == "Fischer et al. (2003)" & Moder
                                                                                                                                                                                                                             panel.spacing.y = unit(x = 1.1, units = "picas")) ->p 
 p
 
-#ggsave(plot = p, filename = here::here("manuscript_files/meta_summaryv4.png"), height = 12, width = 10)
-ggsave(plot = p, filename = "manuscript_files/meta_summaryv4.pdf", height = 12, width = 10, device = cairo_pdf)
+ggsave(plot = p, filename = here::here("manuscript_files/meta_summaryv4.png"), height = 12, width = 10)
+#ggsave(plot = p, filename = "manuscript_files/meta_summaryv4.pdf", height = 12, width = 10, device = cairo_pdf)
 
 
