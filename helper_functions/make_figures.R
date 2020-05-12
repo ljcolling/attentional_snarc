@@ -214,8 +214,8 @@ estimates.list %>% mutate(
   mutate(
     Moderator = case_when(
       grepl(Condition.Full, pattern = "Not.Applicable") == TRUE ~ "No moderators",
-      grepl(Condition.Full, pattern = "LS") == TRUE ~ "Left-starter",
-      grepl(Condition.Full, pattern = "RS") == TRUE ~ "Right-starter",
+      grepl(Condition.Full, pattern = "LS") == TRUE ~ "Consistent left-starter",
+      grepl(Condition.Full, pattern = "RS") == TRUE ~ "Consistent right-starter",
       grepl(Condition.Full, pattern = "LH") == TRUE ~ "Left-handed",
       grepl(Condition.Full, pattern = "RH") == TRUE ~ "Right-handed",
       grepl(Condition.Full, pattern = "LTR") == TRUE   ~ "Left-to-right",
@@ -285,8 +285,8 @@ glue("{estimates.list$mid[4] %>% stringr::str_trim()} ms [{estimates.list$ll[4] 
 
 estimates.list %>% mutate(y = case_when(Model == "Fischer et al. (2003)" & Moderator == "No moderators" ~ 8,
                                         Model == "Model 1" & Moderator == "No moderators" ~ 7,
-                                        Model == "Model 2" & Moderator == "Left-starter" ~ 6,
-                                        Model == "Model 2" & Moderator == "Right-starter" ~ 5,
+                                        Model == "Model 2" & Moderator == "Consistent left-starter" ~ 6,
+                                        Model == "Model 2" & Moderator == "Consistent right-starter" ~ 5,
                                         Model == "Model 3" & Moderator == "Left-to-right" ~ 4,
                                         Model == "Model 3" & Moderator == "Not left-to-right" ~ 3,
                                         Model == "Model 4" & Moderator == "Left-handed" ~ 2,
@@ -305,6 +305,6 @@ estimates.list %>% mutate(y = case_when(Model == "Fischer et al. (2003)" & Moder
 p
 
 ggsave(plot = p, filename = here::here("manuscript_files/meta_summaryv4.png"), height = 12, width = 10)
-#ggsave(plot = p, filename = "manuscript_files/meta_summaryv4.pdf", height = 12, width = 10, device = cairo_pdf)
+ggsave(plot = p, filename = "manuscript_files/meta_summaryv4.pdf", height = 12, width = 10, device = cairo_pdf)
 
 
