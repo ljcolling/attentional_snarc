@@ -1,0 +1,19 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is 'manuscript.blg'
+[84] biber-darwin:322> INFO - === Sun Jun 14, 2020, 21:51:13
+[101] Biber.pm:415> INFO - Reading 'manuscript.bcf'
+[221] Biber.pm:943> INFO - Found 86 citekeys in bib section 0
+[236] Biber.pm:4256> INFO - Processing section 0
+[236] Utils.pm:75> INFO - Globbing data source 'cited.bib'
+[237] Utils.pm:91> INFO - Globbed data source 'cited.bib' to cited.bib
+[247] Biber.pm:4455> INFO - Looking for bibtex format file 'cited.bib' for section 0
+[252] bibtex.pm:1653> INFO - LaTeX decoding ...
+[398] bibtex.pm:1471> INFO - Found BibTeX data source 'cited.bib'
+[811] Utils.pm:304> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[959] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[959] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[959] Biber.pm:4084> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[959] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[1053] bbl.pm:652> INFO - Writing 'manuscript.bbl' with encoding 'UTF-8'
+[1109] bbl.pm:755> INFO - Output to manuscript.bbl
+[1109] Biber.pm:128> INFO - WARNINGS: 1

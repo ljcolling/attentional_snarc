@@ -3,7 +3,7 @@
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thefigure}{S\arabic{figure}}
 \pagenumbering{arabic}
-\setcounter{page}{1}
+
 ```{r}
 require(tidyverse)
 require(glue)
@@ -23,6 +23,8 @@ SpecName <- function(x){
             x == "No Constraints" ~ "*No Constraints*"                               # 6
   )}
 ```
+
+
 
 ## Primary analyses
 
@@ -74,24 +76,27 @@ make.sub.c<-function(estimates,m.idx){
 
 ```
 
-Model 1 was fit to data from `r Model1.counts %>% pull(n)` participants from `r Model1.counts %>% pull(nlab) %>% english::words()` labs (see Table \@ref(tab:Exclusions) for details). Of the six equal allocation multilevel multivariate compound symmetry (EAMMCS) model specifications, the `r SpecName(names(m1.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod1).
+Model 1 was estimated on data from `r Model1.counts %>% pull(n)` participants from `r Model1.counts %>% pull(nlab) %>% english::words()` labs (see Table \@ref(tab:Exclusions) for details). Of the six equal allocation multilevel multivariate compound symmetry (EAMMCS) model specifications, the `r SpecName(names(m1.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod1).
 
 
 ### Model 2: Finger counting
+<!-- update terms here -->
 
-Model 2 was fit to data from `r Model2.counts %>% filter(Con == "LS") %>% pull(n)` left-starter participants from `r Model2.counts %>% filter(Con == "LS") %>% pull(nlab) %>% english::words()` labs and `r Model2.counts %>% filter(Con == "RS") %>% pull(n)` right-starter participants from `r Model2.counts %>% filter(Con == "RS") %>% pull(nlab) %>% english::words()` labs (see Supplementary Table \@ref(tab:count) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m2.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod2).
+Model 2 was estimated on data from `r Model2.counts %>% filter(Con == "LS") %>% pull(n)` consistent left-starters from `r Model2.counts %>% filter(Con == "LS") %>% pull(nlab) %>% english::words()` labs and `r Model2.counts %>% filter(Con == "RS") %>% pull(n)` consistent right-starters from `r Model2.counts %>% filter(Con == "RS") %>% pull(nlab) %>% english::words()` labs (see Supplementary Table \@ref(tab:count) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m2.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod2).
+
+<!-- update terms here -->
 
 ### Model 3: Reading/writing direction
 
-Model 3 was fit to data from `r Model3.counts %>% filter(Con == "LTR") %>% pull(n)` exclusively left-to-right readers/writers from `r Model3.counts %>% filter(Con == "LTR") %>% pull(nlab) %>% english::words()` labs and `r Model3.counts %>% filter(Con == "NLR") %>% pull(n)` not exclusively left-to-right readers/writers from `r Model3.counts %>% filter(Con == "NLR") %>% pull(nlab) %>% english::words()` labs (see Supplementary Table \@ref(tab:read) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m3.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod3).
+Model 3 was estimated on data from `r Model3.counts %>% filter(Con == "LTR") %>% pull(n)` exclusively left-to-right readers/writers from `r Model3.counts %>% filter(Con == "LTR") %>% pull(nlab) %>% english::words()` labs and `r Model3.counts %>% filter(Con == "NLR") %>% pull(n)` not exclusively left-to-right readers/writers from `r Model3.counts %>% filter(Con == "NLR") %>% pull(nlab) %>% english::words()` labs (see Supplementary Table \@ref(tab:read) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m3.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod3).
 
 ### Model 4: Handedness
 
-Model 4 was fit to data from `r Model4.counts %>% filter(Con == "LH") %>% pull(n)` left-handed participants from `r Model4.counts %>% filter(Con == "LH") %>% pull(nlab) %>% english::words()` labs and `r Model4.counts %>% filter(Con == "RH") %>% pull(n)` right-handed participants from `r Model4.counts %>% filter(Con == "RH") %>% pull(nlab) %>% english::words()` labs (see Supplementary Table \@ref(tab:hand) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m4.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod4).
+Model 4 was estimated on data from `r Model4.counts %>% filter(Con == "LH") %>% pull(n)` left-handed participants from `r Model4.counts %>% filter(Con == "LH") %>% pull(nlab) %>% english::words()` labs and `r Model4.counts %>% filter(Con == "RH") %>% pull(n)` right-handed participants from `r Model4.counts %>% filter(Con == "RH") %>% pull(nlab) %>% english::words()` labs (see Supplementary Table \@ref(tab:hand) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m4.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod4).
 
 ### Model 5: Mathematics fluency and mathematics anxiety
 
-Model 5 was fit to data from `r nobs(model5) / 4` participants from `r LabNames %>% length() %>% english::words()` labs (see Table \@ref(tab:Exclusions)). See the main text for model specification details, but note that (i) for consistency with Model 1 we employed the *Equal Variance, Zero Correlation* specification for the Lab $\times$ ISI Condition effects and (ii) the maths test and AMAS were centred and scaled by their respective means and standard deviations across the 1105 participants prior to estimation of the model. Fixed effect estimates, standard errors, and $t$-statistics and variance component estimates are shown in Supplementary Table \@ref(tab:mod5).
+Model 5 was estimated on data from `r nobs(model5) / 4` participants from `r LabNames %>% length() %>% english::words()` labs (see Table \@ref(tab:Exclusions)). See the main text for model specification details, but note that (i) for consistency with Model 1 we employed the *Equal Variance, Zero Correlation* specification for effects for each ISI condition for each lab and (ii) the math test and AMAS were centred and scaled by their respective means and standard deviations across the 1105 participants prior to estimation of the model. Fixed effect estimates, standard errors, and $t$-statistics and variance component estimates are shown in Supplementary Table \@ref(tab:mod5).
 
 
 
@@ -116,12 +121,12 @@ GuessTable %>% pull(LabID) %>% unique() %>% length() -> n.guess.labs
 
 ### Purpose of experiment
 
-Data from several participants were not included in the primary analysis because they correctly guessed the purpose of the experiment (as assessed by the exit questionnaire). The data from these participants was analysed separately to determine whether insight into the purpose of the experiment moderated the effect. Specifically, Model 1 was refit to data from the `r n.guess` participants from `r n.guess.labs %>% english::words()` labs who correctly guessed the purpose of the experiment (see Supplementary Table \@ref(tab:mod1bn) for details). Of the six model EAMMCS model specifications, the `r SpecName(names(m1b.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod1b).
+Data from several participants were not included in the primary analysis because they correctly guessed the purpose of the experiment (as assessed by the exit questionnaire). The data from these participants was analyzed separately to determine whether insight into the purpose of the experiment moderated the effect. Specifically, Model 1 was estimated on data from the `r n.guess` participants from `r n.guess.labs %>% english::words()` labs who correctly guessed the purpose of the experiment (see Supplementary Table \@ref(tab:mod1bn) for details). Of the six model EAMMCS model specifications, the `r SpecName(names(m1b.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod1b).
 
 
 ### Eye-movement contaminated trials
 
-Data from individual trials that were contaminated with eye movements were also not included the primary analysis. The data from these trials was analysed separately to determine whether eye movements moderated the effect. Specifically, Model 1 was refit to data from `r EyeTracker.Trials` eye movement contaminated trials from `r EyeTracker.Subj` participants from `r EyeTracker.Labs %>% english::words()` labs with contaminated trials at each ISI $\times$ congruency condition (see Supplementary Table \@ref(tab:Eyedetail) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m1c.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod1c)
+Data from individual trials that were contaminated with eye movements were also not included the primary analysis. The data from these trials was analyzed separately to determine whether eye movements moderated the effect. Specifically, Model 1 was estimated on data from `r EyeTracker.Trials` eye movement contaminated trials of `r EyeTracker.Subj` participants from `r EyeTracker.Labs %>% english::words()` labs with contaminated trials in every combination of ISI and congruency congruency condition (see Supplementary Table \@ref(tab:Eyedetail) for details). Of the six EAMMCS model specifications, the `r SpecName(names(m1c.idx))` specification was chosen by AIC. AIC; fixed effect estimates, standard errors, and $z$-statistics; and variance component estimates are shown in Supplementary Table \@ref(tab:mod1c)
 
 
 ```{r}
@@ -160,7 +165,7 @@ kable(model1.sub.c.df$df, format = "latex", booktabs = "TRUE", digits = 2, escap
 ReplicationProjectTools::GetLabNames()
 blankNa<-function(x)(ifelse(is.na(x),"0",as.character(x)))
 
-read_csv(here::here("data/final_data_csv/AllFischerData.csv")) %>% select(Lab,FingerGroup) %>% group_by(Lab,FingerGroup) %>% summarise(n = n()) %>% spread(FingerGroup,n) %>% inner_join(tibble(Lab = Nodes, Name = LabNames), by = "Lab") %>% arrange(Name) %>% ungroup() %>% select(Name,LS,LA,NG,RA,RS) %>% mutate_at(c("LS","LA","NG","RA","RS"),blankNa) %>% mutate_all(linebreak) %>% kable("latex",booktabs = T, escape = F, caption = "Number of participants in each finger counting group for each of the seventeen labs.", col.names = linebreak(c("Lab","Left-\nStarter","Left-\nPrefer","No\nGroup","Right-\nPrefer","Right-\nStarter"), align = "c"), linesep = "",align = c("l","c","c","c","c","c"))
+read_csv(here::here("data/final_data_csv/AllFischerData.csv")) %>% select(Lab,FingerGroup) %>% group_by(Lab,FingerGroup) %>% summarise(n = n()) %>% spread(FingerGroup,n) %>% inner_join(tibble(Lab = Nodes, Name = LabNames), by = "Lab") %>% arrange(Name) %>% ungroup() %>% select(Name,LS,LA,NG,RA,RS) %>% mutate_at(c("LS","LA","NG","RA","RS"),blankNa) %>% mutate_all(linebreak) %>% kable("latex",booktabs = T, escape = F, caption = "Number of participants in each finger counting group for each of the seventeen labs.", col.names = linebreak(c("Lab","Consistent\nLeft-starter","Inconsistent\nLeft-starter","No\nGroup","Inconsistent\nRight-starter","Consistent\nRight-starter"), align = "c"), linesep = "",align = c("l","c","c","c","c","c"))
 ```
 
 
@@ -185,6 +190,7 @@ read_csv(here::here("data/final_data_csv/AllFischerData.csv")) %>% select(Lab,Fi
 ```{r}
 fit2.stats$AIC %>% as.data.frame() %>% tibble::rownames_to_column("Specification") %>% mutate(Specification = SpecName(Specification) %>% str_remove_all(pattern = "\\*")) %>% select(-MMCS) %>% rename(AIC = EAMMCS) -> model2.sub.a.df
 model2.fe %>% select(-`$n$`) -> model2.sub.b.df
+model2.sub.b.df %>% mutate(`Finger counting group` = case_when(`Finger counting group` == 'Right-starter' ~ "Consistent Right-starter", `Finger counting group` == "Left-starter" ~ "Consistent Left-starter")) -> model2.sub.b.df
 make.sub.c(estimates2,m2.idx) -> model2.sub.c.df
 ```
 
@@ -383,7 +389,7 @@ kable(model1b.sub.c.df$df, format = "latex", booktabs = "TRUE", digits = 2, esca
 
 read_csv(here::here("data/processed_data/EyeTrackerDetail.csv")) -> EyeTrackerDetail
 names(EyeTrackerDetail)[2] = "Participants"
-EyeTrackerDetail %>% kable(booktabs = T, format = "latex", caption = "Number of participants tested with an eye-tracker, number of participants analysed in our secondary analysis of eye movement contaminated trials, and number of eye movement contaminated trials in the analysis (total number of eye movement contaminated trials) at each ISI $\\times$ congruency condition for each lab.", escape = T, align = c("l","c","c","l","c","c","c","c")) %>% kableExtra::collapse_rows(c(1:3)) %>% kableExtra::landscape()
+EyeTrackerDetail %>% kable(booktabs = T, format = "latex", caption = "Number of participants tested with an eye-tracker, number of participants analyzed in our secondary analysis of eye movement contaminated trials, and number of eye movement contaminated trials in the analysis (total number of eye movement contaminated trials) at each combination of ISI  and congruency condition for each lab.", escape = T, align = c("l","c","c","l","c","c","c","c")) %>% kableExtra::collapse_rows(c(1:3)) %>% kableExtra::landscape()
 
 ```
 
